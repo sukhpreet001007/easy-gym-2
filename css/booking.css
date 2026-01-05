@@ -225,7 +225,7 @@
 } */
 
 .dropdown-wrapper .accordion-body {
-    padding: 10px 20px 10px 20px;
+    padding: 20px 20px 20px 20px;
     font-size: 16px;
     color: #000000;
     line-height: 1.6;
@@ -849,7 +849,7 @@
 .animated-compare-table {
     width: 100%;
     position: relative;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .animated-compare-table .line {
@@ -893,6 +893,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    
 }
 
 .animated-compare-table .line>div:first-child {
@@ -900,7 +901,10 @@
     text-align: left;
     flex: 1.2;
 }
+.animated-compare-table .line > *:first-child:not(th){
+    font-weight: 600;
 
+}
 .animated-compare-table .line i {
     font-size: 18px;
 }
