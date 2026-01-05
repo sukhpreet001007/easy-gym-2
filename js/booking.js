@@ -75,21 +75,24 @@ const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
+
 window.onYouTubeIframeAPIReady = function () {
     const playerElements = document.querySelectorAll('.youtube-player');
     playerElements.forEach((el, index) => {
         const parentElement = el.parentElement;
         const videoId = el.getAttribute('data-video-id');
+        const isClientReview = el.closest('.client-review-card') !== null;
+
         const player = new YT.Player(el.id, {
             height: '100%',
             width: '100%',
             videoId: videoId,
             playerVars: {
-                'autoplay': 0,
+                'autoplay': 0, // Logic handles play
                 'controls': 1,
                 'rel': 0,
                 'showinfo': 0,
-                'mute': 1,
+                'mute': isClientReview ? 0 : 1, // Unmute client reviews (click-to-play), others muted (autoplay)
                 'loop': 1,
                 'playlist': videoId
             },
@@ -98,12 +101,17 @@ window.onYouTubeIframeAPIReady = function () {
                 'onVolumeChange': onPlayerVolumeChange
             }
         });
-        players.push({ id: el.id, player: player, element: parentElement });
+        players.push({ id: el.id, player: player, element: parentElement, isClientReview: isClientReview });
     });
 };
 
 function onPlayerReady(event) {
-    event.target.playVideo();
+    const iframe = event.target.getIframe();
+    const isClientReview = iframe.closest('.client-review-card') !== null;
+
+    if (!isClientReview) {
+        event.target.playVideo();
+    }
 
     playersReady++;
     if (playersReady === players.length) {
@@ -131,7 +139,7 @@ function startAutoplayLogic() {
         let minDistance = Infinity;
 
         players.forEach(p => {
-            if (!p.element) return;
+            if (!p.element || p.isClientReview) return; // Skip client review videos
             const rect = p.element.getBoundingClientRect();
             const playerCenter = rect.left + rect.width / 2;
             const distance = Math.abs(centerX - playerCenter);
@@ -143,7 +151,7 @@ function startAutoplayLogic() {
         });
 
         players.forEach(p => {
-            if (!p.element) return;
+            if (!p.element || p.isClientReview) return; // Skip client review videos
 
 
             if (p.player.getPlayerState && p.player.getPlayerState() !== YT.PlayerState.PLAYING && p.player.getPlayerState() !== YT.PlayerState.BUFFERING) {
