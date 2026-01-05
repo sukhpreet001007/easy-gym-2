@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Wix+Madefor+Display:wght@400..800&display=swap');
+
+.hero2-section {
+    padding: 100px 0;
+    background: #ffffff;
+    /* Fallback */
+    background: radial-gradient(circle at center 20%, rgba(30, 59, 138, 0.213) 0%, rgba(126, 34, 206, 0.05) 30%, #ffffff 70%);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero2-container {
+    /* max-width: 1000px; */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Animated Title */
+.hero2-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 80px;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero2-title span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: hero2-jump-in 0.5s ease forwards;
+    animation-delay: calc(var(--i) * 0.03s);
+    white-space: pre;
+    /* Keep spaces visible */
+}
+
+@keyframes hero2-jump-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+
+    60% {
+        transform: translateY(-5px) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Description */
+.hero2-desc {
+    font-size: 20px;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin: 0 auto 50px;
+    opacity: 0;
+    animation: hero2-fade-up 0.8s ease forwards;
+    animation-delay: 1.2s;
+    /* Start after title animation */
+}
+
+@keyframes hero2-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button */
+.hero2-btn-wrapper {
+    opacity: 0;
+    animation: hero2-fade-up 0.8s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.hero2-btn {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 18px 45px;
+    border-radius: 50px;
+    /* Fully rounded */
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid transparent;
+}
+
+.hero2-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero2-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero2-title {
+        font-size: 36px;
+    }
+
+    .hero2-desc {
+        font-size: 18px;
+    }
+
+    .hero2-section {
+        padding: 60px 0;
+    }
+}
