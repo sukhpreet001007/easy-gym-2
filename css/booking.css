@@ -152,8 +152,9 @@
 
 /* Dropdown Section Accordion Redesign */
 .accordion {
-  --bs-accordion-bg: transparent;
+    --bs-accordion-bg: transparent;
 }
+
 .dropdown-wrapper .accordion-item {
     border: none;
     border-bottom: 1px solid;
@@ -180,14 +181,13 @@
 .dropdown-wrapper .accordion-button:not(.collapsed) {
     color: #2563EC !important;
     border: 1px solid transparent;
-    background-image: 
-        linear-gradient(#fafafb, #fafafb), 
-        linear-gradient(to right, 
-            #D6E0FF 0%, 
-            rgba(214, 224, 255, 0.4) 50%, 
-            transparent 50%, 
-            transparent 100%
-        );
+    background-image:
+        linear-gradient(#fafafb, #fafafb),
+        linear-gradient(to right,
+            #D6E0FF 0%,
+            rgba(214, 224, 255, 0.4) 50%,
+            transparent 50%,
+            transparent 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
     border-bottom-left-radius: 0 !important;
@@ -200,19 +200,19 @@
 
 .dropdown-wrapper .accordion-item:has(.accordion-button:not(.collapsed)) {
     border: 1px solid transparent;
-    background-image: 
-        linear-gradient(#fff, #fff), 
-        linear-gradient(to right, 
-            rgba(214, 224, 255, 0.8) 0%, 
-            rgba(214, 224, 255, 0.3) 50%, 
-            transparent 50%, 
-            transparent 100%
-        );
+    background-image:
+        linear-gradient(#fff, #fff),
+        linear-gradient(to right,
+            rgba(214, 224, 255, 0.8) 0%,
+            rgba(214, 224, 255, 0.3) 50%,
+            transparent 50%,
+            transparent 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 20px;
 }
+
 .dropdown-wrapper-one {
     padding: 59px 0px 59px 40px;
 }
@@ -379,7 +379,7 @@
 
 
 .group-level-section {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .group-level-both {
@@ -792,6 +792,13 @@
         min-height: auto;
         padding: 30px 25px;
     }
+
+    .stage-card-animate {
+        opacity: 1 !important;
+        transform: none !important;
+        width: 100% !important;
+        /* Ensure it takes space */
+    }
 }
 
 @media (max-width: 768px) {
@@ -894,7 +901,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    
+
 }
 
 .animated-compare-table .line>div:first-child {
@@ -902,10 +909,12 @@
     text-align: left;
     flex: 1.2;
 }
-.animated-compare-table .line > *:first-child:not(th){
+
+.animated-compare-table .line>*:first-child:not(th) {
     font-weight: 600;
 
 }
+
 .animated-compare-table .line i {
     font-size: 18px;
 }
@@ -926,30 +935,32 @@
 @media (max-width: 768px) {
     .animated-compare-table .line {
         font-size: 14px;
-       
+
     }
 
     .animated-compare-table .line>div {
         padding: 8px 2px;
-       
+
     }
-    .animated-compare-table .line.th{
+
+    .animated-compare-table .line.th {
         border-radius: 5px;
         padding-left: 5px;
     }
+
     .booking-image-container {
-   position: relative;
-    background-image: url(../images/first-acc.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    aspect-ratio: 663 / 663;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10%;
-}
+        position: relative;
+        background-image: url(../images/first-acc.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        aspect-ratio: 663 / 663;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10%;
+    }
 }
 
 

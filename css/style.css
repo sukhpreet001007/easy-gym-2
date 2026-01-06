@@ -704,15 +704,27 @@ header {
 
 @media (max-width: 576px) {
     .business-card {
-        flex: 0 0 100%;
-        margin-bottom: 10px;
+        flex: 0 0 calc(50% - 8px);
+        margin-bottom: 0px;
+        align-items: center;
+        text-align: center;
     }
 
     .business-grid {
         gap: 15px;
         padding-left: 15px;
         padding-right: 15px;
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .business-icon {
+        align-self: center;
+        justify-content: center;
+    }
+
+    .business-card:last-child {
+        flex: 0 0 100%;
     }
 }
 
@@ -1852,7 +1864,7 @@ button:focus:not(:focus-visible) {
     }
 }
 
-@media only screen and (min-width:1400px) {
+@media only screen and (min-width:1480px) {
 
     .container-fluid {
         max-width: 1920px;
@@ -1869,7 +1881,7 @@ button:focus:not(:focus-visible) {
     }
 }
 
-@media only screen and (max-width:1400px) {
+@media only screen and (max-width:1480px) {
 
     .banner-section-wrapper p {
         font-size: 20px;
@@ -2659,7 +2671,7 @@ button:focus:not(:focus-visible) {
     }
 
     .dropdown-wrapper.dropdown-wrapper-one {
-        padding: 20px;
+        padding: 20px 20px;
     }
 
 
