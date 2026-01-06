@@ -5,7 +5,7 @@
 }
 
 .client-section-h3 {
-    font-size: 32px;
+    font-size: 48px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 50px;
@@ -134,24 +134,24 @@
 @media (max-width: 1200px) {
     .client-review-card {
         width: calc(50vw - 30px);
-        /* 2 cards per width on tablets */
     }
 }
 
 @media (max-width: 768px) {
     .client-review-card {
         width: calc(100vw - 40px);
-        /* 1 card per width on mobile */
         margin: 0 20px;
     }
 
     .client-section-h3 {
-        font-size: 26px;
+        font-size: 32px;
         padding: 0 20px;
     }
 
     .client-review-track {
         animation-duration: 20s;
-        /* Faster animation for fewer items on mobile */
     }
+        .group-level-left-h3{
+            font-size: 32px;
+        }
 }

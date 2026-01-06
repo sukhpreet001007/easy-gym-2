@@ -151,6 +151,9 @@
 
 
 /* Dropdown Section Accordion Redesign */
+.accordion {
+  --bs-accordion-bg: transparent;
+}
 .dropdown-wrapper .accordion-item {
     border: none;
     border-bottom: 1px solid;
@@ -170,7 +173,7 @@
     color: #000000;
     padding: 20px;
     border-radius: 20px !important;
-    background-color: #fafafb;
+    background-color: #fafafb !;
     border-bottom: none;
 }
 
@@ -273,12 +276,12 @@
 .booking-image-container {
     position: relative;
     background-image: url('../images/new-rec.svg');
+    position: relative;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    aspect-ratio: 709 / 580;
-    /* Based on typical SVG dimensions in this project */
+    aspect-ratio: 663 / 663;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -287,7 +290,6 @@
 
 #booking-image {
     width: 703px;
-    height: 701px;
     object-fit: contain;
     z-index: 2;
 }
@@ -886,7 +888,6 @@
 }
 
 .animated-compare-table .line>div {
-    text-align: center;
     flex: 1;
     padding: 20px 15px;
     position: relative;
@@ -925,11 +926,30 @@
 @media (max-width: 768px) {
     .animated-compare-table .line {
         font-size: 14px;
+       
     }
 
     .animated-compare-table .line>div {
-        padding: 12px 8px;
+        padding: 8px 2px;
+       
     }
+    .animated-compare-table .line.th{
+        border-radius: 5px;
+        padding-left: 5px;
+    }
+    .booking-image-container {
+   position: relative;
+    background-image: url(../images/first-acc.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    aspect-ratio: 663 / 663;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10%;
+}
 }
 
 

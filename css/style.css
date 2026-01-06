@@ -983,10 +983,8 @@ header {
 }
 
 .data-migration-section {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fee966+0,e6c700+100 */
     background: linear-gradient(180deg, #1E59FF 0%, #123599 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    padding: 62px 0px;
+    padding: 52px 0px 82px 0;
 }
 
 .data-migration-section h5 {
@@ -1828,31 +1826,29 @@ button:focus:not(:focus-visible) {
 /* Responsive */
 @media (max-width: 768px) {
 
-    .compare-table table,
-    .compare-table thead,
-    .compare-table tbody,
+    .compare-table {
+        border-radius: 0;
+        overflow-x: auto;
+        display: block;
+        padding-bottom: 20px;
+    }
+
+    .compare-table table {
+        width: max-content;
+        min-width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
     .compare-table th,
-    .compare-table td,
-    .compare-table tr {
-        display: block;
-    }
-
-    .compare-table thead {
-        display: none;
-    }
-
     .compare-table td {
-        padding: 12px;
-        border: none;
-        position: relative;
-    }
-
-    .compare-table td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        display: block;
-        margin-bottom: 5px;
-        color: #555;
+        white-space: nowrap;
+        text-align: left !important;
+        min-width: 45vw;
+        padding: 15px;
+        box-sizing: border-box;
     }
 }
 
@@ -1891,9 +1887,9 @@ button:focus:not(:focus-visible) {
         display: none;
     }
 
-    .spaceleft-right {
+    /* .spaceleft-right {
         padding: 0px 20px;
-    }
+    } */
 
     .navbar-expand-md .navbar-nav .nav-link {
         padding: 15px 15px;
@@ -2281,6 +2277,10 @@ button:focus:not(:focus-visible) {
         flex-direction: column-reverse;
     }
 
+    .dropdown-wrapper.booking-section-wrapper .row {
+        flex-direction: column;
+    }
+
     .dropdown-wrapper.dropdown-wrapper-one .dropdown-image {
         margin-top: 0px;
         margin-bottom: 40px;
@@ -2502,6 +2502,8 @@ button:focus:not(:focus-visible) {
 
     .dropdown-wrapper .section-title h2 {
         text-align: left;
+        font-size: 32px;
+        line-height: 1.4;
     }
 
     .section-title.graphical-title h2 span {
@@ -2589,7 +2591,11 @@ button:focus:not(:focus-visible) {
     }
 
     .advantage-right-content {
-        padding: 40px 20px;
+        padding: 40px 0px;
+    }
+
+    .animated-compare-table .line>th {
+        border-radius: 0;
     }
 
     .easy-gym-advantage .why-gyms-switch {
@@ -2604,8 +2610,10 @@ button:focus:not(:focus-visible) {
     .main-footer .spaceleft-right.footer-top {
         padding-bottom: 60px;
     }
-    .img-b{
-      width: 200px;
+
+    .img-b {
+        width: 200px;
+        text-align: center;
     }
 }
 
@@ -2654,9 +2662,6 @@ button:focus:not(:focus-visible) {
         padding: 20px;
     }
 
-    .dropdown-wrapper.dropdown-wrapper-two {
-        padding: 20px;
-    }
 
     .dropdown-wrapper.dropdown-wrapper-two .accordion {
         padding-left: 0px;
@@ -2701,7 +2706,7 @@ button:focus:not(:focus-visible) {
     .we-are-excited h3 span {
         display: block;
     }
-    
+
     .icon-title {
         flex-direction: column;
     }
@@ -2776,7 +2781,11 @@ button:focus:not(:focus-visible) {
     }
 
     .twenty-five {
-        font-size: 16px;
+        font-size: 17px;
+    }
+
+    .booking-image-container {
+        margin-top: 0;
     }
 }
 
@@ -3109,6 +3118,10 @@ button:focus:not(:focus-visible) {
 
 /* For mobile responsiveness */
 @media (max-width: 768px) {
+    .advantage-left-content ul li {
+        font-size: 18px;
+    }
+
     .animate-title {
         white-space: normal;
         animation: fadeSlideUp 1s ease-out forwards;
@@ -3138,6 +3151,14 @@ button:focus:not(:focus-visible) {
     box-sizing: border-box;
 }
 
+.points-three {
+    margin: 10px;
+}
+
+.points-three li {
+    padding: 10px;
+}
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -3157,6 +3178,8 @@ button:focus:not(:focus-visible) {
 .mobile-brand-ticker .brand-ticker-item .row {
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobile-brand-ticker .brand-ticker-item .col-5,
@@ -3175,4 +3198,35 @@ button:focus:not(:focus-visible) {
 
 .mobile-brand-ticker .brand-ticker-item .col-5 {
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-brand-ticker .brand-ticker-item img {
+    width: 240px;
+    /* max-width: 100%; */
+    height: auto;
+}
+
+
+/* Global scrollbar */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
