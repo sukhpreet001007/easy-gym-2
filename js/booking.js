@@ -78,7 +78,11 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 window.onYouTubeIframeAPIReady = function () {
     const playerElements = document.querySelectorAll('.youtube-player');
-    playerElements.forEach((el, index) => {
+
+    const initPlayer = (el) => {
+        if (el.dataset.initialized === "true") return; // Prevent double init
+        el.dataset.initialized = "true";
+
         const parentElement = el.parentElement;
         const videoId = el.getAttribute('data-video-id');
         const isClientReview = el.closest('.client-review-card') !== null;
@@ -102,7 +106,22 @@ window.onYouTubeIframeAPIReady = function () {
             }
         });
         players.push({ id: el.id, player: player, element: parentElement, isClientReview: isClientReview });
-    });
+    };
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    initPlayer(entry.target);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '200px' });
+
+        playerElements.forEach(el => observer.observe(el));
+    } else {
+        playerElements.forEach(el => initPlayer(el));
+    }
 };
 
 function onPlayerReady(event) {
@@ -164,7 +183,6 @@ function startAutoplayLogic() {
 }
 
 
-// Custom Particle Background Implementation removed as per request
 function initCustomParticles() {
     // Function removed
 }
@@ -338,21 +356,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         }, index * 150); // Staggered delay
                     });
 
-                    // Auto-opening logic for the default item
+
                     const defaultOpenItem = accordion.querySelector('.accordion-collapse.show');
                     if (defaultOpenItem) {
-                        // Briefly hide and then re-show to trigger the animation
-                        // if we want it to look like it's "auto-opening" on scroll.
-                        // However, to keep it simple and smooth, we can just ensure 
-                        // it's transitioned properly.
 
-                        // To strictly follow "auto opening once a render website or scroll"
-                        // we can remove 'show' class initially and add it back here.
 
                         const bsCollapse = bootstrap.Collapse.getInstance(defaultOpenItem) || new bootstrap.Collapse(defaultOpenItem, { toggle: false });
 
-                        // If it was already marked as 'show' in HTML, it might be open.
-                        // We can force a re-open if it's the first time it's seen.
+
                         if (!accordion.dataset.animated) {
                             defaultOpenItem.classList.remove('show');
                             setTimeout(() => {
@@ -398,6 +409,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Initialize after a short delay to ensure layout is ready
     setTimeout(initAccordionAnimations, 100);
 });
