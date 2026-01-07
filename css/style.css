@@ -3350,4 +3350,15 @@ button:focus:not(:focus-visible) {
         background-color: rgba(255, 255, 255, 0.2) !important;
         transition: background-color 0.1s;
     }
+
+    /* Remove the background shade/overlay when the menu is open */
+    .ma5menu--active:before {
+        background-color: transparent !important;
+        /* We keep pointer-events allowed so clicking outside still closes the menu if configured */
+    }
+
+    /* Ensure the body doesn't dim if there's any other overlay */
+    .ma5menu--active {
+        background-color: transparent !important;
+    }
 }
