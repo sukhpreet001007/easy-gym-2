@@ -696,5 +696,38 @@
     /* Adjust right side padding for mobile */
     #ModalTogglesix.custom-form-modal .custom-form-modal-right {
         padding: 25px 20px;
+        position: relative;
+        /* Ensure relative positioning for absolute child */
+    }
+
+    /* Close button for mobile */
+    .mobile-close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: transparent;
+        color: #666;
+        /* Or any color that fits the design */
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 10;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-close-btn:hover {
+        color: #ff6b6b;
+    }
+}
+
+/* Hide mobile close button on desktop */
+@media (min-width: 768px) {
+    .mobile-close-btn {
+        display: none;
     }
 }
