@@ -605,6 +605,9 @@ header {
     font-weight: 500;
     margin-top: 30px;
 }
+.twenty-six{
+    font-size: 21px;
+}
 .twenty-four {
     font-size: 39px;
     font-weight: 500;
@@ -1395,7 +1398,7 @@ button:focus:not(:focus-visible) {
     padding-left: 20px;
     position: relative;
     margin-bottom: 0px;
-    font-size: 21px;
+    font-size: 28px;
     font-weight: 500;
 }
 .advantage-left-content .one-li li::before {
@@ -1403,7 +1406,7 @@ button:focus:not(:focus-visible) {
     position: absolute;
     left: 0;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 28px;
 }
 .advantage-right-content {
     padding: 80px 50px;
