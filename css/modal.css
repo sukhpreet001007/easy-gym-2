@@ -1,4 +1,3 @@
-
 #ModalTogglefive.custom-modal .modal-dialog {
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -30,8 +29,13 @@
 }
 
 @keyframes custom-shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
 }
 
 /* Modal body - only for this modal */
@@ -123,12 +127,10 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.3) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0) 100%);
     transform: rotate(30deg);
     transition: all 0.6s ease;
     opacity: 0;
@@ -145,6 +147,7 @@
         opacity: 0;
         transform: translateY(30px) scale(0.9);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -160,9 +163,11 @@
     0% {
         box-shadow: 0 8px 20px rgba(0, 60, 255, 0.08);
     }
+
     50% {
         box-shadow: 0 8px 20px rgba(0, 60, 255, 0.2);
     }
+
     100% {
         box-shadow: 0 8px 20px rgba(0, 60, 255, 0.08);
     }
@@ -185,22 +190,22 @@
     #ModalTogglefive.custom-modal .modal-dialog {
         margin: 20px;
     }
-    
+
     #ModalTogglefive.custom-modal .custom-modal-content {
         border-radius: 20px;
     }
-    
+
     #ModalTogglefive.custom-modal .custom-ph-no {
         padding: 18px 15px;
     }
-    
+
     #ModalTogglefive.custom-modal .custom-flag-icon,
     #ModalTogglefive.custom-modal .custom-whatsapp-icon {
         width: 55px;
         height: 55px;
         margin-right: 15px;
     }
-    
+
     #ModalTogglefive.custom-modal .custom-number {
         font-size: 1.2rem;
     }
@@ -210,24 +215,24 @@
     #ModalTogglefive.custom-modal .modal-dialog {
         margin: 10px;
     }
-    
+
     #ModalTogglefive.custom-modal .custom-ph-no {
         padding: 16px 12px;
     }
-    
+
     #ModalTogglefive.custom-modal .custom-flag-icon,
     #ModalTogglefive.custom-modal .custom-whatsapp-icon {
         width: 50px;
         height: 50px;
         margin-right: 12px;
     }
-    
+
     #ModalTogglefive.custom-modal .custom-flag-icon img,
     #ModalTogglefive.custom-modal .custom-whatsapp-icon img {
         width: 50px;
         height: 50px;
     }
-    
+
     #ModalTogglefive.custom-modal .custom-number {
         font-size: 1.1rem;
     }
@@ -257,11 +262,11 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, 
-        #0066ff, 
-        #00ccff, 
-        #0066ff, 
-        #00ccff);
+    background: linear-gradient(45deg,
+            #0066ff,
+            #00ccff,
+            #0066ff,
+            #00ccff);
     background-size: 400% 400%;
     border-radius: 22px;
     z-index: -1;
@@ -269,9 +274,17 @@
 }
 
 @keyframes gradient-border {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Modal Header */
@@ -348,8 +361,13 @@
 }
 
 @keyframes float-pattern {
-    0% { transform: translateY(0) translateX(0); }
-    100% { transform: translateY(-50px) translateX(-50px); }
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    100% {
+        transform: translateY(-50px) translateX(-50px);
+    }
 }
 
 .form-illustration-content {
@@ -495,7 +513,7 @@
     transform: translateX(-50%);
 }
 
-#ModalTogglesix.custom-form-modal .custom-form-input:focus ~ .input-focus-line {
+#ModalTogglesix.custom-form-modal .custom-form-input:focus~.input-focus-line {
     width: 100%;
 }
 
@@ -535,12 +553,10 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.4) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%);
     transform: rotate(30deg);
     transition: left 0.6s ease;
     opacity: 0;
@@ -611,6 +627,7 @@
         opacity: 0;
         transform: translateY(40px) scale(0.95);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -623,19 +640,19 @@
         flex-direction: column;
         min-height: auto;
     }
-    
+
     #ModalTogglesix.custom-form-modal .custom-form-modal-left {
         padding: 30px 20px;
     }
-    
+
     #ModalTogglesix.custom-form-modal .custom-form-modal-right {
         padding: 30px 25px;
     }
-    
+
     .form-illustration-title {
         font-size: 1.8rem;
     }
-    
+
     .form-title {
         font-size: 2rem;
     }
@@ -649,8 +666,15 @@
 
 /* Floating Particles Animation */
 @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
 }
 
 .floating-particle {
@@ -662,3 +686,15 @@
     animation: float 6s ease-in-out infinite;
 }
 
+
+/* Mobile adjustments for ModalTogglesix */
+@media (max-width: 767px) {
+    #ModalTogglesix.custom-form-modal .custom-form-modal-left {
+        display: none;
+    }
+
+    /* Adjust right side padding for mobile */
+    #ModalTogglesix.custom-form-modal .custom-form-modal-right {
+        padding: 25px 20px;
+    }
+}

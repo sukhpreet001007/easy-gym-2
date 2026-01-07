@@ -605,9 +605,11 @@ header {
     font-weight: 500;
     margin-top: 30px;
 }
-.twenty-six{
+
+.twenty-six {
     font-size: 21px;
 }
+
 .twenty-four {
     font-size: 39px;
     font-weight: 500;
@@ -1401,6 +1403,7 @@ button:focus:not(:focus-visible) {
     font-size: 28px;
     font-weight: 500;
 }
+
 .advantage-left-content .one-li li::before {
     content: '✓';
     position: absolute;
@@ -1408,6 +1411,7 @@ button:focus:not(:focus-visible) {
     color: #ffffff;
     font-size: 28px;
 }
+
 .advantage-right-content {
     padding: 80px 50px;
     background: #ffffff;
@@ -2390,9 +2394,9 @@ button:focus:not(:focus-visible) {
         width: auto;
     }
 
-    #ModalTogglesix {
+    /* #ModalTogglesix {
         display: none !important;
-    }
+    } */
 
     .grey-bar-text h6 {
         font-size: 14px;
