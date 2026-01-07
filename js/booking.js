@@ -92,11 +92,11 @@ window.onYouTubeIframeAPIReady = function () {
             width: '100%',
             videoId: videoId,
             playerVars: {
-                'autoplay': 0, // Logic handles play
+                'autoplay': isClientReview ? 0 : 1, // Autoplay non-reviews immediately
                 'controls': 1,
                 'rel': 0,
                 'showinfo': 0,
-                'mute': isClientReview ? 0 : 1, // Unmute client reviews (click-to-play), others muted (autoplay)
+                'mute': isClientReview ? 0 : 1,
                 'loop': 1,
                 'playlist': videoId
             },
@@ -116,13 +116,15 @@ window.onYouTubeIframeAPIReady = function () {
                     obs.unobserve(entry.target);
                 }
             });
-        }, { rootMargin: '200px' });
+        }, { rootMargin: '1000px' }); // Increased rootMargin for faster loading
 
         playerElements.forEach(el => observer.observe(el));
     } else {
         playerElements.forEach(el => initPlayer(el));
     }
 };
+
+let autoplayIntervalStarted = false;
 
 function onPlayerReady(event) {
     const iframe = event.target.getIframe();
@@ -133,7 +135,8 @@ function onPlayerReady(event) {
     }
 
     playersReady++;
-    if (playersReady === players.length) {
+    if (!autoplayIntervalStarted && playersReady > 0) {
+        autoplayIntervalStarted = true;
         startAutoplayLogic();
     }
 }
