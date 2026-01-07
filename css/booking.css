@@ -320,18 +320,21 @@
     padding: 20px 0;
     cursor: grab;
     user-select: none;
+    touch-action: pan-y;
+    -webkit-user-drag: none;
 }
 
 .shorts-ticker-wrapper:active {
     cursor: grabbing;
 }
 
-.shorts-ticker-wrapper.dragging {
-    cursor: grabbing;
-}
-
 .shorts-ticker-wrapper.dragging .shorts-ticker {
     animation-play-state: paused !important;
+    pointer-events: none;
+}
+
+.shorts-ticker-wrapper.dragging {
+    cursor: grabbing;
 }
 
 .shorts-ticker {

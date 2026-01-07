@@ -7,155 +7,118 @@
     const wrapper = document.querySelector('.shorts-ticker-wrapper');
     const ticker = document.getElementById('shortsTicker');
 
-    if (!wrapper || !ticker) {
-        console.warn('Shorts elements not found');
-        return;
-    }
+    if (!wrapper || !ticker) return;
 
     let isDragging = false;
     let startX = 0;
-    let currentX = 0;
-    let translateX = 0;
-    let animationId = null;
+    let currentTranslateX = 0;
+    const animationDuration = 35; // Must match CSS
 
-    // Get current transform value
+    // Get current transform value (either from animation or inline style)
     function getCurrentTransform() {
         const style = window.getComputedStyle(ticker);
         const matrix = new DOMMatrix(style.transform);
-        return matrix.m41; // translateX value
+        return matrix.m41; // Current translateX
     }
 
-    // Start dragging (mouse)
-    function handleMouseDown(e) {
+    function onDragStart(x) {
         isDragging = true;
-        startX = e.pageX;
-        translateX = getCurrentTransform();
+        startX = x;
+        currentTranslateX = getCurrentTransform();
+
+        // Stop animation immediately and lock at current position
+        ticker.style.animation = 'none';
+        ticker.style.transform = `translateX(${currentTranslateX}px)`;
 
         wrapper.classList.add('dragging');
-        ticker.style.animationPlayState = 'paused';
-
-        // Prevent text selection
-        e.preventDefault();
     }
 
-    // Dragging (mouse)
-    function handleMouseMove(e) {
+    function onDragMove(x) {
         if (!isDragging) return;
 
-        e.preventDefault();
-        currentX = e.pageX;
-        const deltaX = currentX - startX;
+        const deltaX = x - startX;
+        let newX = currentTranslateX + deltaX;
 
-        // Apply the drag movement
-        const newTranslateX = translateX + deltaX;
-        ticker.style.transform = `translateX(${newTranslateX}px)`;
+        // Loop logic: if we drag too far, wrap around seamlessly
+        const tickerWidth = ticker.scrollWidth / 2;
+        if (newX > 0) {
+            newX -= tickerWidth;
+            startX += tickerWidth;
+        } else if (newX < -tickerWidth) {
+            newX += tickerWidth;
+            startX -= tickerWidth;
+        }
+
+        ticker.style.transform = `translateX(${newX}px)`;
     }
 
-    // Stop dragging (mouse)
-    function handleMouseUp() {
+    function onDragEnd() {
         if (!isDragging) return;
-
         isDragging = false;
         wrapper.classList.remove('dragging');
 
-        // Get final position
-        const finalTransform = getCurrentTransform();
-
-        // Resume animation from current position
-        resumeAnimationFromPosition(finalTransform);
+        // Resume animation from the current drag position
+        const finalX = getCurrentTransform();
+        resumeAnimation(finalX);
     }
 
-    // Touch start (mobile)
-    function handleTouchStart(e) {
-        isDragging = true;
-        startX = e.touches[0].pageX;
-        translateX = getCurrentTransform();
+    function resumeAnimation(currentPos) {
+        const tickerWidth = ticker.scrollWidth / 2;
 
-        wrapper.classList.add('dragging');
-        ticker.style.animationPlayState = 'paused';
-    }
-
-    // Touch move (mobile)
-    function handleTouchMove(e) {
-        if (!isDragging) return;
-
-        currentX = e.touches[0].pageX;
-        const deltaX = currentX - startX;
-
-        // Apply the drag movement
-        const newTranslateX = translateX + deltaX;
-        ticker.style.transform = `translateX(${newTranslateX}px)`;
-    }
-
-    // Touch end (mobile)
-    function handleTouchEnd() {
-        if (!isDragging) return;
-
-        isDragging = false;
-        wrapper.classList.remove('dragging');
-
-        // Get final position
-        const finalTransform = getCurrentTransform();
-
-        // Resume animation from current position
-        resumeAnimationFromPosition(finalTransform);
-    }
-
-    // Resume CSS animation from current position
-    function resumeAnimationFromPosition(currentPos) {
-        // Remove inline transform to let CSS animation take over
-        ticker.style.transform = '';
-
-        // Calculate how far we are in the animation cycle
-        const tickerWidth = ticker.scrollWidth / 2; // Half because items are duplicated
-
-        // Normalize position to animation range
+        // Calculate where we are in the 0 to -50% cycle
         let normalizedPos = currentPos % tickerWidth;
         if (normalizedPos > 0) normalizedPos -= tickerWidth;
 
-        // Calculate animation delay to start from current position
-        const animationDuration = 35; // seconds (matches CSS)
+        // Calculate negative delay to skip to the current progress of the animation
         const progress = Math.abs(normalizedPos) / tickerWidth;
         const delay = -(progress * animationDuration);
 
-        // Apply new animation with calculated delay
+        // Force browser to restart animation with the correct delay
         ticker.style.animation = 'none';
-        ticker.offsetHeight; // Trigger reflow
+        ticker.offsetHeight; // Reflow
+        ticker.style.transform = '';
         ticker.style.animation = `ticker-scroll ${animationDuration}s linear infinite`;
         ticker.style.animationDelay = `${delay}s`;
-        ticker.style.animationPlayState = 'running';
     }
 
-    // Mouse events (desktop)
-    wrapper.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
+    // Mouse Listeners
+    wrapper.addEventListener('mousedown', (e) => {
+        onDragStart(e.clientX);
+        e.preventDefault(); // Prevents image dragging and text selection
+    });
 
-    // Prevent dragging from leaving the window
-    wrapper.addEventListener('mouseleave', () => {
+    window.addEventListener('mousemove', (e) => {
         if (isDragging) {
-            handleMouseUp();
+            onDragMove(e.clientX);
         }
     });
 
-    // Touch events (mobile)
-    wrapper.addEventListener('touchstart', handleTouchStart, { passive: true });
-    wrapper.addEventListener('touchmove', handleTouchMove, { passive: true });
-    wrapper.addEventListener('touchend', handleTouchEnd, { passive: true });
+    window.addEventListener('mouseup', onDragEnd);
 
-    // Prevent click events from firing after drag
-    let clickStartX = 0;
-    wrapper.addEventListener('mousedown', (e) => {
-        clickStartX = e.pageX;
-    });
+    // Touch Listeners
+    wrapper.addEventListener('touchstart', (e) => {
+        onDragStart(e.touches[0].clientX);
+    }, { passive: false });
 
+    wrapper.addEventListener('touchmove', (e) => {
+        if (isDragging) {
+            onDragMove(e.touches[0].clientX);
+            // Prevent page scrolling while dragging horizontally
+            if (e.cancelable) e.preventDefault();
+        }
+    }, { passive: false });
+
+    wrapper.addEventListener('touchend', onDragEnd);
+
+    // Click protection: if the user dragged, don't trigger a click (e.g. following a link)
+    let mousedownX = 0;
+    wrapper.addEventListener('mousedown', (e) => mousedownX = e.clientX);
     wrapper.addEventListener('click', (e) => {
-        const clickEndX = e.pageX;
-        if (Math.abs(clickEndX - clickStartX) > 5) {
+        if (Math.abs(e.clientX - mousedownX) > 5) {
             e.preventDefault();
             e.stopPropagation();
         }
     }, true);
 
-    console.log('Shorts drag-to-scroll initialized');
+    console.log('Shorts drag-to-scroll initialized and fixed');
 })();
