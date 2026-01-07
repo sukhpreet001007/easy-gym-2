@@ -1185,14 +1185,18 @@ header .container-fluid {
     background: linear-gradient(90deg, #1a2980, #26d0ce, #1a2980);
     background-size: 200% 100%;
     animation: gradientFlow 3s linear infinite;
+    border: 1px solid #fff;
+
 }
 
 /* Call Now Button - Black with shining animation */
 .mobile-fixed-buttons a.white {
-    background: linear-gradient(90deg, #000000, #333333, #000000);
+    /* background: #020024; */
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(33, 46, 143, 1) 43%, rgba(0, 47, 255, 1) 85%);
     background-size: 200% 100%;
     animation: gradientFlow 3s linear infinite;
     position: relative;
+    border: 1px solid #fff;
 }
 
 /* Add a shining overlay for Call Now button */
@@ -3268,4 +3272,82 @@ button:focus:not(:focus-visible) {
 /* Hover effect */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+/* Mobile Menu Toggle & Interaction Fixes */
+@media (max-width: 991px) {
+
+    /* Style for the main menu toggle button */
+    .ma5menu__toggle,
+    .ma5menu__toggle:hover,
+    .ma5menu__toggle:focus {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        width: 44px !important;
+        height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: transform 0.2s ease, opacity 0.2s ease !important;
+        outline: none !important;
+    }
+
+    .ma5menu__toggle .ma5menu__icon-toggle {
+        position: static !important;
+        margin: 0 !important;
+        filter: brightness(0) invert(1) !important;
+        /* Ensures the icon is white */
+    }
+
+    /* Clicked effect for menu button */
+    .ma5menu__toggle:active {
+        transform: scale(0.85) !important;
+        opacity: 0.7 !important;
+    }
+
+    /* iOS FIX: Ensure all interactive elements in the menu are clickable */
+    .ma5menu__container,
+    .ma5menu__panel,
+    .ma5menu__panel * {
+        -webkit-tap-highlight-color: transparent !important;
+    }
+
+    /* Making the enter arrow button more clickable on iOS */
+    .ma5menu__btn--enter {
+        width: 60px !important;
+        z-index: 10 !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+    }
+
+    /* Ensure the link doesn't block the sub-menu button click */
+    .ma5menu__panel>ul li>.ma5menu__btn--enter+a {
+        padding-right: 70px !important;
+        margin-right: -60px !important;
+        pointer-events: auto !important;
+    }
+
+    /* Force cursor pointer and interaction state on menu items for iOS */
+    .ma5menu__btn--leave,
+    .ma5menu__category,
+    .ma5menu__panel ul li a {
+        cursor: pointer !important;
+        pointer-events: auto !important;
+    }
+
+    /* Specific fix for iOS: elements with onclick or pointer cursor are treated as interactive */
+    .ma5menu__btn--enter,
+    .ma5menu__category {
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    /* Clicked effect for menu items */
+    .ma5menu__panel ul li a:active,
+    .ma5menu__btn--enter:active {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        transition: background-color 0.1s;
+    }
 }
