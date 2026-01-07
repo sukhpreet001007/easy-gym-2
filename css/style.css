@@ -606,7 +606,7 @@ header {
     margin-top: 30px;
 }
 .twenty-four {
-    font-size: 40px;
+    font-size: 39px;
     font-weight: 500;
     color: #fff !important;
 }
@@ -1375,7 +1375,7 @@ button:focus:not(:focus-visible) {
     margin-bottom: 30px;
 }
 
-.advantage-left-content ul li {
+.advantage-left-content .many-li li {
     padding-left: 20px;
     position: relative;
     margin-bottom: 20px;
@@ -1383,15 +1383,28 @@ button:focus:not(:focus-visible) {
     font-weight: 500;
 }
 
-.advantage-left-content ul li::before {
-    content: '•';
+.advantage-left-content .many-li li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: #ff0000;
+    font-size: 24px;
+}
+
+.advantage-left-content .one-li li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 0px;
+    font-size: 21px;
+    font-weight: 500;
+}
+.advantage-left-content .one-li li::before {
+    content: '✓';
     position: absolute;
     left: 0;
     color: #ffffff;
     font-size: 24px;
-    line-height: 1;
 }
-
 .advantage-right-content {
     padding: 80px 50px;
     background: #ffffff;

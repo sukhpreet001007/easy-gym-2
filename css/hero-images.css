@@ -269,6 +269,9 @@
 }
 
 @media (max-width: 576px) {
+    .hero-section-main{
+        padding-bottom: 0;
+    }
     .hero-image-container {
         height: 320px;
     }
@@ -280,7 +283,7 @@
 
     .hero-man {
         width: 280px;
-        left: 65%;
+        left: 50%;
     }
 
 
@@ -288,32 +291,31 @@
         top: -8%;
         left: 2%;
         width: 150px;
-
     }
 
     .workout-card {
         top: -3%;
-        right: -9%;
+        right: -7%;
         width: 150px;
 
     }
 
     .detected-card {
         top: 10%;
-        right: -9%;
+        right: -7%;
         width: 150px;
 
     }
 
     .barbell-card {
         top: 45%;
-        right: 1%;
+        right: -2%;
         width: 100px;
     }
 
     .meals-card {
         bottom: 10%;
-        right: 3%;
+        right: -2%;
         width: 100px;
 
     }
