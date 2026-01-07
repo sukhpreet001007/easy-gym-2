@@ -601,8 +601,14 @@ header {
 }
 
 .twenty-five {
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 500;
+    margin-top: 30px;
+}
+.twenty-four {
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff !important;
 }
 
 .icon-title {
@@ -1365,14 +1371,15 @@ button:focus:not(:focus-visible) {
 .advantage-left-content ul {
     list-style: none;
     padding: 0;
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .advantage-left-content ul li {
     padding-left: 20px;
     position: relative;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 500;
 }
 
