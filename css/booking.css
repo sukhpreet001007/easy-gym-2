@@ -961,7 +961,7 @@
 
     .animated-compare-table .line>div {
         padding: 8px 2px;
-
+        font-size: 16.5px;
     }
 
     .animated-compare-table .line.th {

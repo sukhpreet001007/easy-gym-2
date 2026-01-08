@@ -72,6 +72,31 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Ensure clicks on feature titles and descriptions still work for navigation
-    // (They are already <a> tags or contain <a> tags, so default behavior should work)
+    // Active Page Highlighting Logic
+    const currentUrl = window.location.href;
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+
+    sidebarLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href || href === '#' || href === 'javascript:void(0)') return;
+
+        // Check if the current URL ends with the href or matches exactly
+        if (currentUrl.endsWith(href) || currentPath === href) {
+            link.classList.add('active-page');
+
+            // Highlight Submenu Item
+            const subItem = link.closest('.submenu-item');
+            if (subItem) {
+                subItem.classList.add('active-page');
+                // Open parent and highlight it
+                const parentLi = subItem.closest('.has-submenu');
+                if (parentLi) {
+                    parentLi.classList.add('open');
+                    const pLink = parentLi.querySelector('.parent-link');
+                    if (pLink) pLink.classList.add('active-page');
+                }
+            }
+        }
+    });
 });

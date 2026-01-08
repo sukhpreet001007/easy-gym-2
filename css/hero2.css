@@ -262,7 +262,9 @@
     .feature-title {
         font-size: 26px;
     }
-
+     .feature-text{
+        font-size: 18px;
+     }
     .banner-text {
         font-size: 22px;
     }

@@ -2197,9 +2197,7 @@ button:focus:not(:focus-visible) {
         width: 150px;
     }
 
-    .btn.header-btn {
-        display: none;
-    }
+
 
     .banner-section-wrapper h1 {
         font-size: 40px;
@@ -3162,6 +3160,19 @@ button:focus:not(:focus-visible) {
     }
 }
 
+@media (max-width: 991px) {
+    .points-three {
+        margin-left: 0px;
+        text-align: left;
+        display: block;
+    }
+
+    .full-w-section .btn-hero {
+        display: inline-flex;
+        margin-top: 20px;
+    }
+}
+
 /* For mobile responsiveness */
 @media (max-width: 768px) {
     .advantage-left-content ul li {
@@ -3173,9 +3184,6 @@ button:focus:not(:focus-visible) {
         animation: fadeSlideUp 1s ease-out forwards;
         border-right: none;
     }
-    .points-three {
-    margin-left: 0px;
-}
 }
 
 /* Mobile Marquee Styles */
@@ -3279,7 +3287,11 @@ button:focus:not(:focus-visible) {
 }
 
 /* Mobile Menu Toggle & Interaction Fixes */
-@media (max-width: 991px) {
+.ma5menu__toggle {
+    display: none;
+}
+
+@media (max-width: 767px) {
 
     /* Style for the main menu toggle button */
     .ma5menu__toggle,
@@ -3382,82 +3394,31 @@ button:focus:not(:focus-visible) {
 
 
 
-.instagram-glow-icon {
+.instagram-hue-icon {
     /* Instagram gradient colors */
-    background: linear-gradient(45deg, 
-        #405DE6, #5851DB, #833AB4, #C13584, 
-        #E1306C, #FD1D1D, #F56040, #F77737, 
-        #FCAF45, #FFDC80);
+    background: linear-gradient(45deg,
+            #405DE6, #5851DB, #833AB4, #C13584,
+            #E1306C, #FD1D1D, #F56040, #F77737,
+            #FCAF45, #FFDC80);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     display: inline-block;
-    
-    /* Remove box-shadow and use drop-shadow filter instead */
-    /* box-shadow:  - REMOVED */
-    
-    /* Subtle border radius for soft edges */
+
+    /* Subtle border radius */
     border-radius: 5px;
     padding: 2px;
-    
-    /* Continuous color rotation animation */
-    animation: instagramHueRotate 3s linear infinite;
-    
-    /* Use filter drop-shadow for glow instead of text-shadow */
-    filter: drop-shadow(0 0 3px rgba(193, 53, 132, 0.7))
-           drop-shadow(0 0 6px rgba(225, 48, 108, 0.5))
-           drop-shadow(0 0 9px rgba(253, 29, 29, 0.3));
+
+    /* Hue rotation animation */
+    animation: hueRotate 4s linear infinite;
 }
 
-/* Instagram color rotation animation - UPDATED without box-shadow */
-@keyframes instagramHueRotate {
+@keyframes hueRotate {
     0% {
-        filter: hue-rotate(0deg) 
-               drop-shadow(0 0 4px rgba(64, 93, 230, 0.8))
-               drop-shadow(0 0 8px rgba(88, 81, 219, 0.6))
-               drop-shadow(0 0 12px rgba(131, 58, 180, 0.4));
+        filter: hue-rotate(0deg);
     }
-    25% {
-        filter: hue-rotate(90deg)
-               drop-shadow(0 0 5px rgba(193, 53, 132, 0.9))
-               drop-shadow(0 0 10px rgba(225, 48, 108, 0.7))
-               drop-shadow(0 0 15px rgba(253, 29, 29, 0.5));
-    }
-    50% {
-        filter: hue-rotate(180deg)
-               drop-shadow(0 0 6px rgba(245, 96, 64, 0.9))
-               drop-shadow(0 0 12px rgba(247, 119, 55, 0.7))
-               drop-shadow(0 0 18px rgba(252, 175, 69, 0.5));
-    }
-    75% {
-        filter: hue-rotate(270deg)
-               drop-shadow(0 0 5px rgba(131, 58, 180, 0.9))
-               drop-shadow(0 0 10px rgba(88, 81, 219, 0.7))
-               drop-shadow(0 0 15px rgba(64, 93, 230, 0.5));
-    }
+
     100% {
-        filter: hue-rotate(360deg)
-               drop-shadow(0 0 4px rgba(64, 93, 230, 0.8))
-               drop-shadow(0 0 8px rgba(88, 81, 219, 0.6))
-               drop-shadow(0 0 12px rgba(131, 58, 180, 0.4));
+        filter: hue-rotate(360deg);
     }
-}
-
-/* Optional: Add a pulsing effect */
-@keyframes instagramPulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.9;
-    }
-}
-
-/* If you want a pulsing effect in addition to the glow */
-.instagram-glow-icon.pulse {
-    animation: 
-        instagramHueRotate 3s linear infinite,
-        instagramPulse 2s ease-in-out infinite;
 }

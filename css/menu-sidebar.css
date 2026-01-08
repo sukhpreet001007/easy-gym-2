@@ -138,7 +138,7 @@
     padding: 12px 25px 12px 40px;
 }
 
-.feature-title {
+.feature-title-side {
     flex-grow: 1;
     color: #333;
     text-decoration: none;
@@ -235,4 +235,22 @@
 
 .sidebar-nav>li>a:active {
     background: rgba(0, 0, 0, 0.05);
+}
+
+/* Active Page Highlighting */
+
+
+.submenu-item.active-page .feature-desc {
+    background: rgba(30, 89, 255, 0.1) !important;
+    color: #1E59FF !important;
+    border-left: 4px solid #1E59FF;
+}
+
+.submenu-item.active-page {
+    background: rgba(30, 89, 255, 0.05);
+}
+
+.parent-link.active-page {
+    background: rgba(30, 89, 255, 0.1) !important;
+    color: #1E59FF !important;
 }
