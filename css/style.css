@@ -719,6 +719,7 @@ header {
         margin-bottom: 0px;
         align-items: center;
         text-align: center;
+        padding: 15px;
     }
 
     .business-grid {
@@ -730,13 +731,14 @@ header {
     }
 
     .business-icon {
-        align-self: center;
+        align-items: center;
         justify-content: center;
     }
-
-    .business-card:last-child {
-        flex: 0 0 100%;
+    .business-icon img{
+        align-items: center;
+        justify-content: center;
     }
+    
 }
 
 .business-card:nth-child(1) {

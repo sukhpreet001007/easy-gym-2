@@ -53,7 +53,7 @@
 }
 
 .client-review-card:hover {
-    transform: translateY(-5px);
+    transform: scale(.97);
 }
 
 .video-thumbnail-container {
