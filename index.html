@@ -19,7 +19,7 @@
 
     <!-- <link href="./css/site.min.css" rel="stylesheet" type="text/css"> -->
 
-    <link href="./css/ma5-menu.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/menu-sidebar.css">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/booking.css">
@@ -35,106 +35,109 @@
 
 <body class="color-grey">
 
-    <div class="container">
-        <div style="display: none;">
-
-            <ul class="site-menu">
-                <li>
-                    <a href="index-2.html">Features</a>
-                    <ul>
-                        <li>
-                            <a href="index-2.html">Client Management</a>
-                            <ul>
-                                <li>
-                                    <a href="index-2.html">Transfer staff, products and analyse performance at one
-                                        dashboard.</a>
-                                </li>
-                            </ul>
+    <!-- Custom Sidebar for Mobile -->
+    <div id="custom-sidebar" class="custom-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <img src="images/logoo.png" alt="Easy Gym">
+            </div>
+            <button id="close-sidebar" class="close-sidebar-btn">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <ul class="sidebar-nav">
+                <li class="has-submenu">
+                    <a href="javascript:void(0)" class="parent-link">Features <i class="bi bi-chevron-down"></i></a>
+                    <ul class="submenu">
+                        <li class="submenu-item">
+                            <div class="submenu-header">
+                                <a href="index-2.html" class="feature-title">Client Management</a>
+                                <button class="desc-toggle"><i class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <div class="feature-desc">
+                                <a href="index-2.html">Transfer staff, products and analyse performance at one
+                                    dashboard.</a>
+                            </div>
                         </li>
-                        <li>
-                            <a href="marketing.html">Marketing</a>
-                            <ul>
-                                <li>
-                                    <a href="index-2.html">Boost your sales & bring more cash flow with marketing tools
-                                        that
-                                        convert.</a>
-                                </li>
-                            </ul>
+                        <li class="submenu-item">
+                            <div class="submenu-header">
+                                <a href="marketing.html" class="feature-title">Marketing</a>
+                                <button class="desc-toggle"><i class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <div class="feature-desc">
+                                <a href="marketing.html">Boost your sales & bring more cash flow with marketing tools
+                                    that convert.</a>
+                            </div>
                         </li>
-
-                        <li>
-                            <a href="appointment.html">Appointment Management</a>
-                            <ul>
-                                <li>
-                                    <a href="appointment.html">Convert your insta followers into your clients with free
-                                        web portal</a>
-                                </li>
-                            </ul>
+                        <li class="submenu-item">
+                            <div class="submenu-header">
+                                <a href="appointment.html" class="feature-title">Appointment Management</a>
+                                <button class="desc-toggle"><i class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <div class="feature-desc">
+                                <a href="appointment.html">Convert your insta followers into your clients with free web
+                                    portal.</a>
+                            </div>
                         </li>
-                        <li>
-                            <a href="Gift-membership.html">Gift &amp; membership Cards</a>
-                            <ul>
-                                <li>
-                                    <a href="Gift-membership.html">Everyone loves plastic cards! Make your client feel
-                                        VIP with elite
-                                        membership cards</a>
-                                </li>
-                            </ul>
+                        <li class="submenu-item">
+                            <div class="submenu-header">
+                                <a href="Gift-membership.html" class="feature-title">Gift & membership Cards</a>
+                                <button class="desc-toggle"><i class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <div class="feature-desc">
+                                <a href="Gift-membership.html">Everyone loves plastic cards! Make your client feel VIP
+                                    with elite membership cards.</a>
+                            </div>
                         </li>
-                        <li>
-                            <a href="employee.html">Employee Management</a>
-                            <ul>
-                                <li>
-                                    <a href="employee.html">Make your employees more efficient and productive with smart
-                                        management</a>
-                                </li>
-                            </ul>
+                        <li class="submenu-item">
+                            <div class="submenu-header">
+                                <a href="employee.html" class="feature-title">Employee Management</a>
+                                <button class="desc-toggle"><i class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <div class="feature-desc">
+                                <a href="employee.html">Make your employees more efficient and productive with smart
+                                    management.</a>
+                            </div>
                         </li>
-                        <li>
-                            <a href="billing-payment.html">Billing &amp; Payment</a>
-                            <ul>
-                                <li>
-                                    <a href="billing-payment.html">Fast, reliable billing with secure payments and
-                                        automated invoicing.</a>
-                                </li>
-                            </ul>
+                        <li class="submenu-item">
+                            <div class="submenu-header">
+                                <a href="billing-payment.html" class="feature-title">Billing & Payment</a>
+                                <button class="desc-toggle"><i class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <div class="feature-desc">
+                                <a href="billing-payment.html">Fast, reliable billing with secure payments and automated
+                                    invoicing.</a>
+                            </div>
                         </li>
-                        <li>
-                            <a href="reports.html">Reports &amp; Graphs</a>
-                            <ul>
-                                <li>
-                                    <a href="reports.html">Analysing your business performance &amp; sales made easy</a>
-                                </li>
-                            </ul>
+                        <li class="submenu-item">
+                            <div class="submenu-header">
+                                <a href="reports.html" class="feature-title">Reports & Graphs</a>
+                                <button class="desc-toggle"><i class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <div class="feature-desc">
+                                <a href="reports.html">Analysing your business performance & sales made easy.</a>
+                            </div>
                         </li>
-                        <li>
-                            <a href="inventry.html">Inventory Management</a>
-                            <ul>
-                                <li>
-                                    <a href="inventry.html">Reduce wastage of products &amp; stay ahead in Inventory
-                                        &amp; Stock
-                                        Management</a>
-                                </li>
-                            </ul>
+                        <li class="submenu-item">
+                            <div class="submenu-header">
+                                <a href="inventry.html" class="feature-title">Inventory Management</a>
+                                <button class="desc-toggle"><i class="bi bi-chevron-right"></i></button>
+                            </div>
+                            <div class="feature-desc">
+                                <a href="inventry.html">Reduce wastage of products & stay ahead in Inventory & Stock
+                                    Management.</a>
+                            </div>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Our Tutorials</a>
-                </li>
-                <li>
-                    <a href="#">FAQs</a>
-                </li>
+                <li><a href="#">Our Tutorials</a></li>
+                <li><a href="#">FAQs</a></li>
             </ul>
-            <!-- source for mobile menu end -->
-
-            <!-- source for mobile menu footer start -->
-            <div id="ma5menu-tools" class="ma5menu__tools">
-                footer <a href="#">content</a> here
-            </div>
-            <!-- source for mobile menu footer end -->
         </div>
+       
     </div>
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
     <header>
         <div class="spaceleft-right">
@@ -2827,31 +2830,7 @@
             });
         </script>
 
-        <script>
-            $(document).ready(function () {
-                // Detect iOS to apply specific fixes
-                var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-                ma5menu({
-                    menu: '.site-menu',
-                    activeClass: 'active',
-                    footer: '#ma5menu-tools',
-                    position: 'left',
-                    closeOnBodyClick: isIOS ? false : true // Disable body click close on iOS to prevent accidental closing when clicking arrows
-                });
-
-                // Re-enable closing on overlay click manually for iOS if needed
-                if (isIOS) {
-                    $(document).on('touchstart', '.ma5menu--active', function (e) {
-                        if ($(e.target).is('.ma5menu--active')) {
-                            $('.ma5menu__toggle').click(); // Close the menu
-                        }
-                    });
-                }
-            });
-        </script>
-
-        <script src="./js/ma5-menu.min.js"></script>
+        <script src="js/menu-sidebar.js"></script>
 
 
     </footer>
@@ -3185,12 +3164,7 @@
             }
         });
     </script>
-    <script>
-        // iOS Fix for ma5menu: stop propagation on sub-menu arrow clicks to prevent closing the sidebar
-        $(document).on('touchstart click', '.ma5menu__btn--enter, .ma5menu__btn--leave', function (e) {
-            e.stopPropagation();
-        });
-    </script>
+
     <script src="js/shorts-drag-scroll.js"></script>
 </body>
 
