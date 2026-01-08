@@ -734,11 +734,12 @@ header {
         align-items: center;
         justify-content: center;
     }
-    .business-icon img{
+
+    .business-icon img {
         align-items: center;
         justify-content: center;
     }
-    
+
 }
 
 .business-card:nth-child(1) {
@@ -3284,29 +3285,42 @@ button:focus:not(:focus-visible) {
     .ma5menu__toggle:hover,
     .ma5menu__toggle:focus {
         background-color: transparent !important;
-        border: none !important;
+        border: 2px solid rgba(255, 255, 255, 0.4) !important;
+        border-radius: 8px !important;
         box-shadow: none !important;
-        padding: 0 !important;
-        width: 44px !important;
-        height: 44px !important;
+        padding: 5px 15px !important;
+        width: auto !important;
+        height: 38px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        transition: transform 0.2s ease, opacity 0.2s ease !important;
+        transition: all 0.2s ease !important;
         outline: none !important;
     }
 
-    .ma5menu__toggle .ma5menu__icon-toggle {
-        position: static !important;
-        margin: 0 !important;
-        filter: brightness(0) invert(1) !important;
-        /* Ensures the icon is white */
+    .ma5menu__toggle-text {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     /* Clicked effect for menu button */
     .ma5menu__toggle:active {
-        transform: scale(0.85) !important;
-        opacity: 0.7 !important;
+        transform: scale(0.92) !important;
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        border-color: #ffffff !important;
+        opacity: 0.9 !important;
+    }
+
+    /* Additional iOS Fix: Ensure sub-menu toggles are recognized as buttons */
+    .ma5menu__btn--enter,
+    .ma5menu__btn--leave {
+        -webkit-appearance: none;
+        appearance: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        cursor: pointer !important;
     }
 
     /* iOS FIX: Ensure all interactive elements in the menu are clickable */
