@@ -1140,8 +1140,12 @@
     }
 }
 
-@media screen and (min-width: 1920px) and (min-height: 1080px) {
-    .hero-dashboard{
-       left: 30%;
+
+@media screen and (min-width: 1900px) and (max-width: 1920px) {
+  
+}
+@media screen and (width: 1920px) and (height: 1080px) {
+        .hero-dashboard{
+       left: 35%;
     }
 }
