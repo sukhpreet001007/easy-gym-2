@@ -121,7 +121,17 @@
         transform: translateY(-15px);
     }
 }
+@media only screen and (max-width:1920px){
 
+    .hero-dashboard{
+    width: 630px;
+    left: 26%;
+}
+.hero-man{
+    left: 57%;
+}
+
+}
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
     .hero-image-container {
@@ -1143,14 +1153,4 @@
 
 
 
-@media only screen and (max-width:1920px){
 
-    .hero-dashboard{
-    width: 630px;
-    left: 32%;
-}
-.hero-man{
-    left: 61%;
-}
-
-}
