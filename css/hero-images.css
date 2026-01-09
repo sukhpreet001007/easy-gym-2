@@ -1139,3 +1139,9 @@
         left: 10% !important;
     }
 }
+
+@media screen and (min-width: 1920px) and (min-height: 1080px) {
+    .hero-dashboard{
+       left: 30%;
+    }
+}
