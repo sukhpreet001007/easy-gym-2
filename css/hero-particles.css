@@ -225,5 +225,30 @@
         margin: 30px auto 0;
         display: block;
     }
+    .twenty-four{
+        font-size: 20px;
+    }
+    .advantage-left-content h2{
+        font-size: 32px;
+        text-align: center;
+    }
+    .twenty-five{
+     font-size: 20px;
+
+    }
+    .advantage-left-content .many-li li
+{
+    font-size: 18px;
+}
+.advantage-left-content .one-li li{
+    font-size: 20px;
+}
+.advantage-left-content .one-li li:before{
+    font-size: 20px;
+}
+.twenty-six {
+    font-size: 20px;
+    margin-top: 10px;
+}
 }
 

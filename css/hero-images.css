@@ -201,6 +201,33 @@
     .rose-card {
         width: 22%;
     }
+
+    /* Content Alignment for Portrait Tablets (Surface Pro 7) */
+    .hero-section-main .col-md-12 {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .hero-section-main .points-three {
+        text-align: left !important;
+        padding-left: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: fit-content !important;
+        display: block !important;
+    }
+
+    .hero-section-main .btn-hero {
+        margin: 0 auto 25px auto !important;
+        display: inline-flex !important;
+    }
+
+    .hero-section-main .banner-rating {
+        justify-content: center !important;
+        width: 100% !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -378,42 +405,42 @@
 
     /* Adjust card sizes for tablet */
     .avocado-card {
-        width: 240px !important;
+        width: 290px !important;
         top: -5% !important;
-        left: 5% !important;
+        left: 8% !important;
         animation-delay: 0s;
     }
 
     .workout-card {
-        width: 200px !important;
+        width: 230px !important;
         top: 0% !important;
-        right: 2% !important;
+        right: -1% !important;
         animation-delay: 0.3s;
     }
 
     .detected-card {
-        width: 200px !important;
+        width: 230px !important;
         top: 12% !important;
-        right: 2% !important;
+        right: -1% !important;
         animation-delay: 0.6s;
     }
 
     .barbell-card {
-        width: 120px !important;
+        width: 150px !important;
         top: 40% !important;
         right: 6% !important;
         animation-delay: 0.9s;
     }
 
     .meals-card {
-        width: 150px !important;
+        width: 190px !important;
         bottom: 15% !important;
         right: 10% !important;
         animation-delay: 1.2s;
     }
 
     .rose-card {
-        width: 140px !important;
+        width: 170px !important;
         bottom: 10% !important;
         left: 10% !important;
         animation-delay: 1.5s;
@@ -569,14 +596,12 @@
         width: 180px !important;
         top: 14% !important;
         right: 8% !important;
-
     }
 
     .barbell-card {
         width: 110px !important;
         top: 42% !important;
         right: 10% !important;
-
     }
 
     .meals-card {
@@ -661,10 +686,8 @@
 }
 
 
-
+/* Base adjustments for the 1024px-1480px range */
 @media (min-width: 1024px) and (max-width: 1199px) {
-
-    /* Container adjustments */
     .content-wrapper {
         padding: 0 20px;
     }
@@ -677,7 +700,7 @@
     .col-lg-6 {
         width: 100% !important;
         max-width: 800px !important;
-        /* text-align: center; */
+        text-align: center;
     }
 
     .col-lg-6:first-child {
@@ -685,12 +708,31 @@
     }
 
     .col-lg-6:first-child {
-        text-align: center;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
-}
 
-/* Base adjustments for the 1024px-1480px range */
-@media (min-width: 1024px) and (max-width: 1199px) {
+    .hero-section-main .points-three {
+        text-align: left !important;
+        padding-left: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: fit-content !important;
+        display: block !important;
+    }
+
+    .hero-section-main .btn-hero {
+        margin: 0 auto 25px auto !important;
+        display: inline-flex !important;
+    }
+
+    .hero-section-main .banner-rating {
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
     .hero-image-container {
         height: 550px !important;
     }
@@ -731,7 +773,7 @@
     }
 
     .points-three {
-        justify-content: center;
+        justify-content: center !important;
         margin-bottom: 30px;
     }
 
@@ -755,59 +797,59 @@
 
     /* Scale down dashboard */
     .hero-dashboard {
-        width: 550px !important;
+        width: 650px !important;
         left: 50% !important;
         top: 45% !important;
         transform: translate(-50%, -50%) !important;
     }
 
     .hero-section-main .col-lg-6:first-child {
-        text-align: center;
+        text-align: center !important;
     }
 
     /* Scale down main character */
     .hero-man {
         width: 500px !important;
-        left: 50% !important;
+        left: 70% !important;
         top: 50% !important;
         transform: translate(-50%, -50%) !important;
     }
 
     /* Adjust card sizes for iPad Pro */
     .avocado-card {
-        width: 250px !important;
+        width: 290px !important;
         top: -10% !important;
-        left: 5% !important;
+        left: 18% !important;
     }
 
     .workout-card {
-        width: 220px !important;
+        width: 250px !important;
         top: -3% !important;
-        right: 0% !important;
+        right: -12% !important;
     }
 
     .detected-card {
-        width: 220px !important;
-        top: 10% !important;
-        right: 0% !important;
+        width: 250px !important;
+        top: 8% !important;
+        right: -12% !important;
     }
 
     .barbell-card {
-        width: 130px !important;
+        width: 150px !important;
         top: 40% !important;
-        right: 3% !important;
+        right: 1% !important;
     }
 
     .meals-card {
-        width: 170px !important;
+        width: 190px !important;
         bottom: 15% !important;
-        right: 8% !important;
+        right: 1% !important;
     }
 
     .rose-card {
-        width: 160px !important;
+        width: 190px !important;
         bottom: 10% !important;
-        left: 8% !important;
+        left: 15% !important;
     }
 
     /* iPad Pro animation */
@@ -1016,6 +1058,16 @@
 
     .rose-card {
         width: 150px !important;
+    }
+
+    /* Fix for accordion images moving when items are toggled */
+    .dropdown-wrapper .row {
+        align-items: flex-start !important;
+    }
+
+    /* Align second accordion image with the accordion items, skipping the taller title */
+    .booking-section-wrapper .dropdown-image {
+        margin-top: 100px !important;
     }
 }
 
