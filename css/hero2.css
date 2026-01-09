@@ -289,3 +289,159 @@
         }
     }
 }
+
+/* Mobile view: Images above, content below */
+@media (max-width: 992px) {
+    /* For grow-your-gym section */
+    .grow-your-gym .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .grow-your-gym .item-img {
+        order: 1;
+        margin-bottom: 20px;
+    }
+    
+    .grow-your-gym .item-content {
+        order: 2;
+    }
+    
+    /* For features-split-section blocks */
+    .features-split-section .row.align-items-center {
+        flex-direction: column;
+    }
+    
+    /* Ensure all image columns come first on mobile */
+    .features-split-section .col-lg-6:has(.feature-img-wrapper) {
+        order: 1 !important;
+    }
+    
+    .features-split-section .col-lg-6:has(.feature-title) {
+        order: 2 !important;
+        margin-top: 30px;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* Remove specific padding for mobile */
+    .features-split-section .ps-lg-5,
+    .features-split-section .pe-lg-5 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    /* Force image to be above content in all scenarios */
+    .features-split-section .order-lg-1,
+    .features-split-section .order-lg-2,
+    .features-split-section .order-1,
+    .features-split-section .order-2 {
+        order: 1 !important; /* Image first */
+    }
+    
+    .features-split-section .col-lg-6:not(:has(.feature-img-wrapper)) {
+        order: 2 !important; /* Content second */
+        margin-top: 30px;
+    }
+}
+
+/* For better mobile experience on smaller screens */
+@media (max-width: 576px) {
+    .grow-your-gym .item {
+        margin-bottom: 40px;
+    }
+    
+    .grow-your-gym .item:last-child {
+        margin-bottom: 0;
+    }
+    
+    .features-split-section .col-lg-6:has(.feature-img-wrapper) {
+        margin-bottom: 20px;
+    }
+    
+    .features-split-section .row {
+        margin-bottom: 40px !important;
+    }
+    
+    .features-split-section .row:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+
+/* Smooth scroll reveal animations */
+.grow-your-gym .col-md-4,
+.features-split-section .row {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+/* Animation classes to be added via JavaScript */
+.animate-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Stagger animation for grow-your-gym blocks */
+.grow-your-gym .col-md-4:nth-child(1) { transition-delay: 0.1s; }
+.grow-your-gym .col-md-4:nth-child(2) { transition-delay: 0.2s; }
+.grow-your-gym .col-md-4:nth-child(3) { transition-delay: 0.3s; }
+
+/* Stagger animation for features-split-section blocks */
+.features-split-section .row:nth-child(1) { transition-delay: 0.1s; }
+.features-split-section .row:nth-child(2) { transition-delay: 0.2s; }
+.features-split-section .row:nth-child(3) { transition-delay: 0.3s; }
+.features-split-section .row:nth-child(4) { transition-delay: 0.4s; }
+.features-split-section .row:nth-child(5) { transition-delay: 0.5s; }
+.features-split-section .row:nth-child(6) { transition-delay: 0.6s; }
+
+/* Image animations within blocks */
+.features-split-section .feature-img-wrapper img,
+.grow-your-gym .item-img img {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.8s ease 0.3s;
+}
+
+.animate-visible .feature-img-wrapper img,
+.animate-visible .item-img img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Content animations */
+.features-split-section .feature-title,
+.grow-your-gym .item-content h6 {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.6s ease 0.4s;
+}
+
+.features-split-section .feature-text,
+.grow-your-gym .item-content p {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.6s ease 0.5s;
+}
+
+.animate-visible .feature-title,
+.animate-visible .item-content h6,
+.animate-visible .feature-text,
+.animate-visible .item-content p {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* For blocks with image on right side (even children) */
+.features-split-section .row:nth-child(even) .feature-title,
+.features-split-section .row:nth-child(even) .feature-text {
+    transform: translateX(20px);
+}
+
+.features-split-section .row:nth-child(even).animate-visible .feature-title,
+.features-split-section .row:nth-child(even).animate-visible .feature-text {
+    transform: translateX(0);
+}

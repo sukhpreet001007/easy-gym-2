@@ -166,7 +166,7 @@
 
 
     .floating-card {
-        animation: floatScaleMobile 3s ease-in-out infinite;
+        animation: floatScaleMobile 4s ease-in-out infinite;
     }
 
     .avocado-card {
@@ -353,6 +353,9 @@
         left: 3%;
         width: 100px;
 
+    }
+    .banner-images{
+        gap: 5px !important;
     }
 }
 

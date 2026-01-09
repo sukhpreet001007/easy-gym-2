@@ -446,3 +446,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.grow-your-gym .col-md-4, .features-split-section .row');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-visible');
+                // Optional: Stop observing after animation
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1, // Trigger when 10% of element is visible
+        rootMargin: '0px 0px -50px 0px' // Adjust trigger point
+    });
+    
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+});
