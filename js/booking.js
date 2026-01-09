@@ -414,3 +414,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setTimeout(initAccordionAnimations, 100);
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+            const connectBtn = document.getElementById('connectBtn');
+            const connectDropdown = document.getElementById('connectDropdown');
+
+            if (connectBtn && connectDropdown) {
+                connectBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    connectDropdown.classList.toggle('show');
+
+                    // Rotate chevron
+                    const icon = connectBtn.querySelector('i');
+                    if (icon) {
+                        icon.style.transform = connectDropdown.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+                    }
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (!connectBtn.contains(e.target) && !connectDropdown.contains(e.target)) {
+                        connectDropdown.classList.remove('show');
+                        const icon = connectBtn.querySelector('i');
+                        if (icon) {
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                });
+            }
+        });
