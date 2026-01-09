@@ -973,7 +973,7 @@
 
     .hero-section-main {
         min-height: 520px !important;
-        padding: 40px 50px !important;
+        padding: 40px 50px 10px!important;
         display: flex !important;
         align-items: center !important;
     }
@@ -1141,11 +1141,16 @@
 }
 
 
-@media screen and (min-width: 1900px) and (max-width: 1920px) {
-  
+
+
+@media only screen and (max-width:1920px){
+
+    .hero-dashboard{
+    width: 630px;
+    left: 32%;
 }
-@media screen and (width: 1920px) and (height: 1080px) {
-        .hero-dashboard{
-       left: 35%;
-    }
+.hero-man{
+    left: 61%;
+}
+
 }
