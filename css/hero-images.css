@@ -125,7 +125,8 @@
 /* ============================================
    DESKTOP FIRST - LARGE SCREENS (≥1920px)
    ============================================ */
-@media only screen and (max-width: 1920px) {
+@media (min-width: 1481px) and (max-width: 1920px)
+ {
     .hero-dashboard {
         width: 630px;
         left: 26%;
@@ -173,16 +174,16 @@
         margin-bottom: 0px !important;
         padding-bottom: 0px !important;
     }
-
+ 
     /* Hero text */
     .hero-h1 {
-        font-size: 54px !important;
+        font-size: 44px !important;
         line-height: normal !important;
         margin-bottom: 20px !important;
     }
 
     .hero-p {
-        font-size: 18px !important;
+        font-size: 16px !important;
         line-height: 1.5 !important;
         margin-top: 15px !important;
         margin-bottom: 25px !important;
@@ -191,6 +192,7 @@
     .hero-section-main .points-three {
         justify-content: flex-start !important;
         margin-bottom: 25px !important;
+        font-size: 16px !important;
     }
 
     .hero-section-main .btn-hero {
@@ -210,15 +212,16 @@
     }
 
     .hero-dashboard {
-        width: 550px !important;
-        left: 45% !important;
+        width: 500px !important;
+        left: 52% !important;
         top: 45% !important;
         transform: translate(-50%, -50%) !important;
+        max-width: 520px !important;
     }
 
     .hero-man {
-        width: 440px !important;
-        left: 60% !important;
+        width: 420px !important;
+        left: 65% !important;
         top: 50% !important;
         transform: translate(-50%, -50%) !important;
     }
@@ -229,14 +232,14 @@
     }
 
     .workout-card {
-        width: 240px !important;
-        right: -12%;
+        width: 190px !important;
+        right: -14%;
     }
 
     .detected-card {
-        width: 240px !important;
+        width: 190px !important;
         top: 8%;
-        right: -12%;
+        right: -14%;
     }
 
     .barbell-card {
@@ -336,6 +339,57 @@
     .floating-card {
         animation: floatLargeTablet 5s ease-in-out infinite;
     }
+    .hero-h1 {
+        font-size: 44px;
+    }
+
+    .hero-p {
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+    }
+
+    .points-three li {
+        font-size: 16px !important;
+        padding: 5px !important;
+    }
+
+    .hero-section-main .banner-rating ul li {
+        font-size: 15px !important;
+    }
+
+    .hero-dashboard {
+        left: 50% !important;
+        max-width: 520px;
+        width: 490px !important;
+    }
+
+    .hero-man {
+        left: 65% !important;
+        max-width: 420px;
+    }
+
+    .avocado-card {
+        width: 200px !important;
+        top: -4% !important;
+    }
+    .detected-card{
+        width: 170px !important;
+        right: -12% !important;
+        top: 8% !important;
+    }
+    .workout-card{
+  width: 170px !important;
+        right: -12% !important;
+    }
+   .barbell-card{
+    right: -8% !important;
+    width: 120px !important;
+   }
+   .meals-card{
+    width: 200px !important;
+    right: -8% !important;
+
+   }
 }
 
 /* ============================================
