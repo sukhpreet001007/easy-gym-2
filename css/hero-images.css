@@ -121,271 +121,229 @@
         transform: translateY(-15px);
     }
 }
-@media only screen and (max-width:1920px){
 
-    .hero-dashboard{
-    width: 630px;
-    left: 26%;
-}
-.hero-man{
-    left: 57%;
-}
-
-}
-/* Responsive Adjustments */
-@media (max-width: 1200px) {
-    .hero-image-container {
-        height: 500px;
-    }
-
+/* ============================================
+   DESKTOP FIRST - LARGE SCREENS (≥1920px)
+   ============================================ */
+@media only screen and (max-width: 1920px) {
     .hero-dashboard {
-        width: 650px;
-        left: 25%;
+        width: 630px;
+        left: 26%;
     }
 
     .hero-man {
-        width: 600px;
-        left: 60%;
-    }
-
-    .avocado-card,
-    .workout-card,
-    .detected-card,
-    .barbell-card,
-    .meals-card,
-    .rose-card {
-        width: 25%;
+        left: 57%;
     }
 }
 
-@media (max-width: 992px) {
-    .hero-image-container {
-        height: 450px;
-        margin-top: 40px;
+/* ============================================
+   DESKTOP - LARGE (1200px - 1480px)
+   Side-by-side layout for Surface Pro 7 & iPad Pro Landscape
+   ============================================ */
+@media (min-width: 1200px) and (max-width: 1480px) {
+
+    /* Typography adjustments */
+    .grey-bar-text h6,
+    .grey-bar-text p {
+        font-size: 22px;
     }
 
-    .hero-dashboard {
-        width: 500px;
-        left: 30%;
+    .twenty-four {
+        font-size: 28px;
     }
 
-    .hero-man {
-        width: 450px;
-        left: 65%;
+    .advantage-left-content h2 {
+        font-size: 36px;
     }
 
-
-    .floating-card {
-        animation: floatScaleMobile 4s ease-in-out infinite;
-    }
-
-    .avocado-card {
-        animation-delay: 0s;
-    }
-
-    .workout-card {
-        animation-delay: 0.5s;
-    }
-
-    .detected-card {
-        animation-delay: 1s;
-    }
-
-    .barbell-card {
-        animation-delay: 1.5s;
-    }
-
-    .meals-card {
-        animation-delay: 2s;
-    }
-
-    .rose-card {
-        animation-delay: 2.5s;
-    }
-
-    .avocado-card,
-    .workout-card,
-    .detected-card,
-    .barbell-card,
-    .meals-card,
-    .rose-card {
-        width: 22%;
-    }
-
-    /* Content Alignment for Portrait Tablets (Surface Pro 7) */
-    .hero-section-main .col-md-12 {
-        text-align: center !important;
+    /* Hero section layout */
+    .hero-section-main {
+        min-height: 520px !important;
+        padding: 40px 50px 10px !important;
         display: flex !important;
-        flex-direction: column !important;
         align-items: center !important;
     }
 
-    .hero-section-main .points-three {
+    .hero-section-main .row {
+        width: 100% !important;
+    }
+
+    .hero-section-main .col-lg-6:first-child {
         text-align: left !important;
-        padding-left: 0 !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        width: fit-content !important;
-        display: block !important;
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    /* Hero text */
+    .hero-h1 {
+        font-size: 54px !important;
+        line-height: normal !important;
+        margin-bottom: 20px !important;
+    }
+
+    .hero-p {
+        font-size: 18px !important;
+        line-height: 1.5 !important;
+        margin-top: 15px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .hero-section-main .points-three {
+        justify-content: flex-start !important;
+        margin-bottom: 25px !important;
     }
 
     .hero-section-main .btn-hero {
-        margin: 0 auto 25px auto !important;
-        display: inline-flex !important;
+        margin: 0 0 25px 0 !important;
     }
 
     .hero-section-main .banner-rating {
-        justify-content: center !important;
+        justify-content: flex-start !important;
         width: 100% !important;
+        margin-left: 0px !important;
     }
-}
 
-@media (max-width: 768px) {
+    /* Hero images */
     .hero-image-container {
-        height: 400px;
+        height: 400px !important;
+        margin-right: 0px !important;
     }
 
     .hero-dashboard {
-        width: 400px;
-        left: 35%;
+        width: 550px !important;
+        left: 45% !important;
+        top: 45% !important;
+        transform: translate(-50%, -50%) !important;
     }
 
     .hero-man {
-        width: 350px;
-        left: 70%;
+        width: 440px !important;
+        left: 60% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
     }
 
-    .avocado-card,
-    .workout-card,
-    .detected-card,
-    .barbell-card,
-    .meals-card,
-    .rose-card {
-        width: 18%;
-    }
-
-    .avocado-card,
-    .workout-card,
-    .detected-card,
-    .barbell-card,
-    .meals-card,
-    .rose-card {
-        width: 20%;
-    }
-
-    /* Adjust positions for mobile */
+    /* Floating cards */
     .avocado-card {
-        top: -15%;
-        left: 3%;
+        width: 200px !important;
     }
 
     .workout-card {
-        top: -5%;
-        right: -3%;
+        width: 240px !important;
+        right: -12%;
     }
 
     .detected-card {
+        width: 240px !important;
         top: 8%;
-        right: -3%;
+        right: -12%;
     }
 
     .barbell-card {
-        top: 40%;
-        right: 0%;
+        width: 140px !important;
     }
 
     .meals-card {
-        bottom: 12%;
-        right: 5%;
+        width: 200px !important;
     }
 
     .rose-card {
-        bottom: 5%;
-        left: 5%;
+        width: 150px !important;
+    }
+
+    /* Accordion fixes */
+    .dropdown-wrapper .row {
+        align-items: flex-start !important;
+    }
+
+    .booking-section-wrapper .dropdown-image {
+        margin-top: 100px !important;
     }
 }
 
-@media (max-width: 576px) {
-    .hero-section-main {
-        padding-bottom: 0;
-    }
-
+/* ============================================
+   DESKTOP - STANDARD (≥1100px)
+   Default desktop layout - activates consistently
+   ============================================ */
+@media (min-width: 1100px) and (max-width: 1199px) {
     .hero-image-container {
-        height: 320px;
+        height: 500px;
+        margin-top: 30px;
     }
 
     .hero-dashboard {
-        width: 320px;
-        left: 40%;
+        width: 600px !important;
+        left: 30% !important;
+        top: 45% !important;
     }
 
     .hero-man {
-        width: 280px;
-        left: 50%;
+        width: 500px !important;
+        left: 60% !important;
+        top: 50% !important;
     }
 
-
+    /* Floating cards for desktop */
     .avocado-card {
-        top: -8%;
-        left: 2%;
-        width: 150px;
+        width: 280px !important;
+        top: -10% !important;
+        left: 8% !important;
     }
 
     .workout-card {
-        top: -3%;
-        right: -7%;
-        width: 150px;
-
+        width: 240px !important;
+        top: -2% !important;
+        right: 0% !important;
     }
 
     .detected-card {
-        top: 10%;
-        right: -7%;
-        width: 150px;
-
+        width: 240px !important;
+        top: 10% !important;
+        right: 0% !important;
     }
 
     .barbell-card {
-        top: 45%;
-        right: -2%;
-        width: 100px;
+        width: 140px !important;
+        top: 38% !important;
+        right: 4% !important;
     }
 
     .meals-card {
-        bottom: 10%;
-        right: -2%;
-        width: 100px;
-
+        width: 180px !important;
+        bottom: 15% !important;
+        right: 8% !important;
     }
 
     .rose-card {
-        bottom: 3%;
-        left: 3%;
-        width: 100px;
-
+        width: 160px !important;
+        bottom: 10% !important;
+        left: 8% !important;
     }
-    .banner-images{
-        gap: 5px !important;
+
+    /* Desktop animation */
+    @keyframes floatLargeTablet {
+
+        0%,
+        100% {
+            transform: translateY(0px) scale(1);
+        }
+
+        50% {
+            transform: translateY(-14px) scale(1.03);
+        }
+    }
+
+    .floating-card {
+        animation: floatLargeTablet 5s ease-in-out infinite;
     }
 }
 
-/* Mobile-specific animation with less movement */
-@keyframes floatScaleMobile {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-
-
-/* Tablet-specific adjustments (768px - 992px) */
-@media (min-width: 768px) and (max-width: 992px) {
+/* ============================================
+   TABLET (768px - 1099px)
+   Tablet layout with centered content
+   Includes iPad Pro portrait mode (1024px)
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1099px) {
     .hero-image-container {
         height: 450px;
         margin-top: 40px;
@@ -393,7 +351,6 @@
         overflow: visible;
     }
 
-    /* Scale down dashboard */
     .hero-dashboard {
         width: 500px !important;
         left: 35% !important;
@@ -402,7 +359,6 @@
         animation: slideInFromRight 1.2s ease-out forwards;
     }
 
-    /* Scale down main character */
     .hero-man {
         width: 420px !important;
         left: 65% !important;
@@ -410,13 +366,12 @@
         transform: translate(-50%, -50%) !important;
     }
 
-    /* Tablet-specific floating animation */
+    /* Floating cards for tablet */
     .floating-card {
         animation: floatTablet 4s ease-in-out infinite;
         filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
     }
 
-    /* Adjust card sizes for tablet */
     .avocado-card {
         width: 290px !important;
         top: -5% !important;
@@ -459,7 +414,7 @@
         animation-delay: 1.5s;
     }
 
-    /* Tablet-specific animation with moderate movement */
+    /* Tablet animation */
     @keyframes floatTablet {
 
         0%,
@@ -472,255 +427,8 @@
         }
     }
 
-    /* Adjust animation for dashboard on tablet */
-    @keyframes slideInFromRightTablet {
-        0% {
-            transform: translate(80px, -50%);
-            opacity: 0;
-        }
-
-        100% {
-            transform: translate(-50%, -50%);
-            opacity: 1;
-        }
-    }
-
-    /* Ensure proper z-index layering for tablet */
-    .hero-dashboard {
-        z-index: 1;
-    }
-
-    .hero-man {
-        z-index: 2;
-    }
-
-    .floating-card {
-        z-index: 3;
-    }
-}
-
-/* Large Tablet adjustments (992px - 1200px) */
-@media (min-width: 992px) and (max-width: 1200px) {
-    .hero-image-container {
-        height: 500px;
-        margin-top: 30px;
-    }
-
-    .hero-dashboard {
-        width: 600px !important;
-        left: 30% !important;
-        top: 45% !important;
-    }
-
-    .hero-man {
-        width: 500px !important;
-        left: 60% !important;
-        top: 50% !important;
-    }
-
-    /* Adjust card sizes for large tablet */
-    .avocado-card {
-        width: 280px !important;
-        top: -10% !important;
-        left: 8% !important;
-    }
-
-    .workout-card {
-        width: 240px !important;
-        top: -2% !important;
-        right: 0% !important;
-    }
-
-    .detected-card {
-        width: 240px !important;
-        top: 10% !important;
-        right: 0% !important;
-    }
-
-    .barbell-card {
-        width: 140px !important;
-        top: 38% !important;
-        right: 4% !important;
-    }
-
-    .meals-card {
-        width: 180px !important;
-        bottom: 15% !important;
-        right: 8% !important;
-    }
-
-    .rose-card {
-        width: 160px !important;
-        bottom: 10% !important;
-        left: 8% !important;
-    }
-
-    /* Slightly more movement for large tablets */
-    @keyframes floatLargeTablet {
-
-        0%,
-        100% {
-            transform: translateY(0px) scale(1);
-        }
-
-        50% {
-            transform: translateY(-14px) scale(1.03);
-        }
-    }
-
-    .floating-card {
-        animation: floatLargeTablet 5s ease-in-out infinite;
-    }
-}
-
-/* iPad Portrait Mode (768px - 834px) */
-@media (min-width: 768px) and (max-width: 834px) and (orientation: portrait) {
-    .hero-image-container {
-        height: 400px;
-    }
-
-    .hero-dashboard {
-        width: 450px !important;
-        left: 38% !important;
-        top: 45% !important;
-    }
-
-    .hero-man {
-        width: 380px !important;
-        left: 60% !important;
-        top: 50% !important;
-    }
-
-    /* Slightly reduce card sizes for iPad portrait */
-    .avocado-card {
-        width: 220px !important;
-        top: -9% !important;
-        left: 20% !important;
-    }
-
-    .workout-card {
-        width: 180px !important;
-        top: 2% !important;
-        right: 8% !important;
-
-    }
-
-    .detected-card {
-        width: 180px !important;
-        top: 14% !important;
-        right: 8% !important;
-    }
-
-    .barbell-card {
-        width: 110px !important;
-        top: 42% !important;
-        right: 10% !important;
-    }
-
-    .meals-card {
-        width: 140px !important;
-        bottom: 17% !important;
-        right: 10% !important;
-    }
-
-    .rose-card {
-        width: 150px !important;
-        bottom: 12% !important;
-        left: 30% !important;
-    }
-
-    .full-w-section .hero-h1 {
-        font-size: 50px !important;
-        line-height: 1.1 !important;
-    }
-}
-
-/* iPad Landscape Mode (1024px - 1112px) */
-@media (min-width: 1024px) and (max-width: 1112px) and (orientation: landscape) {
-    .hero-image-container {
-        height: 480px;
-    }
-
-    .hero-dashboard {
-        width: 550px !important;
-        left: 32% !important;
-    }
-
-    .hero-man {
-        width: 480px !important;
-        left: 62% !important;
-    }
-
-    /* Adjust for landscape orientation */
-    .avocado-card {
-        left: 10% !important;
-    }
-
-    .workout-card {
-        right: 3% !important;
-    }
-
-    .detected-card {
-        right: 3% !important;
-    }
-
-    .barbell-card {
-        right: 7% !important;
-    }
-
-    .meals-card {
-        right: 12% !important;
-    }
-
-    .rose-card {
-        left: 12% !important;
-    }
-}
-
-/* Performance optimization for tablet animations */
-@media (max-width: 992px) {
-    .floating-card {
-        will-change: transform;
-        transform: translateZ(0);
-        backface-visibility: hidden;
-    }
-
-    /* Reduce animation intensity on low-power devices */
-    @media (prefers-reduced-motion: reduce) {
-        .floating-card {
-            animation: none !important;
-        }
-
-        .hero-dashboard {
-            animation: none !important;
-            opacity: 1;
-        }
-    }
-}
-
-
-/* Base adjustments for the 1024px-1480px range */
-@media (min-width: 1024px) and (max-width: 1199px) {
-    .content-wrapper {
-        padding: 0 20px;
-    }
-
-    .row {
-        align-items: center !important;
-        justify-content: center !important;
-    }
-
-    .col-lg-6 {
-        width: 100% !important;
-        max-width: 800px !important;
-        text-align: center;
-    }
-
-    .col-lg-6:first-child {
-        margin-bottom: 50px;
-    }
-
-    .col-lg-6:first-child {
+    /* Content centering for tablet */
+    .hero-section-main .col-md-12 {
         text-align: center !important;
         display: flex !important;
         flex-direction: column !important;
@@ -746,128 +454,194 @@
         width: 100% !important;
     }
 
-    .hero-image-container {
-        height: 550px !important;
-    }
-
+    /* Z-index layering */
     .hero-dashboard {
-        width: 650px !important;
-        left: 20% !important;
+        z-index: 1;
     }
 
     .hero-man {
-        width: 600px !important;
-        left: 55% !important;
+        z-index: 2;
     }
 
-    .avocado-card {
-        width: 300px !important;
+    .floating-card {
+        z-index: 3;
     }
 
-    .workout-card {
-        width: 260px !important;
+    /* ============================================
+       SECTION STACKING FOR TABLET (iPad Portrait)
+       Ensures all sections stack vertically
+       ============================================ */
+
+    /* Hero Section - Stack content above image */
+    .hero-section-main .row {
+        flex-direction: column !important;
     }
 
-    .detected-card {
-        width: 260px !important;
-    }
-
-    /* Hero text adjustments */
-    .hero-h1 {
-        font-size: 48px !important;
-        line-height: 1.2 !important;
-        margin-bottom: 20px !important;
-    }
-
-    .hero-p {
-        font-size: 18px !important;
-        line-height: 1.6 !important;
-        margin-bottom: 25px !important;
-    }
-
-    .points-three {
-        justify-content: center !important;
-        margin-bottom: 30px;
-    }
-
-    .btn-hero {
-        margin: 0 auto 25px auto;
-        display: block;
-        width: fit-content;
-    }
-
-    .banner-rating {
-        justify-content: center;
-    }
-
-    /* Hero image container adjustments */
-    .hero-image-container {
-        height: 450px;
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    /* Scale down dashboard */
-    .hero-dashboard {
-        width: 650px !important;
-        left: 50% !important;
-        top: 45% !important;
-        transform: translate(-50%, -50%) !important;
+    .hero-section-main .col-lg-6 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
     }
 
     .hero-section-main .col-lg-6:first-child {
+        margin-bottom: 30px !important;
+        order: 1;
+    }
+
+    .hero-section-main .col-lg-6:last-child {
+        order: 2;
+    }
+
+    /* Table Section (easy-gym-advantage) - Stack vertically */
+    .easy-gym-advantage .row {
+        flex-direction: column !important;
+    }
+
+    .easy-gym-advantage .why-gyms-switch,
+    .easy-gym-advantage .gym-advantage {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .easy-gym-advantage .why-gyms-switch {
+        border-radius: 40px 40px 0 0 !important;
+        min-height: auto !important;
+        padding-bottom: 50px !important;
+    }
+
+    .easy-gym-advantage .gym-advantage {
+        border-radius: 0 0 40px 40px !important;
+    }
+
+    /* Graph Section (group-level) - Stack vertically */
+    .group-level-both {
+        flex-direction: column !important;
+    }
+
+    .group-level-left {
         text-align: center !important;
+        padding: 60px 40px !important;
+        width: 100% !important;
     }
 
-    /* Scale down main character */
+    .group-level-left ul {
+        text-align: left !important;
+        display: inline-block !important;
+    }
+
+    .group-level-right {
+        width: 100% !important;
+        padding: 40px !important;
+    }
+
+    .graph-chart {
+        height: 350px !important;
+    }
+
+    /* Accordion Sections - Stack image above/below accordion */
+    .dropdown-wrapper-one:not(.booking-section-wrapper) .row {
+        flex-direction: column-reverse !important;
+    }
+
+    .booking-section-wrapper .row {
+        flex-direction: column !important;
+    }
+
+    .dropdown-wrapper-one .dropdown-image,
+    .booking-section-wrapper .dropdown-image {
+        margin-bottom: 40px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+
+    .dropdown-wrapper .col-lg-6 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+
+    /* Stage Section - 2 columns on tablet */
+    .stage-section .col-lg-4 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+
+    /* General column stacking for any remaining sections */
+    .row .col-lg-6,
+    .row .col-md-6 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Ensure content wrapper has proper padding */
+    .content-wrapper {
+        padding: 0 20px !important;
+    }
+}
+
+/* ============================================
+   MOBILE - LARGE (577px - 767px)
+   ============================================ */
+@media (min-width: 577px) and (max-width: 767px) {
+    .hero-image-container {
+        height: 400px;
+    }
+
+    .hero-dashboard {
+        width: 400px;
+        left: 35%;
+    }
+
     .hero-man {
-        width: 500px !important;
-        left: 70% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
+        width: 350px;
+        left: 70%;
     }
 
-    /* Adjust card sizes for iPad Pro */
+    .avocado-card,
+    .workout-card,
+    .detected-card,
+    .barbell-card,
+    .meals-card,
+    .rose-card {
+        width: 20%;
+    }
+
+    /* Adjust positions for mobile */
     .avocado-card {
-        width: 290px !important;
-        top: -10% !important;
-        left: 18% !important;
+        top: -15%;
+        left: 3%;
     }
 
     .workout-card {
-        width: 250px !important;
-        top: -3% !important;
-        right: -12% !important;
+        top: -5%;
+        right: -3%;
     }
 
     .detected-card {
-        width: 250px !important;
-        top: 8% !important;
-        right: -12% !important;
+        top: 8%;
+        right: -3%;
     }
 
     .barbell-card {
-        width: 150px !important;
-        top: 40% !important;
-        right: 1% !important;
+        top: 40%;
+        right: 0%;
     }
 
     .meals-card {
-        width: 190px !important;
-        bottom: 15% !important;
-        right: 1% !important;
+        bottom: 12%;
+        right: 5%;
     }
 
     .rose-card {
-        width: 190px !important;
-        bottom: 10% !important;
-        left: 15% !important;
+        bottom: 5%;
+        left: 5%;
     }
 
-    /* iPad Pro animation */
+    /* Mobile animation */
     .floating-card {
-        animation: floatiPadPro 5s ease-in-out infinite;
+        animation: floatScaleMobile 4s ease-in-out infinite;
     }
 
     .avocado-card {
@@ -893,264 +667,134 @@
     .rose-card {
         animation-delay: 2.5s;
     }
-
-    @keyframes floatiPadPro {
-
-        0%,
-        100% {
-            transform: translateY(0px);
-        }
-
-        50% {
-            transform: translateY(-15px);
-        }
-    }
-
-    /* Table Section Stacking */
-    .easy-gym-advantage .why-gyms-switch,
-    .easy-gym-advantage .gym-advantage {
-        flex: 0 0 100%;
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .easy-gym-advantage .why-gyms-switch {
-        border-radius: 40px 40px 0 0;
-        min-height: auto;
-        padding-bottom: 50px;
-    }
-
-    /* Stage Section 2 Columns */
-    .stage-section .col-lg-4 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-
-    /* Graph Section Stacking */
-    .group-level-both {
-        flex-direction: column;
-    }
-
-    .group-level-left {
-        text-align: center;
-        padding: 60px 40px;
-    }
-
-    .group-level-left ul {
-        text-align: left;
-        display: inline-block;
-    }
-
-    .group-level-right {
-        width: 100%;
-        padding: 40px;
-    }
-
-    .graph-chart {
-        height: 350px;
-    }
-
-    /* Fix Layout for First Accordion Section: Image Top, Accordion Bottom */
-    .dropdown-wrapper-one:not(.booking-section-wrapper) .row {
-        flex-direction: column-reverse;
-    }
-
-    /* Fix Layout for Second Accordion Section: Image Top, Accordion Bottom */
-    .booking-section-wrapper .row {
-        flex-direction: column !important;
-    }
-
-    .dropdown-wrapper-one .dropdown-image {
-        margin-bottom: 40px;
-    }
 }
 
-/* Side-by-side specific adjustments for Surface Pro 7 & iPad Pro Landscape (1200-1480px) */
-@media (min-width: 1200px) and (max-width: 1480px) {
-
-    .grey-bar-text h6,
-    .grey-bar-text p {
-        font-size: 22px;
-    }
-
-    .twenty-four {
-        font-size: 28px;
-    }
-
-    .advantage-left-content h2 {
-        font-size: 36px;
-    }
-
+/* ============================================
+   MOBILE - SMALL (≤576px)
+   ============================================ */
+@media (max-width: 576px) {
     .hero-section-main {
-        min-height: 520px !important;
-        padding: 40px 50px 10px!important;
-        display: flex !important;
-        align-items: center !important;
-    }
-
-    .hero-section-main .row {
-        width: 100% !important;
-    }
-
-    .hero-section-main .col-lg-6:first-child {
-        text-align: left !important;
-        margin-bottom: 0px !important;
-        padding-bottom: 0px !important;
-    }
-
-    .hero-h1 {
-        font-size: 54px !important;
-        line-height: normal !important;
-        margin-bottom: 20px !important;
-    }
-
-    .hero-p {
-        font-size: 18px !important;
-        line-height: 1.5 !important;
-        margin-top: 15px !important;
-        margin-bottom: 25px !important;
-    }
-
-    .hero-section-main .points-three {
-        justify-content: flex-start !important;
-        margin-bottom: 25px !important;
-    }
-
-    .hero-section-main .btn-hero {
-        margin: 0 0 25px 0 !important;
-    }
-
-    .hero-section-main .banner-rating {
-        justify-content: flex-start !important;
-        width: 100% !important;
-        margin-left: 0px !important;
-    }
-
-    .hero-man {
-        width: 440px !important;
-        left: 60% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
-    }
-
-    .hero-dashboard {
-        width: 550px !important;
-        left: 45% !important;
-        top: 45% !important;
-        transform: translate(-50%, -50%) !important;
+        padding-bottom: 0;
     }
 
     .hero-image-container {
-        height: 400px !important;
-        margin-right: 0px !important;
-    }
-
-    .avocado-card {
-        width: 200px !important;
-    }
-
-    .workout-card {
-        width: 240px !important;
-        right: -12%;
-    }
-
-    .detected-card {
-        width: 240px !important;
-        top: 8%;
-        right: -12%;
-
-    }
-
-    .barbell-card {
-        width: 140px !important;
-    }
-
-    .meals-card {
-        width: 200px !important;
-    }
-
-    .rose-card {
-        width: 150px !important;
-    }
-
-    /* Fix for accordion images moving when items are toggled */
-    .dropdown-wrapper .row {
-        align-items: flex-start !important;
-    }
-
-    /* Align second accordion image with the accordion items, skipping the taller title */
-    .booking-section-wrapper .dropdown-image {
-        margin-top: 100px !important;
-    }
-}
-
-
-/* iPad Pro 11" (834px - 1194px) */
-@media (min-width: 834px) and (max-width: 1194px) and (max-height: 1194px) {
-    .hero-image-container {
-        height: 420px;
-        max-width: 750px;
+        height: 320px;
     }
 
     .hero-dashboard {
-        width: 500px !important;
-        left: 50% !important;
-        top: 45% !important;
+        width: 320px;
+        left: 40%;
     }
 
     .hero-man {
-        width: 450px !important;
-        left: 50% !important;
-        top: 50% !important;
+        width: 280px;
+        left: 50%;
     }
 
-    .hero-h1 {
-        font-size: 44px !important;
-    }
-
-    .hero-p {
-        font-size: 17px !important;
-    }
-
-    /* Adjust card sizes */
     .avocado-card {
-        width: 220px !important;
-        top: -8% !important;
-        left: 8% !important;
+        top: -8%;
+        left: 2%;
+        width: 150px;
     }
 
     .workout-card {
-        width: 200px !important;
-        top: -2% !important;
-        right: 2% !important;
+        top: -3%;
+        right: -7%;
+        width: 150px;
     }
 
     .detected-card {
-        width: 200px !important;
-        top: 12% !important;
-        right: 2% !important;
+        top: 10%;
+        right: -7%;
+        width: 150px;
     }
 
     .barbell-card {
-        width: 120px !important;
-        top: 42% !important;
-        right: 5% !important;
+        top: 45%;
+        right: -2%;
+        width: 100px;
     }
 
     .meals-card {
-        width: 160px !important;
-        bottom: 15% !important;
-        right: 10% !important;
+        bottom: 10%;
+        right: -2%;
+        width: 100px;
     }
 
     .rose-card {
-        width: 150px !important;
-        bottom: 10% !important;
-        left: 10% !important;
+        bottom: 3%;
+        left: 3%;
+        width: 100px;
+    }
+
+    .banner-images {
+        gap: 5px !important;
+    }
+
+    /* Mobile animation */
+    .floating-card {
+        animation: floatScaleMobile 4s ease-in-out infinite;
+    }
+
+    .avocado-card {
+        animation-delay: 0s;
+    }
+
+    .workout-card {
+        animation-delay: 0.5s;
+    }
+
+    .detected-card {
+        animation-delay: 1s;
+    }
+
+    .barbell-card {
+        animation-delay: 1.5s;
+    }
+
+    .meals-card {
+        animation-delay: 2s;
+    }
+
+    .rose-card {
+        animation-delay: 2.5s;
     }
 }
 
+/* ============================================
+   MOBILE ANIMATION
+   ============================================ */
+@keyframes floatScaleMobile {
 
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
 
+    50% {
+        transform: translateY(-10px);
+    }
+}
 
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+@media (max-width: 1099px) {
+    .floating-card {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
 
+    /* Reduce animation for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+        .floating-card {
+            animation: none !important;
+        }
+
+        .hero-dashboard {
+            animation: none !important;
+            opacity: 1;
+        }
+    }
+}
