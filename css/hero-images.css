@@ -125,8 +125,7 @@
 /* ============================================
    DESKTOP FIRST - LARGE SCREENS (≥1920px)
    ============================================ */
-@media (min-width: 1481px) and (max-width: 1920px)
- {
+@media (min-width: 1481px) and (max-width: 1920px) {
     .hero-dashboard {
         width: 630px;
         left: 26%;
@@ -174,7 +173,7 @@
         margin-bottom: 0px !important;
         padding-bottom: 0px !important;
     }
- 
+
     /* Hero text */
     .hero-h1 {
         font-size: 44px !important;
@@ -262,6 +261,13 @@
     .booking-section-wrapper .dropdown-image {
         margin-top: 100px !important;
     }
+
+    /* Disable animations for stage section in this viewport */
+    .stage-card-animate {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }
 
 /* ============================================
@@ -339,6 +345,7 @@
     .floating-card {
         animation: floatLargeTablet 5s ease-in-out infinite;
     }
+
     .hero-h1 {
         font-size: 44px;
     }
@@ -372,24 +379,28 @@
         width: 200px !important;
         top: -4% !important;
     }
-    .detected-card{
+
+    .detected-card {
         width: 170px !important;
         right: -12% !important;
         top: 8% !important;
     }
-    .workout-card{
-  width: 170px !important;
+
+    .workout-card {
+        width: 170px !important;
         right: -12% !important;
     }
-   .barbell-card{
-    right: -8% !important;
-    width: 120px !important;
-   }
-   .meals-card{
-    width: 200px !important;
-    right: -8% !important;
 
-   }
+    .barbell-card {
+        right: -8% !important;
+        width: 120px !important;
+    }
+
+    .meals-card {
+        width: 200px !important;
+        right: -8% !important;
+
+    }
 }
 
 /* ============================================
