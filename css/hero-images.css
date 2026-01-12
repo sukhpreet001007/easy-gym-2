@@ -262,14 +262,6 @@
         margin-top: 100px !important;
     }
 
-    /* Disable animations for stage section in this viewport (iPad Pro Landscape) */
-    .stage-section-card,
-    .stage-card-animate {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-        visibility: visible !important;
-    }
 }
 
 /* ============================================
@@ -404,14 +396,6 @@
 
     }
 
-    /* Disable animations for stage section in this viewport (iPad Pro Landscape Small) */
-    .stage-section-card,
-    .stage-card-animate {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-        visibility: visible !important;
-    }
 }
 
 /* ============================================

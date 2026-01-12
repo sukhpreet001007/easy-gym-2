@@ -857,17 +857,15 @@
     transform: translateY(0);
 }
 
-/* Feature Cards Animation Classes */
+/* Feature Cards Animation Classes - Simplified for better compatibility */
 .stage-card-animate {
     opacity: 0;
-    transform: translateY(40px) scale(0.95);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: opacity, transform;
+    transition: opacity 1s ease-in-out;
+    will-change: opacity;
 }
 
 .stage-card-animate.active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+    opacity: 1 !important;
 }
 
 /* Ensure the auto-opening effect looks smooth */
