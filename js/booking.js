@@ -131,7 +131,10 @@ function onPlayerReady(event) {
     const isClientReview = iframe.closest('.client-review-card') !== null;
 
     if (!isClientReview) {
-        event.target.playVideo();
+        const rect = iframe.getBoundingClientRect();
+        if (rect.right > -100 && rect.left < window.innerWidth + 100) {
+            event.target.playVideo();
+        }
     }
 
     playersReady++;
@@ -156,33 +159,38 @@ function onPlayerVolumeChange(event) {
 
 function startAutoplayLogic() {
     const checkCenterPlayer = () => {
-        const centerX = window.innerWidth / 2;
-        let closestPlayer = null;
-        let minDistance = Infinity;
+        const viewportWidth = window.innerWidth;
 
         players.forEach(p => {
             if (!p.element || p.isClientReview) return; // Skip client review videos
+
             const rect = p.element.getBoundingClientRect();
-            const playerCenter = rect.left + rect.width / 2;
-            const distance = Math.abs(centerX - playerCenter);
 
-            if (distance < minDistance) {
-                minDistance = distance;
-                closestPlayer = p;
-            }
-        });
+            // Check if the player is within the horizontal viewport (with a small buffer)
+            const isVisible = rect.right > -100 && rect.left < viewportWidth + 100;
 
-        players.forEach(p => {
-            if (!p.element || p.isClientReview) return; // Skip client review videos
-
-
-            if (p.player.getPlayerState && p.player.getPlayerState() !== YT.PlayerState.PLAYING && p.player.getPlayerState() !== YT.PlayerState.BUFFERING) {
-                p.player.playVideo();
+            if (isVisible) {
+                // If visible and not playing, try to play
+                if (p.player.getPlayerState &&
+                    p.player.getPlayerState() !== YT.PlayerState.PLAYING &&
+                    p.player.getPlayerState() !== YT.PlayerState.BUFFERING) {
+                    try {
+                        p.player.playVideo();
+                    } catch (e) {
+                        console.warn("Autoplay blocked or failed for:", p.id);
+                    }
+                }
+            } else {
+                // If NOT visible and is playing, pause to save resources
+                if (p.player.getPlayerState && p.player.getPlayerState() === YT.PlayerState.PLAYING) {
+                    p.player.pauseVideo();
+                }
             }
         });
     };
 
-    setInterval(checkCenterPlayer, 100);
+    // Run check frequently for smooth transitions in the ticker
+    setInterval(checkCenterPlayer, 200);
 }
 
 
@@ -389,24 +397,31 @@ document.addEventListener('DOMContentLoaded', function () {
             accordionObserver.observe(section);
         });
 
-        // Stage Section Cards Animation Logic
+        // Stage Section Cards Animation Logic (Using Animate.css)
         const stageSection = document.querySelector('.stage-section');
         if (stageSection) {
             const stageCards = stageSection.querySelectorAll('.stage-section-card');
-            stageCards.forEach(card => card.classList.add('stage-card-animate'));
+
+            // Set initial state - hide cards before animation
+            stageCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.visibility = 'hidden';
+            });
 
             const stageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         stageCards.forEach((card, index) => {
                             setTimeout(() => {
-                                card.classList.add('active');
+                                card.style.opacity = '1';
+                                card.style.visibility = 'visible';
+                                card.classList.add('animate__animated', 'animate__fadeInUp');
                             }, index * 100); // Staggered delay for cards
                         });
                         observer.unobserve(stageSection);
                     }
                 });
-            }, { threshold: 0.15 });
+            }, { threshold: 0.1 }); // Lowered threshold for better reliability on large tablet screens
 
             stageObserver.observe(stageSection);
         }
@@ -418,38 +433,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-            const connectBtn = document.getElementById('connectBtn');
-            const connectDropdown = document.getElementById('connectDropdown');
+    const connectBtn = document.getElementById('connectBtn');
+    const connectDropdown = document.getElementById('connectDropdown');
 
-            if (connectBtn && connectDropdown) {
-                connectBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    connectDropdown.classList.toggle('show');
+    if (connectBtn && connectDropdown) {
+        connectBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            connectDropdown.classList.toggle('show');
 
-                    // Rotate chevron
-                    const icon = connectBtn.querySelector('i');
-                    if (icon) {
-                        icon.style.transform = connectDropdown.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
-                    }
-                });
-
-                // Close dropdown when clicking outside
-                document.addEventListener('click', function (e) {
-                    if (!connectBtn.contains(e.target) && !connectDropdown.contains(e.target)) {
-                        connectDropdown.classList.remove('show');
-                        const icon = connectBtn.querySelector('i');
-                        if (icon) {
-                            icon.style.transform = 'rotate(0deg)';
-                        }
-                    }
-                });
+            // Rotate chevron
+            const icon = connectBtn.querySelector('i');
+            if (icon) {
+                icon.style.transform = connectDropdown.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
             }
         });
 
-document.addEventListener('DOMContentLoaded', function() {
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!connectBtn.contains(e.target) && !connectDropdown.contains(e.target)) {
+                connectDropdown.classList.remove('show');
+                const icon = connectBtn.querySelector('i');
+                if (icon) {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
     const elements = document.querySelectorAll('.grow-your-gym .col-md-4, .features-split-section .row');
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -462,7 +477,7 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1, // Trigger when 10% of element is visible
         rootMargin: '0px 0px -50px 0px' // Adjust trigger point
     });
-    
+
     elements.forEach(element => {
         observer.observe(element);
     });

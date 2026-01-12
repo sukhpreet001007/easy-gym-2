@@ -815,12 +815,7 @@
         padding: 30px 25px;
     }
 
-    .stage-card-animate {
-        opacity: 1 !important;
-        transform: none !important;
-        width: 100% !important;
-        /* Ensure it takes space */
-    }
+
 }
 
 @media (max-width: 768px) {
@@ -857,16 +852,8 @@
     transform: translateY(0);
 }
 
-/* Feature Cards Animation Classes - Simplified for better compatibility */
-.stage-card-animate {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    will-change: opacity;
-}
+/* Stage section animation classes removed - now using animate.css via JS */
 
-.stage-card-animate.active {
-    opacity: 1 !important;
-}
 
 /* Ensure the auto-opening effect looks smooth */
 .accordion-collapse.collapsing {
