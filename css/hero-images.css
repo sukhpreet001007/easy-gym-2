@@ -127,12 +127,33 @@
    ============================================ */
 @media (min-width: 1481px) and (max-width: 1920px) {
     .hero-dashboard {
-        width: 630px;
-        left: 26%;
+        width: 600px;
+        left: 30%;
     }
 
     .hero-man {
-        left: 57%;
+        width: 500px;
+        left: 67%;
+    }
+    .hero-p{
+        font-size: 18px !important;
+        line-height: 1.4 !important;
+    }
+    .hero-h1{
+        font-size: 48px !important;
+    }
+    .detected-card , .workout-card{
+        width: 210px !important;
+    }
+    .avocado-card{
+        width: 250px !important;
+        top: -8%;
+    }
+    .rose-card{
+        width: 180px !important;
+    }
+    .barbell-card{
+        width: 160px !important;
     }
 }
 
