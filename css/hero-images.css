@@ -127,23 +127,24 @@
    ============================================ */
 @media (min-width: 1481px) and (max-width: 1920px) {
     .hero-dashboard {
-        width: 600px;
+        width: 620px;
         left: 30%;
     }
 
     .hero-man {
-        width: 500px;
-        left: 67%;
+        width: 540px;
+        left: 57%;
     }
     .hero-p{
-        font-size: 18px !important;
-        line-height: 1.4 !important;
+        font-size: 22px !important;
+        line-height: 1.5 !important;
     }
     .hero-h1{
-        font-size: 48px !important;
+        font-size: 52px !important;
     }
     .detected-card , .workout-card{
-        width: 210px !important;
+        width: 250px !important;
+        right: 2%;
     }
     .avocado-card{
         width: 250px !important;
