@@ -122,6 +122,27 @@
     }
 }
 
+.design-img {
+    width: 900px;
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-image-container-1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+@media (max-width: 991px) {
+    .hero-image-container-1 {
+        margin-top: 50px;
+    }
+}
+
+
 /* ============================================
    DESKTOP FIRST - LARGE SCREENS (≥1920px)
    ============================================ */
@@ -135,25 +156,32 @@
         width: 540px;
         left: 57%;
     }
-    .hero-p{
+
+    .hero-p {
         font-size: 22px !important;
         line-height: 1.5 !important;
     }
-    .hero-h1{
+
+    .hero-h1 {
         font-size: 52px !important;
     }
-    .detected-card , .workout-card{
+
+    .detected-card,
+    .workout-card {
         width: 250px !important;
         right: 2%;
     }
-    .avocado-card{
+
+    .avocado-card {
         width: 250px !important;
         top: -8%;
     }
-    .rose-card{
+
+    .rose-card {
         width: 180px !important;
     }
-    .barbell-card{
+
+    .barbell-card {
         width: 160px !important;
     }
 }
@@ -842,6 +870,37 @@
         animation-delay: 2.5s;
     }
 }
+
+/* ============================================
+   DESIGN GYM SECTION RESPONSIVENESS
+   ============================================ */
+@media (max-width: 991px) {
+    .design-row {
+        margin-bottom: 50px;
+    }
+
+    /* Force image to be on top for Content-Image rows (which utilize .reverse-mobile class) */
+    .reverse-mobile {
+        flex-direction: column-reverse;
+    }
+
+    /* For Image-Content rows, the natural order is Image then Content, so no change needed.
+       However, we ensure all rows display as columns on mobile */
+    .design-row {
+        text-align: center;
+    }
+
+    .design-content-wrapper {
+        padding: 30px 15px;
+    }
+
+    .design-img-wrapper {
+        margin-bottom: 20px;
+    }
+}
+
+
+
 
 /* ============================================
    MOBILE ANIMATION

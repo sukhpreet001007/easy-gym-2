@@ -86,26 +86,36 @@ window.onYouTubeIframeAPIReady = function () {
         const parentElement = el.parentElement;
         const videoId = el.getAttribute('data-video-id');
         const isClientReview = el.closest('.client-review-card') !== null;
+        const isFaqVideo = el.getAttribute('data-faq-video') === "true";
+
+        // Determine parameters based on video type
+        let playerVars = {
+            'autoplay': isClientReview ? 0 : 1, // Autoplay non-reviews (standard behavior)
+            'controls': 1,
+            'rel': 0,
+            'showinfo': 0,
+            'mute': isClientReview ? 0 : 1,
+            'loop': 1,
+            'playlist': videoId
+        };
+
+        if (isFaqVideo) {
+            playerVars.autoplay = 0; // Don't autoplay FAQ videos
+            playerVars.mute = 0;     // Don't mute FAQ videos by default
+        }
 
         const player = new YT.Player(el.id, {
             height: '100%',
             width: '100%',
             videoId: videoId,
-            playerVars: {
-                'autoplay': isClientReview ? 0 : 1, // Autoplay non-reviews immediately
-                'controls': 1,
-                'rel': 0,
-                'showinfo': 0,
-                'mute': isClientReview ? 0 : 1,
-                'loop': 1,
-                'playlist': videoId
-            },
+            playerVars: playerVars,
             events: {
                 'onReady': onPlayerReady,
-                'onVolumeChange': onPlayerVolumeChange
+                'onVolumeChange': onPlayerVolumeChange,
+                'onStateChange': onPlayerStateChange // Added for single play logic
             }
         });
-        players.push({ id: el.id, player: player, element: parentElement, isClientReview: isClientReview });
+        players.push({ id: el.id, player: player, element: parentElement, isClientReview: isClientReview, isFaqVideo: isFaqVideo });
     };
 
     if ('IntersectionObserver' in window) {
@@ -130,7 +140,16 @@ function onPlayerReady(event) {
     const iframe = event.target.getIframe();
     const isClientReview = iframe.closest('.client-review-card') !== null;
 
-    if (!isClientReview) {
+    // Check if this is an FAQ video by looking up via ID (more robust)
+    // The iframe id usually matches the original div id
+    const playerObj = players.find(p => p.id === iframe.id);
+    const isFaqVideo = playerObj ? playerObj.isFaqVideo : false;
+
+    // Double check via attribute on the iframe itself if possible? 
+    // The YT API replaces the div, but sometimes copies attributes or we might have set it on the parent.
+    // The playerObj lookup is best.
+
+    if (!isClientReview && !isFaqVideo) {
         const rect = iframe.getBoundingClientRect();
         if (rect.right > -100 && rect.left < window.innerWidth + 100) {
             event.target.playVideo();
@@ -141,6 +160,20 @@ function onPlayerReady(event) {
     if (!autoplayIntervalStarted && playersReady > 0) {
         autoplayIntervalStarted = true;
         startAutoplayLogic();
+    }
+}
+
+function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.PLAYING) {
+        const currentPlayer = event.target;
+        players.forEach(p => {
+            if (p.player !== currentPlayer) {
+                // Check if the other player is currently playing
+                if (p.player.getPlayerState && p.player.getPlayerState() === YT.PlayerState.PLAYING) {
+                    p.player.pauseVideo();
+                }
+            }
+        });
     }
 }
 
@@ -162,7 +195,7 @@ function startAutoplayLogic() {
         const viewportWidth = window.innerWidth;
 
         players.forEach(p => {
-            if (!p.element || p.isClientReview) return; // Skip client review videos
+            if (!p.element || p.isClientReview || p.isFaqVideo) return; // Skip client review and FAQ videos from autoplay logic
 
             const rect = p.element.getBoundingClientRect();
 
@@ -481,4 +514,20 @@ document.addEventListener('DOMContentLoaded', function () {
     elements.forEach(element => {
         observer.observe(element);
     });
+
+    // FAQ Masonry Layout Refresh on Accordion Toggle
+    const faqContainer = document.querySelector('.faq-section-classname-container .row');
+    if (faqContainer) {
+        const faqAccordions = faqContainer.querySelectorAll('.collapse');
+        faqAccordions.forEach(acc => {
+            acc.addEventListener('shown.bs.collapse', function () {
+                var msnry = Masonry.data(faqContainer);
+                if (msnry) msnry.layout();
+            });
+            acc.addEventListener('hidden.bs.collapse', function () {
+                var msnry = Masonry.data(faqContainer);
+                if (msnry) msnry.layout();
+            });
+        });
+    }
 });

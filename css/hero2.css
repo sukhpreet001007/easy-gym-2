@@ -231,7 +231,14 @@
         transform: scale(1);
     }
 }
-
+.first-title-coun{
+    color: #1849D3;
+    font-size: 30px;
+    font-weight: bold
+}
+/* .faq-hero{
+    width: 100%;
+} */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 48px;

@@ -1,0 +1,65 @@
+/* Main Section Styling */
+.design-section {
+    padding: 80px 0;
+    background-color: #fcfcfc;
+    /* Light background similar to screenshot */
+    overflow: hidden;
+}
+
+/* Row Styling */
+.design-row {
+    margin-bottom: 80px;
+}
+
+.design-row:last-child {
+    margin-bottom: 0;
+}
+
+/* Content Styling */
+.design-content-wrapper {
+    padding: 20px;
+}
+
+.design-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.design-desc {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .design-title {
+        font-size: 26px;
+    }
+
+    .design-desc {
+        font-size: 18px;
+    }
+}
+
+/* Image Wrapper Styling */
+.design-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.design-img-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    /* Rounded corners as per typical modern design */
+}
+
+/* Spacing specifics */
+/* .spaceleft-right .container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+} */
