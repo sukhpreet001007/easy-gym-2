@@ -430,15 +430,14 @@ document.addEventListener('DOMContentLoaded', function () {
             accordionObserver.observe(section);
         });
 
-        // Stage Section Cards Animation Logic (Using Animate.css)
+        // Stage Section Cards Animation Logic (Refactored for Fade + Scale)
         const stageSection = document.querySelector('.stage-section');
         if (stageSection) {
             const stageCards = stageSection.querySelectorAll('.stage-section-card');
 
-            // Set initial state - hide cards before animation
+            // Set initial state via class
             stageCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.visibility = 'hidden';
+                card.classList.add('stage-card-initial');
             });
 
             const stageObserver = new IntersectionObserver((entries, observer) => {
@@ -446,15 +445,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (entry.isIntersecting) {
                         stageCards.forEach((card, index) => {
                             setTimeout(() => {
-                                card.style.opacity = '1';
-                                card.style.visibility = 'visible';
-                                card.classList.add('animate__animated', 'animate__fadeInUp');
-                            }, index * 100); // Staggered delay for cards
+                                card.classList.add('stage-card-animate');
+                            }, index * 150); // Staggered delay for cards
                         });
                         observer.unobserve(stageSection);
                     }
                 });
-            }, { threshold: 0.1 }); // Lowered threshold for better reliability on large tablet screens
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
             stageObserver.observe(stageSection);
         }
