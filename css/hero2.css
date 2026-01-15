@@ -5,6 +5,13 @@
     position: relative;
     overflow: hidden;
 }
+.hero-section-2-faq {
+    /* padding-top: 100px; */
+    /* padding-bottom: 80px; */
+    background: linear-gradient(0deg, #EAE9FF 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
 
 .hero-title {
     font-size: 80px;

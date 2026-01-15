@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="css/hero-particles.css">
     <link rel="stylesheet" href="css/hero-images.css">
     <link rel="stylesheet" href="css/hero2.css">
+    <link rel="stylesheet" href="css/contact-us.css">
 
 </head>
 
@@ -273,268 +274,115 @@
             </nav>
         </div>
     </header>
-    <section class="hero-section-2">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="hero-title">
-                        <span class="word-animation">Employee Management</span>
-                    </h1>
-                    <p class="hero-subtitle">Employee Management Streamlines Staff, Schedules, Performance, Payroll, and Commissions, Boosting Accountability and Gym Success.
 
 
-
-                    </p>
-                    <div class="text-center mt-5">
-                        <button class="book-demo-btn" data-bs-target="#ModalTogglesix" data-bs-toggle="modal">
-                            <svg width="100%" height="100%">
-                                <rect width="100%" height="100%" />
-                            </svg>
-                            <span>Book Your Demo<i class="fa-solid fa-arrow-right text-light px-2"></i></span>
-                        </button>
-                    </div>
-                </div>
-                <div class="col-12 mt-5">
-                    <div class="hero-image-wrapper">
-                        <img src="assets-2/2nd-dashboard.png" alt="Dashboard Interface" class="img-fluid">
-                    </div>
-                </div>
-            </div>
+    <!-- <header class="contact-us-header">
+        <div class="contact-us-address">
+            <i class="fas fa-map-marker-alt"></i>
+            123 Business Street, Tech City, TC 10101
         </div>
-    </section>
-    <section class="grow-your-gym space-top-bottom">
-        <div class="spaceleft-right">
-            <div class="container-fluid">
-                <div class="section-title text-center">
-                    <h2>Our Unique Selling Points</h2>
-                </div>
-                <div class="container pb-5">
-                    <div class="row">
-                        <div class="col-md-4 col-lg-4">
-                            <div class="item">
-                                <div class="item-img"><img loading="lazy" src="images/box.png" class="img-fluid"></div>
-                                <div class="item-content">
-                                    <h6>Automated WhatsApp</h6>
-                                    <p>Automated WhatsApp boosts member retention and revenue with automatic reminders,
-                                        expiry alerts, and timely follow-ups. No app downloads, zero manual effort, and
-                                        24/7 operation reliably drive growth and save time.
+        <div class="contact-us-social-icons">
+            <a href="#" class="contact-us-social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="contact-us-social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="contact-us-social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="contact-us-social-link"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </header> -->
 
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-4">
-                            <div class="item">
-                                <div class="item-img"><img loading="lazy" src="images/box.png" class="img-fluid"></div>
-                                <div class="item-content">
-                                    <h6>Biometric Authentication</h6>
-                                    <p>Biometric authentication in software controls entry, attendance, and revenue. It
-                                        blocks expired memberships, prevents proxy entries, and syncs with billing to
-                                        reduce effort and ensure a premium, disciplined environment.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-4">
-                            <div class="item">
-                                <div class="item-img"><img loading="lazy" src="images/box.png" class="img-fluid"></div>
-                                <div class="item-content">
-                                    <h6>Multi-Location User Access</h6>
-                                    <p>Multi-location access in software lets owners manage all branches from a single
-                                        dashboard. Monitor performance, sales, and attendance with role-based access and
-                                        centralized billing for scalable growth and expansion.
+    <!-- Main Content -->
+    <main class="contact-us-container">
+        <h1 class="contact-us-title">Get In Touch</h1>
 
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+        <div class="contact-us-content">
+            <!-- Contact Form -->
+            <div class="contact-us-form-container">
+                <form id="contactForm" class="contact-us-form">
+                    <div class="contact-us-form-group">
+                        <label for="contact-us-name">Your Name</label>
+                        <i class="fas fa-user contact-us-icon"></i>
+                        <input type="text" id="contact-us-name" class="contact-us-form-input"
+                            placeholder="Enter your full name" required>
                     </div>
-                </div>
-                <div class="text-center mt-5">
-                    <button class="book-demo-btn" data-bs-target="#ModalTogglesix" data-bs-toggle="modal">
-                        <svg width="100%" height="100%">
-                            <rect width="100%" height="100%" />
-                        </svg>
-                        <span>Schedule Your Free Demo<i class="fa-solid fa-arrow-right text-light px-2"></i></span>
+
+                    <div class="contact-us-form-group">
+                        <label for="contact-us-company">Company Name</label>
+                        <i class="fas fa-building contact-us-icon"></i>
+                        <input type="text" id="contact-us-company" class="contact-us-form-input"
+                            placeholder="Enter your company name">
+                    </div>
+
+                    <div class="contact-us-form-group">
+                        <label for="contact-us-email">Email Address</label>
+                        <i class="fas fa-envelope contact-us-icon"></i>
+                        <input type="email" id="contact-us-email" class="contact-us-form-input"
+                            placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="contact-us-form-group">
+                        <label for="contact-us-phone">Phone Number</label>
+                        <i class="fas fa-phone contact-us-icon"></i>
+                        <input type="tel" id="contact-us-phone" class="contact-us-form-input"
+                            placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="contact-us-form-group">
+                        <label for="contact-us-message">Your Message</label>
+                        <i class="fas fa-comment-dots contact-us-icon"></i>
+                        <textarea id="contact-us-message" class="contact-us-form-input contact-us-textarea"
+                            placeholder="Type your message here..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="contact-us-submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
                     </button>
-                </div>
+                </form>
             </div>
-        </div>
-    </section>
 
-    <section class="features-split-section">
-        <div class="container space-top-bottom1">
-            <!-- Block 1 -->
-            <div class="row align-items-center mb-5 pb-5">
-                <div class="col-lg-6 pe-lg-5">
-                    <h2 class="feature-title">Automated Commission Tracking
-
-                    </h2>
-                    <p class="feature-text mt-4">Automated commission tracking ensures accurate, transparent trainer payouts across sessions, classes, sales, and renewals. Real-time reports simplify payroll, prevent disputes, motivate staff, provide full visibility, and help minimize revenue leakage for gym owners.
-
-
-
+            <!-- Contact Information -->
+            <div class="contact-us-info-container">
+                <div class="contact-us-info-box">
+                    <h3 class="contact-us-info-title"><i class="fas fa-clock"></i> Address</h3>
+                    <p class="contact-us-info-text">
+                        1771 Robson Street, #1506, Vancouver, BC V6G 3B7
                     </p>
-                </div>
-                <div class="col-lg-6 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Smart Client Database" class="img-fluid">
+                    <ul class="contact-us-info-text">
+                        <li>+91 8699288803</li>
+                        <li>+1 7163404934</li>
+                    </ul>
+                    <div class="contact-map-wrapper">
+                        <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"
+                            marginwidth="0"
+                            src="https://maps.google.com/maps?q=1771%20Robson%20Street%2C%20%231506%2C%20Vancouver%2C%20BC%20V6G%203B7&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    </div>
+                    <div class="contact-us-social-icons">
+                        <a href="#" class="contact-us-social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="contact-us-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="contact-us-social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="contact-us-social-link"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Block 2 -->
-            <div class="row align-items-center mb-5 pb-5">
-                <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Billing And Payment" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
-                    <h2 class="feature-title">Employee & Trainers Management
- </h2>
-                    <p class="feature-text mt-4">Smart Attendance & Shift Tracking with integrated communication tools monitors trainer performance via member-trainer linking, task allocation, and role permissions. Manage staff commissions and centralized profiles through a single gym software dashboard.
-
-
-
+                <div class="contact-us-info-box">
+                    <h3 class="contact-us-info-title"><i class="fas fa-headset"></i> Support</h3>
+                    <p class="contact-us-info-text">
+                        Our support team is available 24/7 for urgent matters.<br>
+                        Email: support@example.com<br>
+                        Emergency Phone: +1 7163404934
                     </p>
                 </div>
-            </div>
-        </div>
 
-        <!-- Blue Banner -->
-        <!-- <div class="feature-banner">
-             <div class="sparkles"></div>
-            <div class="container">
-                <h3 class="banner-text text-center m-0">
-
-                </h3>
-            </div>
-        </div> -->
-
-        <div class="container space-top-bottom11">
-            <!-- Block 3 -->
-            <div class="row align-items-center mb-5 pb-5">
-                <div class="col-lg-6 pe-lg-5">
-                    <h2 class="feature-title">New Trainer Login Portal
-
-
-                    </h2>
-                    <p class="feature-text mt-4">Trainers can access PT & group bookings without members’ personal or billing data. Sessions are verified via 2-step OTP. Scheduling, in-app communication, & automated attendance, monitor performance via a mobile-friendly dashboard with access permissions.
-
-
+                <!-- <div class="contact-us-info-box">
+                    <h3 class="contact-us-info-title"><i class="fas fa-lightbulb"></i> Why Choose Us</h3>
+                    <p class="contact-us-info-text">
+                        We provide exceptional customer service with quick response times. Our team is dedicated to
+                        solving your problems efficiently and effectively.
                     </p>
-                </div>
-                <div class="col-lg-6 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Workout Plan" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Block 4 -->
-            <div class="row align-items-center mb-5 pb-5">
-                <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Diet Plan" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
-                    <h2 class="feature-title">Trainer Ratings & Feedback 
-
-                    </h2>
-                    <p class="feature-text mt-4">Members receive automated post-session feedback emails on trainer performance and service quality. This client-driven system boosts trust, standards, recognition, while admins access insights through a unified dashboard integrated with the portal for transparency.
-
-
-
-
-                    </p>
-                </div>
-            </div>
-
-            <!-- Block 5 -->
-            <div class="row align-items-center">
-                <div class="col-lg-6 pe-lg-5">
-                    <h2 class="feature-title">Personalized Training & Easy Booking
-</h2>
-                    <p class="feature-text mt-4">
-Our Software streamlines class & session booking with Google Calendar integration. Automated alerts, billing, data tracking reduce missed appointments, enhance rebooking, and deliver a seamless user experience that boosts member loyalty and enhances gym productivity.
-
-
-
-                    </p>
-                </div>
-                <div class="col-lg-6 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Body Analysis" class="img-fluid">
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
+    </main>
 
-        <!-- Blue Banner -->
-        <div class="feature-banner">
-            <div class="sparkles"></div>
-            <div class="container">
-                <h3 class="banner-text text-center m-0">
-                    Automate Entire Team Workflow From Scheduling to Performance!
-                </h3>
-            </div>
-        </div>
 
-    </section>
- <section class="shorts-section">
-
-        <div class="shorts-ticker-wrapper">
-            <div class="shorts-ticker" id="shortsTicker">
-                <div class="short-item">
-                    <div id="player1" class="youtube-player" data-video-id="JKzeZ-3tbIE"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player2" class="youtube-player" data-video-id="jimVj-JD6Ls"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player3" class="youtube-player" data-video-id="vYmi_aLfvPQ"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player4" class="youtube-player" data-video-id="BoZXza1zitE"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player5" class="youtube-player" data-video-id="bZeQtC8oILc"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player6" class="youtube-player" data-video-id="M7S0hJVJH4U"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player1-dup" class="youtube-player" data-video-id="63vJeSUAUq8"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player2-dup" class="youtube-player" data-video-id="8969mVsxpF4"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player3-dup" class="youtube-player" data-video-id="FfgS6TdJKnU"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player4-dup" class="youtube-player" data-video-id="l4ilIxEhaR8"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player5-dup" class="youtube-player" data-video-id="BZqUW2HfczU"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player6-dup" class="youtube-player" data-video-id="kmwBHvynjJg"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player7-dup" class="youtube-player" data-video-id="erfsex2p0qw"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player8-dup" class="youtube-player" data-video-id="EmgHgKrvoeY"></div>
-                </div>
-                <div class="short-item">
-                    <div id="player9-dup" class="youtube-player" data-video-id="Cqnuk1lW1NY"></div>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="data-migration-section">
         <div class="spaceleft-right">
             <div class="container-fluid text-center">
@@ -553,7 +401,7 @@ Our Software streamlines class & session booking with Google Calendar integratio
                                     <svg width="100%" height="100%">
                                         <rect width="100%" height="100%" />
                                     </svg>
-                                    <span>Get Complimentary Demo <i
+                                    <span>Get Complimentary Demo<i
                                             class="fa-solid fa-arrow-right text-light px-2"></i></span>
                                 </button>
                             </div>
@@ -582,7 +430,7 @@ Our Software streamlines class & session booking with Google Calendar integratio
                             </ul>
                         </div>
                     </div>
-                   <div class="col-6 col-md text-center text-md-start">
+                    <div class="col-6 col-md text-center text-md-start">
                         <div class="footer-links">
                             <h6>Countries we serve in</h6>
                             <ul>
@@ -674,6 +522,7 @@ Our Software streamlines class & session booking with Google Calendar integratio
             </div>
         </div>
     </div>
+
 
     <div class="modal fade custom-modal" id="ModalTogglefive" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
@@ -795,9 +644,70 @@ Our Software streamlines class & session booking with Google Calendar integratio
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/menu-sidebar.js"></script>
         <script src="js/booking.js"></script>
-    <script src="js/shorts-drag-scroll.js"></script>
+        <script src="js/shorts-drag-scroll.js"></script>
 
     </footer>
+    <script>
+
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('contact-us-name').value;
+            const company = document.getElementById('contact-us-company').value;
+            const email = document.getElementById('contact-us-email').value;
+            const phone = document.getElementById('contact-us-phone').value;
+            const message = document.getElementById('contact-us-message').value;
+
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields: Name, Email, and Message');
+                return;
+            }
+
+            // In a real application, you would send this data to a server
+            // For this example, we'll just show a success message
+            alert(`Thank you, ${name}! Your message has been sent successfully. We'll get back to you at ${email} as soon as possible.`);
+
+            // Reset form
+            document.getElementById('contactForm').reset();
+
+            // Add a little visual feedback
+            const submitBtn = document.querySelector('.contact-us-submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            submitBtn.style.background = 'linear-gradient(to right, #2ed573, #1dd1a1)';
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = 'linear-gradient(to right, #4db5ff, #2af598)';
+            }, 3000);
+        });
+
+        // Add focus effects to form inputs
+        const formInputs = document.querySelectorAll('.contact-us-form-input');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function () {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+
+            input.addEventListener('blur', function () {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+
+        // Add floating animation to info boxes on hover
+        const infoBoxes = document.querySelectorAll('.contact-us-info-box');
+        infoBoxes.forEach(box => {
+            box.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-10px)';
+            });
+
+            box.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 
 </html>
