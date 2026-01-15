@@ -10,7 +10,7 @@
 .terms-header {
     text-align: center;
     padding: 3rem 1rem;
-    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    background: linear-gradient(180deg, #1E59FF 0%, #123599 100%);
     border-radius: 20px;
     margin-bottom: 3rem;
     color: white;
@@ -63,7 +63,7 @@
 .terms-intro p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    color: #475569;
+    color: #000000;
 }
 
 .terms-highlight {
@@ -150,7 +150,7 @@
 
 .terms-section-title {
     font-size: 1.8rem;
-    color: #1e293b;
+    color: #000000;
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
@@ -165,7 +165,7 @@
 }
 
 .terms-content {
-    color: #475569;
+    color: #000000;
 }
 
 .terms-content p {
