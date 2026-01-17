@@ -1693,10 +1693,11 @@ button:focus:not(:focus-visible) {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.design-box{
+.design-box {
     text-decoration: none;
     color: #000;
 }
+
 /* Responsive adjustments for focus state */
 @media (max-width: 767.98px) {
     .navbar-expand-md .navbar-nav .nav-link::after {
@@ -2175,9 +2176,10 @@ button:focus:not(:focus-visible) {
 @media only screen and (max-width:1024px) {}
 
 @media only screen and (max-width:991px) {
-     .accordion-body{
+    .accordion-body {
         text-align: left;
-     }
+    }
+
     .navbar-expand-md .navbar-nav li ul li {
         min-height: 155px;
     }
@@ -3537,4 +3539,56 @@ button:focus:not(:focus-visible) {
         display: block !important;
         /* Override style.css hiding them on tablet */
     }
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    z-index: 9999;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: #1E59FF;
+    /* Using the primary blue color from the site */
+    width: 0%;
+    transition: width 0.1s ease-out;
+}
+
+/* Go To Top Button */
+#goToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    background: linear-gradient(180deg, #1E59FF 0%, #123599 100%);
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#goToTopBtn:hover {
+    background: #FFDD33;
+    /* Yellow hover effect */
+    transform: translateY(-5px);
+}
+
+#goToTopBtn.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
 }

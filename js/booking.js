@@ -530,20 +530,56 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
- document.querySelectorAll('.tutorial-video-wrapper').forEach(wrapper => {
-            wrapper.addEventListener('click', function () {
-                const videoId = this.dataset.videoId;
-                if (!videoId) return;
+document.querySelectorAll('.tutorial-video-wrapper').forEach(wrapper => {
+    wrapper.addEventListener('click', function () {
+        const videoId = this.dataset.videoId;
+        if (!videoId) return;
 
-                const iframe = document.createElement('iframe');
-                iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
-                iframe.setAttribute('width', '100%');
-                iframe.setAttribute('height', '100%');
-                iframe.setAttribute('frameborder', '0');
-                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-                iframe.setAttribute('allowfullscreen', '');
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
+        iframe.setAttribute('width', '100%');
+        iframe.setAttribute('height', '100%');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', '');
 
-                this.innerHTML = '';
-                this.appendChild(iframe);
+        this.innerHTML = '';
+        this.appendChild(iframe);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Scroll Progress Bar & Go To Top Button Logic
+    const progressBar = document.getElementById('scrollProgressBar');
+    const goToTopBtn = document.getElementById('goToTopBtn');
+
+    window.addEventListener('scroll', () => {
+        // Scroll Progress
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+        if (progressBar) {
+            progressBar.style.width = scrollPercentage + '%';
+        }
+
+        // Go To Top Button Visibility
+        if (goToTopBtn) {
+            if (scrollTop > 300) { // Show after scrolling down 300px
+                goToTopBtn.classList.add('show');
+            } else {
+                goToTopBtn.classList.remove('show');
+            }
+        }
+    });
+
+    // Go To Top Action
+    if (goToTopBtn) {
+        goToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
+    }
+});
