@@ -1439,6 +1439,15 @@ button:focus:not(:focus-visible) {
 
 .item-img img {
     width: 100%;
+    border-radius: 10px;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.06));
+
+}
+
+.item-img:hover img{
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.1));
+    transition: all .4s ease-in-out;
+    transform: scale(.97);
 }
 
 .demo-modal-form .modal-box .modal-left {
