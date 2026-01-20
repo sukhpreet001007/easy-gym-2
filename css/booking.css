@@ -246,31 +246,115 @@
     background-color: #fafafb !important;
 }
 
-#main-dropdown-image {
-    width: 663px !important;
+/* Consolidated rule for #main-dropdown-image and #booking-image */
+#main-dropdown-image,
+#booking-image {
+    width: 663px;
     height: 663px !important;
     object-fit: contain;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+    border-radius: 24px;
+    /* Added border-radius */
+}
+
+/* Animations and Hover Effects for Desktop Only */
+@media (min-width: 992px) {
+
+    #main-dropdown-image,
+    #booking-image {
+        animation: floatImage 4s ease-in-out infinite;
+    }
+
+    #main-dropdown-image:hover,
+    #booking-image:hover {
+        transform: scale(1.02) translateY(-5px);
+    }
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .first-accordion-image-container {
     position: relative;
-    background-image: url('../images/first-acc.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    /* Animated Gradient Background */
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(33, 46, 143, 1) 43%, rgba(0, 47, 255, 1) 85%);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+
     width: 100%;
     aspect-ratio: 663 / 663;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10%;
+    border-radius: 24px;
+    /* Soften the container edges */
+    overflow: hidden;
+    /* Ensure sparkles don't overflow */
 }
 
-#main-dropdown-image {
-    width: 663px;
-    height: 663px;
-    object-fit: contain;
-    z-index: 2;
+/* Sparkle Animation */
+.first-accordion-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    /* Wider width for movement */
+    height: 200%;
+    /* Taller height for movement */
+    background-image:
+        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 30% 10%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 40% 30%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        radial-gradient(circle at 100% 30%, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+    background-size: 200px 200px;
+    animation: sparkleAnimation 20s linear infinite;
+    z-index: 1;
+    /* Above background, below image (image is z-index 2) */
+    pointer-events: none;
+}
+
+@keyframes sparkleAnimation {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    100% {
+        transform: translateY(-50%) translateX(-50%);
+    }
 }
 
 .booking-image-container {
@@ -288,11 +372,7 @@
     padding: 10%;
 }
 
-#booking-image {
-    width: 703px;
-    object-fit: contain;
-    z-index: 2;
-}
+/* Removed duplicate #booking-image rule as it's now handled in the shared block */
 
 @media (max-width: 991px) {
     #main-dropdown-image {
