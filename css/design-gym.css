@@ -1,7 +1,7 @@
 /* Main Section Styling */
 .design-section {
     padding: 80px 0;
-    background-color: #fcfcfc;
+    /* background-color: #fcfcfc; */
     /* Light background similar to screenshot */
     overflow: hidden;
 }
@@ -55,7 +55,18 @@
     width: 100%;
     height: auto;
     border-radius: 20px;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.1));
+    overflow: hidden;
     /* Rounded corners as per typical modern design */
+    
+    /* Add smooth transition for Y-axis movement */
+    transform: translateY(0);
+    transition: transform 0.5s ease;
+}
+
+.design-img-wrapper:hover img {
+    /* Moves image up slightly on Y-axis */
+    transform: translateY(-10px);
 }
 
 /* Spacing specifics */
@@ -63,3 +74,4 @@
     max-width: 1400px;
     margin: 0 auto;
 } */
+

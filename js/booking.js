@@ -549,38 +549,27 @@ document.querySelectorAll('.tutorial-video-wrapper').forEach(wrapper => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Scroll Progress Bar & Go To Top Button Logic
     const progressBar = document.getElementById('scrollProgressBar');
     const goToTopBtn = document.getElementById('goToTopBtn');
 
     window.addEventListener('scroll', () => {
-        // Scroll Progress
         const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrollPercentage = (scrollTop / scrollHeight) * 100;
 
         if (progressBar) {
             progressBar.style.width = scrollPercentage + '%';
+            
+            const hue = (scrollPercentage / 100) * 360;
         }
 
-        // Go To Top Button Visibility
         if (goToTopBtn) {
-            if (scrollTop > 300) { // Show after scrolling down 300px
+            if (scrollTop > 300) { 
                 goToTopBtn.classList.add('show');
             } else {
                 goToTopBtn.classList.remove('show');
             }
         }
     });
-
-    // Go To Top Action
-    if (goToTopBtn) {
-        goToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
 });
 

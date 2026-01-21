@@ -357,7 +357,7 @@
     }
 }
 
-.booking-image-container {
+/* .booking-image-container {
     position: relative;
     background-image: url('../images/new-rec.svg');
     position: relative;
@@ -370,12 +370,12 @@
     align-items: center;
     justify-content: center;
     padding: 10%;
-}
+} */
 
 /* Removed duplicate #booking-image rule as it's now handled in the shared block */
 
 @media (max-width: 991px) {
-    #main-dropdown-image {
+    #main-dropdown-image, #booking-image {
         width: 100% !important;
         height: auto !important;
     }
