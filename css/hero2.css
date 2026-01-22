@@ -243,9 +243,12 @@
     font-size: 30px;
     font-weight: bold
 }
-/* .faq-hero{
-    width: 100%;
-} */
+.faq-hero{
+    width: 80%;
+    border-radius: 24px;
+    margin-bottom: 40px;
+  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.035));
+}
 @media (max-width: 768px) {
     .hero-title {
         font-size: 48px;
