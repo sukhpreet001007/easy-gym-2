@@ -581,7 +581,8 @@ header {
 }
 
 .item-content h6 {
-    font-size: 22px;
+     font-size: clamp(1rem, 2vw, 1.25rem);
+    white-space: nowrap;
     margin-bottom: 10px;
     font-weight: 700;
 }
@@ -1261,7 +1262,6 @@ button:focus:not(:focus-visible) {
 .banner-rating ul {
     margin: 0px;
     padding: 0px;
-    margin-left: 10px;
 }
 
 .banner-rating ul li {
@@ -1327,6 +1327,7 @@ button:focus:not(:focus-visible) {
     position: relative;
     top: -4px;
 }
+/* flags */
 
 .grey-bar-text h6 {
     font-weight: 600;
@@ -1936,7 +1937,103 @@ button:focus:not(:focus-visible) {
     font-weight: 700;
     line-height: 64px;
 }
+.banner-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 4px;
+}
 
+.banner-list li {
+    margin: 0;
+}
+
+/* Flag counter styles - Scooter meter effect */
+.flag-counter-container {
+    position: relative;
+    height: 24px;
+    width: 36px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    perspective: 100px;
+    flex-shrink: 0;
+}
+
+.flag-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+}
+
+.flag-link {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    position: relative;
+}
+
+.flag-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    backface-visibility: hidden;
+    transform-origin: center bottom;
+    transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.8s ease;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.flag-img.active {
+    transform: translateY(0) rotateX(0);
+    opacity: 1;
+    z-index: 2;
+}
+
+.flag-img.next {
+    transform: translateY(100%) rotateX(-90deg);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.flag-img.leaving {
+    transform: translateY(-100%) rotateX(90deg);
+    opacity: 0;
+    z-index: 0;
+}
+
+/* Desktop styles */
+.line.desktop-only {
+    color: #666;
+    font-weight: bold;
+    padding: 0 2px;
+}
+.flag-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    opacity: 0.3;
+    display: none;
+}
+
+.flag-img.loading::before {
+    display: block;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
 /* Responsive */
 @media (max-width: 768px) {
 
@@ -1964,8 +2061,104 @@ button:focus:not(:focus-visible) {
         padding: 15px;
         box-sizing: border-box;
     }
+      .banner-list {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px 0;
+        padding: 4px 0;
+        width: 100%;
+    }
+    
+    /* Hide separator lines on mobile */
+    .line.desktop-only {
+        display: none !important;
+    }
+    
+    /* Adjust flag container size for mobile - FIXED */
+    .flag-counter-container {
+        height: 24px;
+        width: 24px;
+        margin: 0;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Ensure flags display full without cutting */
+    .flag-wrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+    }
+    
+    .flag-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .flag-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: contain !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        display: block;
+    }
+    
+    /* Rating text adjustment */
+    .banner-list > li:first-child.line {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 4px;
+        order: -1;
+    }
+    
+    .banner-list > li:first-child.line p {
+        font-size: 0.9em;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    /* Order flag containers to appear after rating */
+    .flag-counter-container {
+        order: 0;
+    }
 }
 
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .flag-counter-container {
+        height: 22px;
+        width: 22px;
+    }
+    
+    .banner-list > li:first-child.line p {
+        font-size: 0.85em;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .flag-counter-container {
+        height: 20px;
+        width: 20px;
+    }
+    
+    .banner-list {
+        gap: 6px 0;
+    }
+}
 @media only screen and (min-width:1480px) {
 
     .container-fluid {
@@ -2815,7 +3008,7 @@ button:focus:not(:focus-visible) {
     }
 
     .item-content h6 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .we-are-excited h3 span {
@@ -3633,3 +3826,4 @@ button:focus:not(:focus-visible) {
     );
     background-size: 100% 100%; /* Ensures gradient spans full width */
 }
+

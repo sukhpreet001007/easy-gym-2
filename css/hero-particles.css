@@ -195,6 +195,7 @@
 
     .banner-rating .banner-list {
         justify-content: center;
+        gap: 20px !important;
     }
 }
 

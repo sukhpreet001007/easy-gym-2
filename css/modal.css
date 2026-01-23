@@ -403,16 +403,19 @@
     padding: 10px 0;
     font-size: 1.1rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* important */
+    gap: 15px;               /* cleaner spacing */
     opacity: 0.9;
     transition: opacity 0.3s ease;
 }
+
 
 .form-benefits li:hover {
     opacity: 1;
 }
 
 .benefit-icon {
+    flex-shrink: 0;          /* key fix */
     width: 24px;
     height: 24px;
     background: rgba(255, 255, 255, 0.2);
@@ -420,10 +423,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
     font-weight: bold;
     font-size: 0.9rem;
 }
+
 
 /* Right Side - Form */
 #ModalTogglesix.custom-form-modal .custom-form-modal-right {
@@ -582,12 +585,19 @@
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid rgba(0, 102, 255, 0.1);
+    width: 100%;
 }
 
 .form-footer-text {
     color: #666;
     font-size: 0.9rem;
     margin: 0;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    display: inline;
+    text-align: center;
 }
 
 .form-footer-link {
@@ -596,6 +606,8 @@
     font-weight: 600;
     transition: all 0.3s ease;
     position: relative;
+    white-space: nowrap;
+    display: inline-block;
 }
 
 .form-footer-link::after {

@@ -29,9 +29,348 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <link rel="stylesheet" href="css/hero-particles.css">
     <link rel="stylesheet" href="css/hero-images.css">
     <link rel="stylesheet" href="css/hero2.css">
+<style>
+/* Coming Soon Section */
+.coming-soon {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #f8fafc;
+}
+
+/* Card with your gradient background */
+.coming-soon-card {
+    width: 800px; /* More width than height */
+    max-width: 90vw;
+    min-height: 400px;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(33, 46, 143, 1) 43%, rgba(0, 47, 255, 1) 85%);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Add subtle pattern overlay */
+.coming-soon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Card Header */
+.card-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.underline {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #4cc9f0, #4361ee);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* Card Content */
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.icon-container {
+    margin: 20px 0;
+}
+
+.icon-circle {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: pulse 2s infinite;
+}
+
+.icon {
+    font-size: 3rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    margin: 20px 0 15px;
+    font-weight: 600;
+    color: white;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* Progress Section */
+.progress-section {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.progress-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 85%;
+    background: linear-gradient(90deg, #4cc9f0, #4361ee);
+    border-radius: 5px;
+    position: relative;
+    animation: loading 2s ease-in-out infinite;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.feature-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* Card Footer */
+.card-footer {
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.home-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 35px;
+    background: white;
+    color: #0018a4;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.home-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    background: #f8fafc;
+}
+
+.home-button:active {
+    transform: translateY(-1px);
+}
+
+.button-arrow {
+    transition: transform 0.3s ease;
+}
+
+.home-button:hover .button-arrow {
+    transform: translateX(5px);
+}
+
+.footer-note {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(76, 201, 240, 0.4);
+    }
+    50% { 
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(76, 201, 240, 0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes loading {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .coming-soon-card {
+        padding: 30px 25px;
+        width: 600px;
+        min-height: 450px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+    }
+    
+    .features {
+        gap: 20px;
+    }
+    
+    .home-button {
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .coming-soon-card {
+        padding: 25px 20px;
+        width: 90vw;
+        min-height: 500px;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .icon {
+        font-size: 2.5rem;
+    }
+    
+    .features {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .feature {
+        flex-direction: row;
+        gap: 15px;
+    }
+    
+    .home-button {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+}
+</style>
 
 </head>
 
@@ -39,7 +378,8 @@
     <div class="scroll-progress-container">
         <div class="scroll-progress-bar" id="scrollProgressBar"></div>
     </div>
-     <div id="custom-sidebar" class="custom-sidebar">
+    
+    <div id="custom-sidebar" class="custom-sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo">
                 <img src="images/logoo.png" alt="Easy Gym">
@@ -257,9 +597,11 @@
                                 </a>
                                 <div class="social-icons">
                                     <ul>
-                                        <li><a href="#"><i style="font-size:24px; color: #ffffff;"
+                                        <li><a href="https://www.youtube.com/channel/UCLnl3aFCQmt0Ck5lP8EloWA"
+                                                target="_blank"><i style="font-size:24px; color: #ffffff;"
                                                     class="fa-brands fa-youtube"></i></a></li>
-                                        <li><a href="#"><i style="font-size:24px; color: #ffffff;"
+                                        <li><a href="https://www.instagram.com/easygymsoftware/" target="_blank"><i
+                                                    style="font-size:24px; color: #ffffff;"
                                                     class="fa-brands fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
@@ -277,16 +619,45 @@
         </div>
     </header>
 
-    <section class="hero-section-2">
+
+    <section class="coming-soon">
+    <div class="coming-soon-card">
+        <div class="card-header">
+            <h1 class="title">🚧 Coming Soon</h1>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="card-content">
+            <div class="icon-container">
+                <div class="icon-circle">
+                    <span class="icon">⏳</span>
+                </div>
+            </div>
+            
+            <h2 class="subtitle">Something Amazing is Brewing</h2>
+            <p class="description">We're working hard to bring you an incredible experience. Stay tuned!</p>
+            
+        </div>
+        
+        <div class="card-footer">
+            <a href="/" class="home-button">
+                <span class="button-text">Go to Homepage</span>
+                <span class="button-arrow">→</span>
+            </a>
+            <p class="footer-note">Explore our current website while you wait</p>
+        </div>
+    </div>
+</section>
+    <!-- <section class="hero-section-2">
         <div class="container">   
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h4 class="first-title-coun">Best Gym Software of India</h4>
+                    <h4 class="first-title-coun">Best Gym Management Software in Bahrain</h4>
                     <h1 class="hero-title">
-                        <span class="word-animation">Transform Chaos into Clarity, Your Studio, Simplified!</span>
+                        <span class="word-animation">From Reps to Revenue</span>
                     </h1>
-                    <p class="hero-subtitle">Smart, automated marketing that helps gyms attract, retain, and grow
-                        members from first inquiry to lifelong engagement.
+                    <p class="hero-subtitle">Simplify Bahrain gym management, engage members 24/7, boost revenue, with Arabic support, GCC payments, & full automation.
+
 
                     </p>
                     <div class="text-center mt-5">
@@ -294,7 +665,7 @@
                             <svg width="100%" height="100%">
                                 <rect width="100%" height="100%" />
                             </svg>
-                            <span>Book Your Demo<i class="fa-solid fa-arrow-right text-light px-2"></i></span>
+                            <span>Schedule Your Free Demo<i class="fa-solid fa-arrow-right text-light px-2"></i></span>
                         </button>
                     </div>
                 </div>
@@ -305,8 +676,8 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="grow-your-gym space-top-bottom">
+    </section> -->
+    <!-- <section class="grow-your-gym space-top-bottom">
         <div class="spaceleft-right">
             <div class="container-fluid">
                 <div class="section-title text-center">
@@ -318,10 +689,8 @@
                             <div class="item">
                                 <div class="item-img"><img loading="lazy" src="images/box.png" class="img-fluid"></div>
                                 <div class="item-content">
-                                    <h6>Automated WhatsApp</h6>
-                                    <p>Automated WhatsApp boosts member retention and revenue with automatic reminders,
-                                        expiry alerts, and timely follow-ups. No app downloads, zero manual effort, and
-                                        24/7 operation reliably drive growth and save time.
+                                    <h6>GCC-Ready Bilingual Platform</h6>
+                                    <p>Bahrain gyms can operate smoothly in both Arabic and English, streamline operations, support local and regional payments, enhance member experience, and position themselves as professional, inclusive, and growth-ready brands thanks to a GCC-ready bilingual platform.
 
                                     </p>
                                 </div>
@@ -331,10 +700,9 @@
                             <div class="item">
                                 <div class="item-img"><img loading="lazy" src="images/box.png" class="img-fluid"></div>
                                 <div class="item-content">
-                                    <h6>Biometric Authentication</h6>
-                                    <p>Biometric authentication in software controls entry, attendance, and revenue. It
-                                        blocks expired memberships, prevents proxy entries, and syncs with billing to
-                                        reduce effort and ensure a premium, disciplined environment.
+                                    <h6>Automate Billing & Boost Revenue</h6>
+                                    <p>The Automate Billing & Boost Revenue feature fully automates memberships, recurring payments, renewals, and reminders via secure GCC-ready gateways, ensuring seamless collections, real-time revenue tracking, fewer disputes, and predictable, growth-ready cash flow.
+
                                     </p>
                                 </div>
                             </div>
@@ -343,10 +711,10 @@
                             <div class="item">
                                 <div class="item-img"><img loading="lazy" src="images/box.png" class="img-fluid"></div>
                                 <div class="item-content">
-                                    <h6>Multi-Location User Access</h6>
-                                    <p>Multi-location access in software lets owners manage all branches from a single
-                                        dashboard. Monitor performance, sales, and attendance with role-based access and
-                                        centralized billing for scalable growth and expansion.
+                                    <h6>All-in-One Branch Management</h6>
+                                    <p>
+All-in-One Branch Management enables Bahrain gym owners to easily oversee single or multiple locations from a centralized dashboard, tracking revenue, memberships, attendance, bookings, and trainer performance in real-time for secure, scalable, & efficient operations.
+
 
                                     </p>
                                 </div>
@@ -359,22 +727,22 @@
                         <svg width="100%" height="100%">
                             <rect width="100%" height="100%" />
                         </svg>
-                        <span>Schedule Your Free Demo<i class="fa-solid fa-arrow-right text-light px-2"></i></span>
+                        <span>Get Started Instantly<i class="fa-solid fa-arrow-right text-light px-2"></i></span>
                     </button>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <section class="features-split-section">
+    <!-- <section class="features-split-section">
         <div class="container space-top-bottom1">
-            <!-- Block 1 -->
             <div class="row align-items-center mb-5 pb-5">
                 <div class="col-lg-6 pe-lg-5">
-                    <h2 class="feature-title">Sell From Instagram
+                    <h2 class="feature-title">Seamless Arabic & English Experience
                     </h2>
-                    <p class="feature-text mt-4">Easy Gym Software enables gyms to sell memberships, PT, and services via Instagram with customizable plans, integrated booking & payments, live analytics, email, text, and WhatsApp engagement, event promotion, and targeted offers to grow sales and loyalty.
+                    <p class="feature-text mt-4">
 
+Delivers a seamless Arabic & English experience for Bahrain’s diverse fitness market, enabling instant language switching across all workflows, eliminating barriers, enhancing service quality, building trust, and positioning gyms as modern, globally aligned destinations.
 
                     </p>
                 </div>
@@ -385,7 +753,6 @@
                 </div>
             </div>
 
-            <!-- Block 2 -->
             <div class="row align-items-center mb-5 pb-5">
                 <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
                     <div class="feature-img-wrapper">
@@ -393,30 +760,26 @@
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
-                    <h2 class="feature-title">Custom Campaigns</h2>
-                    <p class="feature-text mt-4">Our integrated software helps gyms and fitness studios grow revenue with automated marketing. Bulk promotions and reminders via, and WhatsApp, text, and email boost engagement, attendance, and satisfaction; ensure communication; save time; and streamline operations.
-                    </p>
+                    <h2 class="feature-title">Hassle-Free Membership Payments</h2>
+                    <p class="feature-text mt-4">
+
+The Hassle-Free Membership Payments feature automates billing and renewals for Bahrain gyms, enabling secure recurring payments, real-time tracking, GCC-ready gateways, reducing disputes, improving cash flow, and delivering a seamless, professional member experience.
+
                 </div>
             </div>
         </div>
 
-        <!-- Blue Banner -->
-        <div class="feature-banner  mb-5 mt-0">
-             <div class="sparkles"></div>
-            <div class="container">
-                <h3 class="banner-text text-center m-0">
-Analyze and Organize to reach new heights, not just survive!
-                </h3>
-            </div>
-        </div>
+       
 
         <div class="container space-top-bottom11">
-            <!-- Block 3 -->
+            
             <div class="row align-items-center mb-5 pb-5">
                 <div class="col-lg-6 pe-lg-5">
-                    <h2 class="feature-title">One Click, Thousands Reached, Zero Effort
+                    <h2 class="feature-title">Secure Biometric & QR Access
+
                     </h2>
-                    <p class="feature-text mt-4">An affordable marketing suite lets gyms and fitness studios run multi-channel campaigns via email, text & WhatsApp. Personalize messages, segment audiences, track performance, drive renewals, and boost engagement, conversions, and support growth.
+                    <p class="feature-text mt-4">The Secure Biometric & QR Access feature enables Bahrain gyms to offer contactless, highly secure entry, instantly syncing with memberships to prevent unauthorized access, streamline check-ins, reduce front-desk dependency, and deliver a smooth, professional member experience.
+
 
 
                     </p>
@@ -428,7 +791,6 @@ Analyze and Organize to reach new heights, not just survive!
                 </div>
             </div>
 
-            <!-- Block 4 -->
             <div class="row align-items-center mb-5 pb-5">
                 <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
                     <div class="feature-img-wrapper">
@@ -436,21 +798,24 @@ Analyze and Organize to reach new heights, not just survive!
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
-                    <h2 class="feature-title">Referral Campaigns & Reward Programs</h2>
-                    <p class="feature-text mt-4">Automated referral tracking drives real-time ROI via cost-effective channels. Custom rewards, CRM integration, and notifications boost engagement, while referral links and QR codes simplify sharing and support measurable fitness business growth.
+                    <h2 class="feature-title">Centralized Branch Dashboard</h2>
+                    <p class="feature-text mt-4">
+The Centralized Branch Dashboard enables Bahrain gym owners efficiently manage multiple gym locations from a single secure online interface, easily tracking revenue, memberships, attendance, bookings, and trainer performance in real-time with full role-based accountability.
 
 
                     </p>
                 </div>
             </div>
 
-            <!-- Block 5 -->
+          
             <div class="row align-items-center">
                 <div class="col-lg-6 pe-lg-5">
-                    <h2 class="feature-title">Memberships & Packages
+                    <h2 class="feature-title">Integrated Class & PT Booking
 
                     </h2>
-                    <p class="feature-text mt-4">The software lets gyms create unlimited memberships, PT packages, and class bundles with flexible pricing. Automated activations, renewals, freezes, and reminders boost retention, track performance, and drive revenue and engagement
+                    <p class="feature-text mt-4">
+The Integrated Class & PT Booking system lets members effortlessly and conveniently book sessions online, seamlessly syncing attendance, trainer schedules & billing in real time, reducing conflicts and no-shows while boosting class occupancy, PT revenue, and operational efficiency.
+
 
                     </p>
                 </div>
@@ -467,21 +832,24 @@ Analyze and Organize to reach new heights, not just survive!
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
-                    <h2 class="feature-title">Referral Campaigns & Reward Programs</h2>
-                    <p class="feature-text mt-4">Automated referral tracking drives real-time ROI via cost-effective channels. Custom rewards, CRM integration, and notifications boost engagement, while referral links and QR codes simplify sharing and support measurable fitness business growth.
+                    <h2 class="feature-title">WhatsApp & Email Communication</h2>
+                    <p class="feature-text mt-4">
+Enables professional WhatsApp and email communication, fully automating payments, renewals, class updates, and reminders, boosting engagement, reducing missed payments, building member trust, and delivering a truly consistent, polished experience for Bahrain gyms.
 
 
                     </p>
                 </div>
             </div>
 
-            <!-- Block 5 -->
+          
             <div class="row align-items-center">
                 <div class="col-lg-6 pe-lg-5">
-                    <h2 class="feature-title">Memberships & Packages
+                    <h2 class="feature-title">Smart Insights, Instant Reports
 
                     </h2>
-                    <p class="feature-text mt-4">The software lets gyms create unlimited memberships, PT packages, and class bundles with flexible pricing. Automated activations, renewals, freezes, and reminders boost retention, track performance, and drive revenue and engagement
+                    <p class="feature-text mt-4">
+With Real-Time Reports & Business Insights, Bahrain gym owners gain instant visibility into revenue, collections, renewals, attendance, bookings, and member retention. Dashboards eliminate spreadsheets, highlight opportunities, and enable smarter data-driven decisions.
+
 
                     </p>
                 </div>
@@ -498,40 +866,43 @@ Analyze and Organize to reach new heights, not just survive!
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
-                    <h2 class="feature-title">Referral Campaigns & Reward Programs</h2>
-                    <p class="feature-text mt-4">Automated referral tracking drives real-time ROI via cost-effective channels. Custom rewards, CRM integration, and notifications boost engagement, while referral links and QR codes simplify sharing and support measurable fitness business growth.
+                    <h2 class="feature-title">Scalable Boutique & Premium Fitness</h2>
+                    <p class="feature-text mt-4">Scalable platform for boutique and premium fitness clubs in Bahrain, efficiently and securely managing single or multiple locations with secure permissions, standardised workflows, and centralised control, driving confident growth, efficiency, and a premium brand experience.
 
 
                     </p>
                 </div>
             </div>
-             <div class="text-center mt-5">
+            <div class="text-center mt-5">
                         <button class="book-demo-btn" data-bs-target="#ModalTogglesix" data-bs-toggle="modal">
                             <svg width="100%" height="100%">
                                 <rect width="100%" height="100%" />
                             </svg>
-                            <span>Book Your Demo<i class="fa-solid fa-arrow-right text-light px-2"></i></span>
+                            <span>Book Your Free Demo Today<i class="fa-solid fa-arrow-right text-light px-2"></i></span>
                         </button>
                     </div>
         </div>
 
-        <!-- Blue Banner -->
+     
         <div class="feature-banner">
             <div class="sparkles"></div>
             <div class="container">
-                <h3 class="banner-text text-center m-0">Virtual Receptionist aids you to grow and works like a pro while others sleep, allowing you to maintain a consistent flow!
+                <h3 class="banner-text text-center m-0">Reception That Never Sleeps, Bahrain-Style!
+
 
                 </h3>
             </div>
         </div>
 
-    </section>
-    <section class="stage-section">
+    </section> -->
+    <!-- <section class="stage-section">
         <div class="container">
             <div class="stage-section-content text-center mb-5">
-                <h3 class="stage-section-h3">Automate Today,<br> Dominate Tomorrow.
+                <h3 class="stage-section-h3">More Growth & Less Grind
+
                 </h3>
-                <p class="stage-section-p mx-auto">Our Easy Gym Software is bespoke for fitness centers, yoga studios, MMA academies, sports clubs, Pilates instructors, indoor climbing coaches, and many more users as well.
+                <p class="stage-section-p mx-auto">From gyms and yoga studios to MMA academies and sports clubs across Bahrain, Easy Gym Software helps you manage clients, schedules, and payments, enabling you to focus on growth.
+
                 </p>
             </div>
 
@@ -539,10 +910,9 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/one.svg" alt="Biometric" class="stage-card-icon">
-                        <h4>Biometric Integration</h4>
-                        <p>Easy Gym Software offers secure access, real-time attendance tracking, and automatic
-                            membership expiry. Fingerprint, facial, and RFID biometrics have been integrated into
-                            modernized gym and studio operations to guarantee entry for active members.
+                        <h4>Hassle-Free Data Migration & Onboarding</h4>
+                        <p>
+The transition to Easy Gym Software is smooth and effortless. All member data, payments, attendance, and history are securely migrated at no additional cost, with onboarding support ensuring your team is trained and ready from day one, zero downtime, and zero data loss.
 
 
                         </p>
@@ -551,10 +921,10 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/three.svg" alt="Workout" class="stage-card-icon">
-                        <h4>Workout & Diet Plans</h4>
-                        <p>Coaches can easily utilize Easy Gym Software to create personalized fitness and nutritional
-                            plans with AI suggestions. Members access plans directly via apps, while a drag-and-drop
-                            template simplifies plan creation for fitness, Yoga, Dance, Pilates, and MMA studios.
+                        <h4>24/7 WhatsApp Assistant
+</h4>
+                        <p>24/7 WhatsApp Bot serves as your gym’s virtual front desk, instantly handling member enquiries, FAQs, lead capture, and follow-ups, boosting conversions, reducing front-desk workload by 60–70%, and ensuring consistent, reliable member support without extra staff.
+
 
                         </p>
                     </div>
@@ -562,21 +932,17 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/two.svg" alt="Retention" class="stage-card-icon">
-                        <h4>Client Retention</h4>
-                        <p>With automated, customized birthday and anniversary messages, as well as timely payment
-                            reminders and renewal prompts via WhatsApp, email, and text, you can ensure your gym patrons
-                            feel truly valued, connected, appreciated, and engaged over time.
-
+                        <h4>Lead & Walk-In Accelerator</h4>
+                        <p>The Smart Lead & Walk-In Conversion System captures and tracks every enquiry in real-time. Bahrain gyms can respond quickly, increase conversions, enhance marketing ROI, make a professional first impression by using automated alerts and follow-ups.
                         </p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/four.svg" alt="Marketing" class="stage-card-icon">
-                        <h4>Walk-Ins & Marketing Tools</h4>
-                        <p>Track all new inquiries and follow up with advanced marketing templates for MMA, fitness
-                            studios, yoga, dance, and sports academies. Smart lead tracking and automatic nurturing
-                            consistently turn potential leads into highly loyal clients, driving business growth.
+                        <h4>All-in-One Lead Integration
+</h4>
+                        <p>Unifies leads from websites, Google Ads, and Meta Ads into a single system. Bahrain gyms can track and take action, enhance response times, increase conversions, optimise marketing effectiveness, and maintain transparent, well-organised lead management.
 
 
                         </p>
@@ -585,10 +951,9 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/five.svg" alt="Front Desk" class="stage-card-icon">
-                        <h4>Virtual Front Desk That Works While You Sleep</h4>
-                        <p>Transform your fitness business with a smart 24/7 virtual receptionist for Pilates, dance,
-                            CrossFit, MMA, or sports studios. Stay connected with members anytime and manage operations
-                            for flawless business performance.
+                        <h4>Custom eForms with E-Sign</h4>
+                        <p>Replace paperwork with custom digital eForms, including waivers and consent forms, with secure e-signatures. Bahrain gyms can integrate forms into websites or reservations, reduce legal risk, enhance professionalism, and deliver a smooth experience.
+
 
 
                         </p>
@@ -597,11 +962,9 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/six.svg" alt="Always on" class="stage-card-icon">
-                        <h4>Always On</h4>
-                        <p>Easy Gym Software's Always On feature provides 24/7 seamless access to bookings, payments,
-                            and membership management, with the latest updates and secure cloud data storage with
-                            instant inquiry responses via email, text messages, and WhatsApp.
-
+                        <h4>Instant Online Memberships  
+</h4>
+                        <p>Allow members to explore plans, register, and purchase memberships online 24/7 without front-desk support. Automated confirmations, billing synchronisation, and instant activation reduce errors and staff workload, unlocking revenue and convenience for Bahrain gyms.
 
 
 
@@ -611,10 +974,10 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/seven.svg" alt="Support" class="stage-card-icon">
-                        <h4>Automated Client Support</h4>
-                        <p>Deliver notifications, membership renewals, enticing offers, payment reminders, important
-                            notices, and customized birthday and anniversary wishes automatically to keep your customers
-                            engaged and satisfied while enabling your business to function smoothly.
+                        <h4>
+Free Mobile-Friendly Booking Site 
+</h4>
+                        <p>Every Bahrain gym receives a free, fully mobile-optimised website to handle enquiries, registrations, class bookings, and membership purchases. Fast, accessible, and lead-focused, it boosts visibility, captures leads 24/7, saves costs, and increases conversions.
 
 
 
@@ -624,21 +987,20 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/eight.svg" alt="Engagement" class="stage-card-icon">
-                        <h4>Instant Engagement</h4>
-                        <p>Address the latest inquiries by delivering carefully tailored emails, texts, and WhatsApp
-                            messages, ensuring prospective customers feel valued and appreciated without delay. Drop-off
-                            ceased when inactive members re-engaged, with no manual intervention.
+                        <h4>Membership Pause & Auto-Reactivation
+</h4>
+                        <p>Easily manage membership freezes for travel, medical reasons, or seasonal breaks in Bahrain. The system automatically adjusts validity and reactivates memberships, eliminating disputes, enhancing satisfaction, reducing conflicts, and ensuring billing.
+
                         </p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/nine.svg" alt="Cold Leads" class="stage-card-icon">
-                        <h4>Re‑Engage Cold Leads
+                        <h4>Renewal & Expiry Alerts
+
                         </h4>
-                        <p>Trouble-free Send professional, fully customized emails, texts, and WhatsApp messages to
-                            inactive prospects, reignite interest, retrieve lost leads, and bring them back through your
-                            doors. Prioritize and score leads using the pre-built win-back template.
+                        <p>Automatic notifications alert members and staff before membership expiries, renewals, and pending dues via WhatsApp, text messages, or email. This proactive approach minimises lapses, reduces churn, and ensures revenue without requiring constant staff follow-ups.
 
                         </p>
                     </div>
@@ -646,10 +1008,9 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/ten.svg" alt="Insights" class="stage-card-icon">
-                        <h4>Smart Insights</h4>
-                        <p>Access robust, visual dashboards that display the best-selling classes, best-performing
-                            packages, busiest hours, and client feedback for your fitness centers, training schools,
-                            academies, clubs, and studios so you can always know exactly what's working.
+                        <h4>Trainer Insights & Performance
+</h4>
+                        <p>Monitor trainer attendance, sessions, PT revenue, and productivity. Gym owners can recognise top performers, enforce accountability, and optimise utilisation, enabling Bahrain gyms to boost training revenue while upholding standards.
 
 
                         </p>
@@ -658,10 +1019,10 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/eleven.svg" alt="Retention" class="stage-card-icon">
-                        <h4>Boost Retention</h4>
-                        <p>Track members who are irregular or inconsistent, and stay consistently connected with timely,
-                            personalized follow-ups that clearly show your commitment to their progress. Strengthen
-                            trainer–member relationships with built-in loyalty and rewards programs.
+                        <h4>PT Package Tracking & Management
+</h4>
+                        <p>Sell, manage, and track PT packages with session limits and validity periods. Automatic session deductions record completed sessions in real time, preventing disputes, ensuring billing, improving trainer accountability, and delivering a smoother experience.
+
 
 
 
@@ -671,10 +1032,10 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/twelve.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Effortless Studio Operations</h4>
-                        <p>Our goal is to provide the best possible fitness experience while efficiently handling all
-                            administrative tasks. Supervise attendance, bookings, staff, schedules, memberships,
-                            payments, and daily operations effortlessly from a single, powerful centralized dashboard.
+                        <h4>POS & Inventory Management
+</h4>
+                        <p>Manage supplements, merchandise, and services with an integrated POS system featuring real-time inventory tracking. Bahraini gym owners can maintain smooth operations and make informed decisions using low-stock alerts, sales reports, and profit insights.
+
 
 
                         </p>
@@ -683,10 +1044,10 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/three.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Effortless Studio Operations</h4>
-                        <p>Our goal is to provide the best possible fitness experience while efficiently handling all
-                            administrative tasks. Supervise attendance, bookings, staff, schedules, memberships,
-                            payments, and daily operations effortlessly from a single, powerful centralized dashboard.
+                        <h4>Loyalty & Referral Management
+</h4>
+                        <p>Boost repeat purchases and word-of-mouth growth with an easy-to-use, fully integrated reward and referral system. Members earn points for purchases and referrals, increasing engagement, loyalty, and value, all managed without manual management.
+
 
 
                         </p>
@@ -695,11 +1056,9 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets/note.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Effortless Studio Operations</h4>
-                        <p>Our goal is to provide the best possible fitness experience while efficiently handling all
-                            administrative tasks. Supervise attendance, bookings, staff, schedules, memberships,
-                            payments, and daily operations effortlessly from a single, powerful centralized dashboard.
-
+                        <h4>Workout & Diet Plan Assignment
+</h4>
+                        <p>Create and assign personalised workout and diet plans with intuitive drag-and-drop tools. Track progress, body transformations, and adherence in one system, enhancing results, improving retention, and positioning your gym as a results-driven fitness destination.
 
                         </p>
                     </div>
@@ -707,10 +1066,10 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/thirteen.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Effortless Studio Operations</h4>
-                        <p>Our goal is to provide the best possible fitness experience while efficiently handling all
-                            administrative tasks. Supervise attendance, bookings, staff, schedules, memberships,
-                            payments, and daily operations effortlessly from a single, powerful centralized dashboard.
+                        <h4>Attendance & Inactivity Monitoring
+</h4>
+                        <p>Identify irregular or inactive members early with smart attendance tracking and behavioural insights. Automated triggers and personalised notifications help gyms re-engage members before they drop off, boosting retention and long-term revenue.
+
 
 
                         </p>
@@ -719,11 +1078,9 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/two.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Effortless Studio Operations</h4>
-                        <p>Our goal is to provide the best possible fitness experience while efficiently handling all
-                            administrative tasks. Supervise attendance, bookings, staff, schedules, memberships,
-                            payments, and daily operations effortlessly from a single, powerful centralized dashboard.
-
+                        <h4>Peak Hour & Space Utilisation Insights</h4>
+                        <p>
+Gain clear insights into peak hours, class occupancy, and facility usage patterns. Optimise schedules, staffing, and space planning to reduce congestion, improve efficiency, and enhance the overall member experience, crucial for premium Bahrain gyms.
 
                         </p>
                     </div>
@@ -731,11 +1088,9 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/fourteen.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Effortless Studio Operations</h4>
-                        <p>Our goal is to provide the best possible fitness experience while efficiently handling all
-                            administrative tasks. Supervise attendance, bookings, staff, schedules, memberships,
-                            payments, and daily operations effortlessly from a single, powerful centralized dashboard.
-
+                        <h4>Staff Roles & Access Control</h4>
+                        <p>
+Assign specific access rights to owners, managers, trainers, and front-desk staff. This ensures data security, accountability, and smooth delegation, enabling gyms to scale operations, maintain oversight, and protect sensitive member and business information.
 
                         </p>
                     </div>
@@ -743,18 +1098,16 @@ Analyze and Organize to reach new heights, not just survive!
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
                         <img loading="lazy" src="assets-2/fifteen.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Effortless Studio Operations</h4>
-                        <p>Our goal is to provide the best possible fitness experience while efficiently handling all
-                            administrative tasks. Supervise attendance, bookings, staff, schedules, memberships,
-                            payments, and daily operations effortlessly from a single, powerful centralized dashboard.
-
+                        <h4>Cloud Access On-the-Go</h4>
+                        <p>
+Securely manage your gym operations from any device, anywhere, with transparency. Cloud-based infrastructure also enables Bahraini gym owners to monitor performance, revenue, and operations remotely, providing complete control and peace of mind.
 
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
      <section class="clients-section">
         <div class="client-section-inner">
@@ -905,7 +1258,7 @@ Analyze and Organize to reach new heights, not just survive!
             </div>
         </div>
     </section>
-     <section class="main-footer">
+   <section class="main-footer">
         <div class="spaceleft-right footer-top">
             <div class="container">
                 <div class="row justify-content-between">

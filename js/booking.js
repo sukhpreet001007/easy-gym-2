@@ -573,3 +573,136 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const flagContainers = document.querySelectorAll('.flag-counter-container');
+    let currentIndices = [0, 0, 0, 0];
+    let usedFlags = new Set();
+    let isAnimating = false;
+    
+    // Preload all flag images
+    function preloadImages() {
+        const allImages = document.querySelectorAll('.flag-img');
+        allImages.forEach(img => {
+            // Create a new Image object to force load
+            const preloadImg = new Image();
+            preloadImg.src = img.src;
+            img.dataset.loaded = 'false';
+            
+            preloadImg.onload = function() {
+                img.dataset.loaded = 'true';
+                img.classList.remove('loading');
+            };
+            
+            preloadImg.onerror = function() {
+                img.dataset.loaded = 'true';
+                img.classList.remove('loading');
+            };
+            
+            // Show loading state
+            img.classList.add('loading');
+        });
+    }
+    
+    function getRandomUniqueFlag(containerIndex) {
+        const container = flagContainers[containerIndex];
+        const flags = container.querySelectorAll('.flag-img');
+        const availableIndices = [];
+        
+        // Find available flags that aren't currently shown in other containers
+        flags.forEach((flag, index) => {
+            if (!usedFlags.has(flag.src)) {
+                availableIndices.push(index);
+            }
+        });
+        
+        // If no unique flags available, reset and use any flag
+        if (availableIndices.length === 0) {
+            usedFlags.clear();
+            return Math.floor(Math.random() * flags.length);
+        }
+        
+        return availableIndices[Math.floor(Math.random() * availableIndices.length)];
+    }
+    
+    function rotateFlags() {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        // Clear used flags set for this rotation cycle
+        usedFlags.clear();
+        
+        flagContainers.forEach((container, containerIndex) => {
+            const flags = container.querySelectorAll('.flag-img');
+            const currentActive = container.querySelector('.flag-img.active');
+            const nextIndex = getRandomUniqueFlag(containerIndex);
+            
+            // Mark this flag as used for current cycle
+            usedFlags.add(flags[nextIndex].src);
+            
+            // Set next flag as "next" state (coming from bottom)
+            const nextFlag = flags[nextIndex];
+            nextFlag.classList.add('next');
+            
+            // Force reflow to ensure CSS transition starts
+            void nextFlag.offsetWidth;
+            
+            // Start animation after a small delay to create staggered effect
+            setTimeout(() => {
+                if (currentActive) {
+                    currentActive.classList.remove('active');
+                    currentActive.classList.add('leaving');
+                }
+                
+                nextFlag.classList.remove('next');
+                nextFlag.classList.add('active');
+                
+                // Remove leaving class after animation completes
+                if (currentActive) {
+                    setTimeout(() => {
+                        currentActive.classList.remove('leaving');
+                    }, 1200);
+                }
+                
+                currentIndices[containerIndex] = nextIndex;
+            }, containerIndex * 100); // Staggered start for each container
+        });
+        
+        // Reset animation flag after all animations complete
+        setTimeout(() => {
+            isAnimating = false;
+        }, 2000);
+    }
+    
+    // Preload images first
+    preloadImages();
+    
+    // Start rotation after images are loaded - change every 4 seconds (slower)
+    let rotationInterval;
+    
+    function startRotation() {
+        // Initial rotation after 2 seconds to ensure images are loaded
+        setTimeout(() => {
+            rotateFlags();
+            // Continue rotation every 4 seconds
+            rotationInterval = setInterval(rotateFlags, 4000);
+        }, 2000);
+    }
+    
+    // Check if all images are loaded before starting
+    function checkAllImagesLoaded() {
+        const allImages = document.querySelectorAll('.flag-img');
+        const loadedImages = Array.from(allImages).filter(img => img.dataset.loaded === 'true');
+        
+        if (loadedImages.length >= allImages.length * 0.8) { // Start when 80% are loaded
+            startRotation();
+        } else {
+            setTimeout(checkAllImagesLoaded, 500);
+        }
+    }
+    
+    // Start checking image loading
+    setTimeout(checkAllImagesLoaded, 1000);
+    
+    // Fallback in case image loading check fails
+    setTimeout(startRotation, 3000);
+});

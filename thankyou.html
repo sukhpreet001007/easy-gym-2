@@ -36,6 +36,733 @@
     <link rel="stylesheet" href="css/hero-images.css">
     <link rel="stylesheet" href="css/hero2.css">
 
+<style>
+/* Thank You Section */
+.thank-you {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.thank-you-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Thank You Content */
+.thank-you-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Confetti Animation */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    pointer-events: none;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+    opacity: 0.8;
+    border-radius: 2px;
+    animation: confetti-fall linear infinite;
+}
+
+.confetti:nth-child(1) {
+    left: 10%;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    background: #ff6b6b;
+}
+
+.confetti:nth-child(2) {
+    left: 20%;
+    animation-duration: 4s;
+    animation-delay: 0.5s;
+    background: #4ecdc4;
+}
+
+.confetti:nth-child(3) {
+    left: 30%;
+    animation-duration: 3.5s;
+    animation-delay: 1s;
+    background: #feca57;
+}
+
+.confetti:nth-child(4) {
+    left: 40%;
+    animation-duration: 4.5s;
+    animation-delay: 1.5s;
+    background: #45b7d1;
+}
+
+.confetti:nth-child(5) {
+    left: 50%;
+    animation-duration: 3.2s;
+    animation-delay: 2s;
+    background: #ff9ff3;
+}
+
+.confetti:nth-child(6) {
+    left: 60%;
+    animation-duration: 4.2s;
+    animation-delay: 2.5s;
+    background: #96ceb4;
+}
+
+.confetti:nth-child(7) {
+    left: 70%;
+    animation-duration: 3.8s;
+    animation-delay: 3s;
+    background: #ff6b6b;
+}
+
+.confetti:nth-child(8) {
+    left: 80%;
+    animation-duration: 4s;
+    animation-delay: 3.5s;
+    background: #4ecdc4;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(600px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.success-checkmark {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.check-icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 4px solid #4CAF50;
+    margin: 0 auto;
+    animation: scaleIn 0.5s ease-out;
+}
+
+.check-icon::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: -2px;
+    width: 30px;
+    height: 100px;
+    background: #FFFFFF;
+    transform-origin: 100% 50%;
+    border-radius: 100px 0 0 100px;
+    transform: rotate(-45deg);
+}
+
+.check-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: 60px;
+    height: 100px;
+    background: #FFFFFF;
+    transform-origin: 0 50%;
+    border-radius: 0 100px 100px 0;
+    transform: rotate(-45deg);
+    animation: rotate-circle 0.75s ease-in forwards;
+}
+
+.icon-line {
+    height: 5px;
+    background-color: #4CAF50;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+}
+
+.line-tip {
+    top: 46px;
+    left: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+    animation: icon-line-tip 0.75s ease-in forwards;
+}
+
+.line-long {
+    top: 38px;
+    right: 8px;
+    width: 47px;
+    transform: rotate(-45deg);
+    animation: icon-line-long 0.75s ease-in forwards;
+}
+
+.icon-circle {
+    top: -4px;
+    left: -4px;
+    z-index: 10;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    box-sizing: content-box;
+    border: 4px solid rgba(76, 175, 80, 0.3);
+    animation: circle-pulse 2s ease-in-out infinite;
+}
+
+.icon-fix {
+    top: 8px;
+    width: 5px;
+    left: 26px;
+    z-index: 1;
+    height: 85px;
+    position: absolute;
+    transform: rotate(-45deg);
+    background-color: #FFFFFF;
+}
+
+/* Animations */
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate-circle {
+    0% {
+        transform: rotate(-45deg);
+    }
+    5% {
+        transform: rotate(-45deg);
+    }
+    12% {
+        transform: rotate(-405deg);
+    }
+    100% {
+        transform: rotate(-405deg);
+    }
+}
+
+@keyframes icon-line-tip {
+    0% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+    54% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+    70% {
+        width: 50px;
+        left: -8px;
+        top: 37px;
+    }
+    84% {
+        width: 17px;
+        left: 21px;
+        top: 48px;
+    }
+    100% {
+        width: 25px;
+        left: 14px;
+        top: 45px;
+    }
+}
+
+@keyframes icon-line-long {
+    0% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+    65% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+    84% {
+        width: 55px;
+        right: 0px;
+        top: 35px;
+    }
+    100% {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+    }
+}
+
+@keyframes circle-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.5;
+    }
+}
+
+/* Make sure it fits with the existing design */
+.success-checkmark {
+    margin: 20px auto 0px;
+}
+
+/* Remove the old icon-circle styles if they exist */
+.icon-circle.pulse-animation {
+    display: none;
+}
+
+.thank-you-icon {
+    font-size: 3.5rem;
+}
+
+.pulse-animation {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+    }
+}
+
+/* Title */
+.thank-you-title {
+    font-size: 3.5rem;
+    margin: 0 0 20px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.title-text {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+.title-text:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+    }
+}
+
+/* Message */
+.thank-you-message {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* Stats */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #f093fb, #f5576c);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.rotate-animation {
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.stat-text {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Celebration Text */
+.celebration-text {
+    margin: 30px 0;
+}
+
+.celebration-text p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #667eea;
+}
+
+
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.home-button {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+}
+
+.home-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+}
+
+.share-button {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.share-button:hover {
+    transform: translateY(-3px);
+    background: #f8f9ff;
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2);
+}
+
+/* Video Section */
+.video-section {
+   
+    padding: 30px;
+    
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.video-title {
+    font-size: 1.5rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.video-controls {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.mute-indicator, .auto-play {
+    background: rgba(102, 126, 234, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Video Wrapper */
+.video-wrapper {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 16/9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.play-indicator {
+    text-align: center;
+    animation: playPulse 2s ease-in-out infinite;
+}
+
+.play-circle {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.play-icon {
+    color: #667eea;
+    font-size: 1.5rem;
+}
+
+.play-text {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes playPulse {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.youtube-container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Video Footer */
+.video-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.video-description {
+    color: #666;
+    margin: 0 0 15px;
+    font-size: 1rem;
+}
+
+.video-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background: rgba(102, 126, 234, 0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #667eea;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.float {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    animation: floatUp 6s ease-in-out infinite;
+}
+
+.float-1 { left: 10%; animation-delay: 0s; }
+.float-2 { left: 20%; animation-delay: 1s; }
+.float-3 { left: 30%; animation-delay: 2s; }
+.float-4 { left: 70%; animation-delay: 3s; }
+.float-5 { left: 80%; animation-delay: 4s; }
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .thank-you-container {
+        gap: 40px;
+    }
+    
+    .thank-you-content {
+        padding: 40px 25px;
+    }
+    
+    .thank-you-title {
+        font-size: 2.8rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .stats-container {
+        gap: 30px;
+    }
+    
+    .video-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .thank-you-title {
+        font-size: 2.3rem;
+    }
+    
+    .thank-you-message {
+        font-size: 1.1rem;
+    }
+    
+    .icon-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .thank-you-icon {
+        font-size: 2.8rem;
+    }
+    
+    .video-section {
+        padding: 20px;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -283,478 +1010,68 @@
         </div>
     </header>
 
-    <section class="hero-section-2">
-        <div class="container">   
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h4 class="first-title-coun">Best Gym Management Software in Bahrain</h4>
-                    <h1 class="hero-title">
-                        <span class="word-animation">From Reps to Revenue</span>
-                    </h1>
-                    <p class="hero-subtitle">Simplify Bahrain gym management, engage members 24/7, boost revenue, with Arabic support, GCC payments, & full automation.
 
+<section class="thank-you">
+    <div class="thank-you-container">
+        <!-- Main Content -->
+        <div class="thank-you-content">
+            <div class="confetti-container">
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+            </div>
+            
+            <div class="success-checkmark">
+    <div class="check-icon">
+        <span class="icon-line line-tip"></span>
+        <span class="icon-line line-long"></span>
+        <div class="icon-circle"></div>
+        <div class="icon-fix"></div>
+    </div>
+</div>
+            
+            <h1 class="thank-you-title">
+                <span class="title-text">Thank</span>
+                <span class="title-text">You!</span>
+            </h1>
+            
+            <p class="thank-you-message">
+We’re thrilled to help you achieve your goals! A team member will reach out shortly to guide you through your personalized demo.
 
-                    </p>
-                    <div class="text-center mt-5">
-                        <button class="book-demo-btn" data-bs-target="#ModalTogglesix" data-bs-toggle="modal">
-                            <svg width="100%" height="100%">
-                                <rect width="100%" height="100%" />
-                            </svg>
-                            <span>Schedule Your Free Demo<i class="fa-solid fa-arrow-right text-light px-2"></i></span>
-                        </button>
+            </p>
+            
+            
+            <div class="celebration-text">
+                <p>While you wait, feel free to explore our website, blog, or FAQ for tips and insights.</p>
+            </div>
+            
+         
+        </div>
+        
+        <!-- YouTube Video Section -->
+        <div class="video-section">
+            <div class="video-container">
+                
+                <!-- YouTube Video iframe -->
+                <div class="video-wrapper">
+                    <div class="video-overlay">
+                       
                     </div>
+                    <div class="youtube-container" id="youtube-video"></div>
                 </div>
-                <div class="col-12 mt-5">
-                    <div class="hero-image-wrapper">
-                        <img src="assets-2/2nd-dashboard.png" alt="Dashboard Interface" class="img-fluid">
-                    </div>
-                </div>
+                
             </div>
         </div>
-    </section>
-    <section class="grow-your-gym space-top-bottom">
-        <div class="spaceleft-right">
-            <div class="container-fluid">
-                <div class="section-title text-center">
-                    <h2>Our Unique Selling Points</h2>
-                </div>
-                <div class="container pb-5">
-                    <div class="row">
-                        <div class="col-md-4 col-lg-4">
-                            <div class="item">
-                                <div class="item-img"><img loading="lazy" src="images/box.png" class="img-fluid"></div>
-                                <div class="item-content">
-                                    <h6>GCC-Ready Bilingual Platform</h6>
-                                    <p>Bahrain gyms can operate smoothly in both Arabic and English, streamline operations, support local and regional payments, enhance member experience, and position themselves as professional, inclusive, and growth-ready brands thanks to a GCC-ready bilingual platform.
-
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-4">
-                            <div class="item">
-                                <div class="item-img"><img loading="lazy" src="images/box.png" class="img-fluid"></div>
-                                <div class="item-content">
-                                    <h6>Automate Billing & Boost Revenue</h6>
-                                    <p>The Automate Billing & Boost Revenue feature fully automates memberships, recurring payments, renewals, and reminders via secure GCC-ready gateways, ensuring seamless collections, real-time revenue tracking, fewer disputes, and predictable, growth-ready cash flow.
-
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-4">
-                            <div class="item">
-                                <div class="item-img"><img loading="lazy" src="images/box.png" class="img-fluid"></div>
-                                <div class="item-content">
-                                    <h6>All-in-One Branch Management</h6>
-                                    <p>
-All-in-One Branch Management enables Bahrain gym owners to easily oversee single or multiple locations from a centralized dashboard, tracking revenue, memberships, attendance, bookings, and trainer performance in real-time for secure, scalable, & efficient operations.
-
-
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-5">
-                    <button class="book-demo-btn" data-bs-target="#ModalTogglesix" data-bs-toggle="modal">
-                        <svg width="100%" height="100%">
-                            <rect width="100%" height="100%" />
-                        </svg>
-                        <span>Get Started Instantly<i class="fa-solid fa-arrow-right text-light px-2"></i></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="features-split-section">
-        <div class="container space-top-bottom1">
-            <!-- Block 1 -->
-            <div class="row align-items-center mb-5 pb-5">
-                <div class="col-lg-6 pe-lg-5">
-                    <h2 class="feature-title">Seamless Arabic & English Experience
-                    </h2>
-                    <p class="feature-text mt-4">
-
-Delivers a seamless Arabic & English experience for Bahrain’s diverse fitness market, enabling instant language switching across all workflows, eliminating barriers, enhancing service quality, building trust, and positioning gyms as modern, globally aligned destinations.
-
-                    </p>
-                </div>
-                <div class="col-lg-6 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Smart Client Database" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Block 2 -->
-            <div class="row align-items-center mb-5 pb-5">
-                <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Billing And Payment" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
-                    <h2 class="feature-title">Hassle-Free Membership Payments</h2>
-                    <p class="feature-text mt-4">
-
-The Hassle-Free Membership Payments feature automates billing and renewals for Bahrain gyms, enabling secure recurring payments, real-time tracking, GCC-ready gateways, reducing disputes, improving cash flow, and delivering a seamless, professional member experience.
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Blue Banner -->
-        <!-- <div class="feature-banner  mb-5 mt-0">
-             <div class="sparkles"></div>
-            <div class="container">
-                <h3 class="banner-text text-center m-0">
-Analyze and Organize to reach new heights, not just survive!
-                </h3>
-            </div>
-        </div> -->
-
-        <div class="container space-top-bottom11">
-            <!-- Block 3 -->
-            <div class="row align-items-center mb-5 pb-5">
-                <div class="col-lg-6 pe-lg-5">
-                    <h2 class="feature-title">Secure Biometric & QR Access
-
-                    </h2>
-                    <p class="feature-text mt-4">The Secure Biometric & QR Access feature enables Bahrain gyms to offer contactless, highly secure entry, instantly syncing with memberships to prevent unauthorized access, streamline check-ins, reduce front-desk dependency, and deliver a smooth, professional member experience.
-
-
-
-                    </p>
-                </div>
-                <div class="col-lg-6 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Workout Plan" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Block 4 -->
-            <div class="row align-items-center mb-5 pb-5">
-                <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Diet Plan" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
-                    <h2 class="feature-title">Centralized Branch Dashboard</h2>
-                    <p class="feature-text mt-4">
-The Centralized Branch Dashboard enables Bahrain gym owners efficiently manage multiple gym locations from a single secure online interface, easily tracking revenue, memberships, attendance, bookings, and trainer performance in real-time with full role-based accountability.
-
-
-                    </p>
-                </div>
-            </div>
-
-            <!-- Block 5 -->
-            <div class="row align-items-center">
-                <div class="col-lg-6 pe-lg-5">
-                    <h2 class="feature-title">Integrated Class & PT Booking
-
-                    </h2>
-                    <p class="feature-text mt-4">
-The Integrated Class & PT Booking system lets members effortlessly and conveniently book sessions online, seamlessly syncing attendance, trainer schedules & billing in real time, reducing conflicts and no-shows while boosting class occupancy, PT revenue, and operational efficiency.
-
-
-                    </p>
-                </div>
-                <div class="col-lg-6 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Body Analysis" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-             <div class="row align-items-center mb-5 pb-5">
-                <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Diet Plan" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
-                    <h2 class="feature-title">WhatsApp & Email Communication</h2>
-                    <p class="feature-text mt-4">
-Enables professional WhatsApp and email communication, fully automating payments, renewals, class updates, and reminders, boosting engagement, reducing missed payments, building member trust, and delivering a truly consistent, polished experience for Bahrain gyms.
-
-
-                    </p>
-                </div>
-            </div>
-
-            <!-- Block 5 -->
-            <div class="row align-items-center">
-                <div class="col-lg-6 pe-lg-5">
-                    <h2 class="feature-title">Smart Insights, Instant Reports
-
-                    </h2>
-                    <p class="feature-text mt-4">
-With Real-Time Reports & Business Insights, Bahrain gym owners gain instant visibility into revenue, collections, renewals, attendance, bookings, and member retention. Dashboards eliminate spreadsheets, highlight opportunities, and enable smarter data-driven decisions.
-
-
-                    </p>
-                </div>
-                <div class="col-lg-6 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Body Analysis" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-             <div class="row align-items-center mb-5 pb-5">
-                <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
-                    <div class="feature-img-wrapper">
-                        <img src="assets-2/2nd-side.png" alt="Diet Plan" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
-                    <h2 class="feature-title">Scalable Boutique & Premium Fitness</h2>
-                    <p class="feature-text mt-4">Scalable platform for boutique and premium fitness clubs in Bahrain, efficiently and securely managing single or multiple locations with secure permissions, standardised workflows, and centralised control, driving confident growth, efficiency, and a premium brand experience.
-
-
-                    </p>
-                </div>
-            </div>
-            <div class="text-center mt-5">
-                        <button class="book-demo-btn" data-bs-target="#ModalTogglesix" data-bs-toggle="modal">
-                            <svg width="100%" height="100%">
-                                <rect width="100%" height="100%" />
-                            </svg>
-                            <span>Book Your Free Demo Today<i class="fa-solid fa-arrow-right text-light px-2"></i></span>
-                        </button>
-                    </div>
-        </div>
-
-        <!-- Blue Banner -->
-        <div class="feature-banner">
-            <div class="sparkles"></div>
-            <div class="container">
-                <h3 class="banner-text text-center m-0">Reception That Never Sleeps, Bahrain-Style!
-
-
-                </h3>
-            </div>
-        </div>
-
-    </section>
-    <section class="stage-section">
-        <div class="container">
-            <div class="stage-section-content text-center mb-5">
-                <h3 class="stage-section-h3">More Growth & Less Grind
-
-                </h3>
-                <p class="stage-section-p mx-auto">From gyms and yoga studios to MMA academies and sports clubs across Bahrain, Easy Gym Software helps you manage clients, schedules, and payments, enabling you to focus on growth.
-
-                </p>
-            </div>
-
-            <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/one.svg" alt="Biometric" class="stage-card-icon">
-                        <h4>Hassle-Free Data Migration & Onboarding</h4>
-                        <p>
-The transition to Easy Gym Software is smooth and effortless. All member data, payments, attendance, and history are securely migrated at no additional cost, with onboarding support ensuring your team is trained and ready from day one, zero downtime, and zero data loss.
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/three.svg" alt="Workout" class="stage-card-icon">
-                        <h4>24/7 WhatsApp Assistant
-</h4>
-                        <p>24/7 WhatsApp Bot serves as your gym’s virtual front desk, instantly handling member enquiries, FAQs, lead capture, and follow-ups, boosting conversions, reducing front-desk workload by 60–70%, and ensuring consistent, reliable member support without extra staff.
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/two.svg" alt="Retention" class="stage-card-icon">
-                        <h4>Lead & Walk-In Accelerator</h4>
-                        <p>The Smart Lead & Walk-In Conversion System captures and tracks every enquiry in real-time. Bahrain gyms can respond quickly, increase conversions, enhance marketing ROI, make a professional first impression by using automated alerts and follow-ups.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/four.svg" alt="Marketing" class="stage-card-icon">
-                        <h4>All-in-One Lead Integration
-</h4>
-                        <p>Unifies leads from websites, Google Ads, and Meta Ads into a single system. Bahrain gyms can track and take action, enhance response times, increase conversions, optimise marketing effectiveness, and maintain transparent, well-organised lead management.
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/five.svg" alt="Front Desk" class="stage-card-icon">
-                        <h4>Custom eForms with E-Sign</h4>
-                        <p>Replace paperwork with custom digital eForms, including waivers and consent forms, with secure e-signatures. Bahrain gyms can integrate forms into websites or reservations, reduce legal risk, enhance professionalism, and deliver a smooth experience.
-
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/six.svg" alt="Always on" class="stage-card-icon">
-                        <h4>Instant Online Memberships  
-</h4>
-                        <p>Allow members to explore plans, register, and purchase memberships online 24/7 without front-desk support. Automated confirmations, billing synchronisation, and instant activation reduce errors and staff workload, unlocking revenue and convenience for Bahrain gyms.
-
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/seven.svg" alt="Support" class="stage-card-icon">
-                        <h4>
-Free Mobile-Friendly Booking Site 
-</h4>
-                        <p>Every Bahrain gym receives a free, fully mobile-optimised website to handle enquiries, registrations, class bookings, and membership purchases. Fast, accessible, and lead-focused, it boosts visibility, captures leads 24/7, saves costs, and increases conversions.
-
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/eight.svg" alt="Engagement" class="stage-card-icon">
-                        <h4>Membership Pause & Auto-Reactivation
-</h4>
-                        <p>Easily manage membership freezes for travel, medical reasons, or seasonal breaks in Bahrain. The system automatically adjusts validity and reactivates memberships, eliminating disputes, enhancing satisfaction, reducing conflicts, and ensuring billing.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/nine.svg" alt="Cold Leads" class="stage-card-icon">
-                        <h4>Renewal & Expiry Alerts
-
-                        </h4>
-                        <p>Automatic notifications alert members and staff before membership expiries, renewals, and pending dues via WhatsApp, text messages, or email. This proactive approach minimises lapses, reduces churn, and ensures revenue without requiring constant staff follow-ups.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/ten.svg" alt="Insights" class="stage-card-icon">
-                        <h4>Trainer Insights & Performance
-</h4>
-                        <p>Monitor trainer attendance, sessions, PT revenue, and productivity. Gym owners can recognise top performers, enforce accountability, and optimise utilisation, enabling Bahrain gyms to boost training revenue while upholding standards.
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/eleven.svg" alt="Retention" class="stage-card-icon">
-                        <h4>PT Package Tracking & Management
-</h4>
-                        <p>Sell, manage, and track PT packages with session limits and validity periods. Automatic session deductions record completed sessions in real time, preventing disputes, ensuring billing, improving trainer accountability, and delivering a smoother experience.
-
-
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/twelve.svg" alt="Operations" class="stage-card-icon">
-                        <h4>POS & Inventory Management
-</h4>
-                        <p>Manage supplements, merchandise, and services with an integrated POS system featuring real-time inventory tracking. Bahraini gym owners can maintain smooth operations and make informed decisions using low-stock alerts, sales reports, and profit insights.
-
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/three.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Loyalty & Referral Management
-</h4>
-                        <p>Boost repeat purchases and word-of-mouth growth with an easy-to-use, fully integrated reward and referral system. Members earn points for purchases and referrals, increasing engagement, loyalty, and value, all managed without manual management.
-
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets/note.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Workout & Diet Plan Assignment
-</h4>
-                        <p>Create and assign personalised workout and diet plans with intuitive drag-and-drop tools. Track progress, body transformations, and adherence in one system, enhancing results, improving retention, and positioning your gym as a results-driven fitness destination.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/thirteen.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Attendance & Inactivity Monitoring
-</h4>
-                        <p>Identify irregular or inactive members early with smart attendance tracking and behavioural insights. Automated triggers and personalised notifications help gyms re-engage members before they drop off, boosting retention and long-term revenue.
-
-
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/two.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Peak Hour & Space Utilisation Insights</h4>
-                        <p>
-Gain clear insights into peak hours, class occupancy, and facility usage patterns. Optimise schedules, staffing, and space planning to reduce congestion, improve efficiency, and enhance the overall member experience, crucial for premium Bahrain gyms.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/fourteen.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Staff Roles & Access Control</h4>
-                        <p>
-Assign specific access rights to owners, managers, trainers, and front-desk staff. This ensures data security, accountability, and smooth delegation, enabling gyms to scale operations, maintain oversight, and protect sensitive member and business information.
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
-                    <div class="stage-section-card">
-                        <img loading="lazy" src="assets-2/fifteen.svg" alt="Operations" class="stage-card-icon">
-                        <h4>Cloud Access On-the-Go</h4>
-                        <p>
-Securely manage your gym operations from any device, anywhere, with transparency. Cloud-based infrastructure also enables Bahraini gym owners to monitor performance, revenue, and operations remotely, providing complete control and peace of mind.
-
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    </div>
+    
+   
+</section>
+  
      <section class="clients-section">
         <div class="client-section-inner">
             <h3 class="client-section-h3">What Our Clients Say About Us</h3>
@@ -904,7 +1221,7 @@ Securely manage your gym operations from any device, anywhere, with transparency
             </div>
         </div>
     </section>
-         <section class="main-footer">
+     <section class="main-footer">
         <div class="spaceleft-right footer-top">
             <div class="container">
                 <div class="row justify-content-between">
@@ -1050,7 +1367,7 @@ Securely manage your gym operations from any device, anywhere, with transparency
         </div>
     </div>
 
-    <div class="modal fade demo-modal-form custom-form-modal" id="ModalTogglesix" tabindex="-1" aria-hidden="true">
+  <div class="modal fade demo-modal-form custom-form-modal" id="ModalTogglesix" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered custom-form-modal-dialog">
             <div class="modal-content register-modal custom-form-modal-content">
 
@@ -1149,7 +1466,68 @@ Securely manage your gym operations from any device, anywhere, with transparency
     <script src="js/shorts-drag-scroll.js"></script>
 
     </footer>
-
+<script>
+// Load YouTube video
+document.addEventListener('DOMContentLoaded', function() {
+    // Extract video ID from URL
+    const videoUrl = 'https://youtu.be/d4UpRbB9Byc?si=U7oYxNuoNPKhpjfD';
+    const videoId = extractVideoId(videoUrl);
+    
+    if (videoId) {
+        loadYouTubeVideo(videoId);
+    }
+    
+    function extractVideoId(url) {
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : null;
+    }
+    
+    function loadYouTubeVideo(videoId) {
+        const container = document.getElementById('youtube-video');
+        
+        // Create iframe for YouTube video
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0&enablejsapi=1`;
+        iframe.title = "Thank You Celebration Video";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.frameBorder = "0";
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+        iframe.style.borderRadius = "15px";
+        
+        container.appendChild(iframe);
+        
+        // Add click to unmute functionality
+        let isMuted = true;
+        iframe.addEventListener('load', function() {
+            // Auto play is handled by YouTube URL parameters
+            // Add hover effect
+            iframe.parentElement.parentElement.addEventListener('mouseenter', function() {
+                document.querySelector('.play-indicator').style.opacity = '0.5';
+            });
+            
+            iframe.parentElement.parentElement.addEventListener('mouseleave', function() {
+                document.querySelector('.play-indicator').style.opacity = '1';
+            });
+            
+            // Click to toggle mute
+            iframe.parentElement.parentElement.addEventListener('click', function() {
+                if (isMuted) {
+                    // Note: YouTube API would be needed for actual mute toggle
+                    // For now, we'll just show visual feedback
+                    document.querySelector('.mute-indicator').textContent = "🔊 Unmuted";
+                    isMuted = false;
+                } else {
+                    document.querySelector('.mute-indicator').textContent = "🔇 Muted";
+                    isMuted = true;
+                }
+            });
+        });
+    }
+});
+</script>
      
 </body>
 
