@@ -306,7 +306,7 @@
                 </div>
                 <div class="col-12 mt-5">
                     <div class="hero-image-wrapper">
-                        <img src="assets-2/2nd-dashboard.png" alt="Dashboard Interface" class="img-fluid">
+                        <img src="assets/2nd-dashboard.png" alt="Dashboard Interface" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -383,7 +383,7 @@ Instant Booking sends WhatsApp, text, and email confirmations, locks slots, auto
                 </div>
                 <div class="col-lg-6 mt-4 mt-lg-0">
                     <div class="feature-img-wrapper">
-                        <img src="assets-2/247_whatsapp_bot.png" alt="Smart Client Database" class="img-fluid">
+                        <img src="assets/247_whatsapp_bot.png" alt="Smart Client Database" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -392,7 +392,7 @@ Instant Booking sends WhatsApp, text, and email confirmations, locks slots, auto
             <div class="row align-items-center mb-5 pb-5">
                 <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
                     <div class="feature-img-wrapper">
-                        <img src="assets-2/Instagram_Booking.png" alt="Billing And Payment" class="img-fluid">
+                        <img src="assets/Instagram_Booking.png" alt="Billing And Payment" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
@@ -435,7 +435,7 @@ Members can reserve trainers, classes, or memberships at any time with a branded
                 </div>
                 <div class="col-lg-6 mt-4 mt-lg-0">
                     <div class="feature-img-wrapper">
-                        <img src="assets-2/From_your_website.png" alt="Workout Plan" class="img-fluid">
+                        <img src="assets/From_your_website.png" alt="Workout Plan" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -444,7 +444,7 @@ Members can reserve trainers, classes, or memberships at any time with a branded
             <div class="row align-items-center mb-5 pb-5">
                 <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
                     <div class="feature-img-wrapper">
-                        <img src="assets-2/Easy_QR_portal.png" alt="Diet Plan" class="img-fluid">
+                        <img src="assets/Easy_QR_portal.png" alt="Diet Plan" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 ps-lg-5">
@@ -471,7 +471,7 @@ Members can reserve trainers, classes, or memberships at any time with a branded
                 </div>
                 <div class="col-lg-6 mt-4 mt-lg-0">
                     <div class="feature-img-wrapper">
-                        <img src="assets-2/From_your_website.png" alt="Body Analysis" class="img-fluid">
+                        <img src="assets/From_your_website.png" alt="Body Analysis" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -816,7 +816,51 @@ Members can reserve trainers, classes, or memberships at any time with a branded
     <script src="js/shorts-drag-scroll.js"></script>
 
     </footer>
+ <div class="custom-tawk-button" onclick="openTawkChat()" id="customTawkBtn">
+        <i class="bi bi-chat-dots-fill"></i>
+    </div>
 
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+
+        // Hide default Tawk button immediately via CSS
+        var style = document.createElement('style');
+        style.innerHTML = '.tawk-min-container { display: none !important; }';
+        document.head.appendChild(style);
+
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5d00e724267b2e57853201f5/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+
+        // Function to open Tawk chat
+        function openTawkChat() {
+            Tawk_API.showWidget();
+            Tawk_API.maximize();
+        }
+
+        // Handle Tawk events
+        Tawk_API.onLoad = function () {
+            Tawk_API.hideWidget();
+        };
+
+        Tawk_API.onChatMaximized = function () {
+            document.getElementById('customTawkBtn').style.display = 'none';
+        };
+
+        Tawk_API.onChatMinimized = function () {
+            Tawk_API.hideWidget();
+            document.getElementById('customTawkBtn').style.display = 'flex';
+        };
+
+        Tawk_API.onChatHidden = function () {
+            document.getElementById('customTawkBtn').style.display = 'flex';
+        };
+    </script>
 </body>
 
 </html>

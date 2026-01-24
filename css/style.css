@@ -581,7 +581,7 @@ header {
 }
 
 .item-content h6 {
-     font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(1rem, 2vw, 1.25rem);
     white-space: nowrap;
     margin-bottom: 10px;
     font-weight: 700;
@@ -1327,6 +1327,7 @@ button:focus:not(:focus-visible) {
     position: relative;
     top: -4px;
 }
+
 /* flags */
 
 .grey-bar-text h6 {
@@ -1937,6 +1938,7 @@ button:focus:not(:focus-visible) {
     font-weight: 700;
     line-height: 64px;
 }
+
 .banner-list {
     display: flex;
     align-items: center;
@@ -2012,6 +2014,7 @@ button:focus:not(:focus-visible) {
     font-weight: bold;
     padding: 0 2px;
 }
+
 .flag-img::before {
     content: '';
     position: absolute;
@@ -2031,9 +2034,15 @@ button:focus:not(:focus-visible) {
 }
 
 @keyframes loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
 }
+
 /* Responsive */
 @media (max-width: 768px) {
 
@@ -2061,7 +2070,8 @@ button:focus:not(:focus-visible) {
         padding: 15px;
         box-sizing: border-box;
     }
-      .banner-list {
+
+    .banner-list {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
@@ -2069,12 +2079,12 @@ button:focus:not(:focus-visible) {
         padding: 4px 0;
         width: 100%;
     }
-    
+
     /* Hide separator lines on mobile */
     .line.desktop-only {
         display: none !important;
     }
-    
+
     /* Adjust flag container size for mobile - FIXED */
     .flag-counter-container {
         height: 24px;
@@ -2085,7 +2095,7 @@ button:focus:not(:focus-visible) {
         align-items: center;
         justify-content: center;
     }
-    
+
     /* Ensure flags display full without cutting */
     .flag-wrapper {
         height: 100%;
@@ -2095,7 +2105,7 @@ button:focus:not(:focus-visible) {
         justify-content: center;
         overflow: visible;
     }
-    
+
     .flag-link {
         display: flex;
         align-items: center;
@@ -2103,7 +2113,7 @@ button:focus:not(:focus-visible) {
         width: 100%;
         height: 100%;
     }
-    
+
     .flag-img {
         position: absolute;
         width: 100%;
@@ -2113,23 +2123,23 @@ button:focus:not(:focus-visible) {
         max-height: 100% !important;
         display: block;
     }
-    
+
     /* Rating text adjustment */
-    .banner-list > li:first-child.line {
+    .banner-list>li:first-child.line {
         width: 100%;
         text-align: center;
         margin-bottom: 4px;
         order: -1;
     }
-    
-    .banner-list > li:first-child.line p {
+
+    .banner-list>li:first-child.line p {
         font-size: 0.9em;
         margin: 0;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    
+
     /* Order flag containers to appear after rating */
     .flag-counter-container {
         order: 0;
@@ -2142,8 +2152,8 @@ button:focus:not(:focus-visible) {
         height: 22px;
         width: 22px;
     }
-    
-    .banner-list > li:first-child.line p {
+
+    .banner-list>li:first-child.line p {
         font-size: 0.85em;
     }
 }
@@ -2154,11 +2164,12 @@ button:focus:not(:focus-visible) {
         height: 20px;
         width: 20px;
     }
-    
+
     .banner-list {
         gap: 6px 0;
     }
 }
+
 @media only screen and (min-width:1480px) {
 
     .container-fluid {
@@ -3807,7 +3818,8 @@ button:focus:not(:focus-visible) {
     height: 4px;
     background: transparent;
     z-index: 9999;
-    overflow: hidden; /* Added to contain the gradient */
+    overflow: hidden;
+    /* Added to contain the gradient */
 }
 
 .scroll-progress-bar {
@@ -3815,15 +3827,74 @@ button:focus:not(:focus-visible) {
     width: 0%;
     transition: width 0.1s ease-out;
     /* Gradient background that will be revealed as width increases */
-    background: linear-gradient(
-        90deg,
-        #348cbe 0%,
-        #3735aa 20%,
-        #25cae7 40%,
-        #555b8f 60%,
-        #118AB2 80%,
-        #1E59FF 100%
-    );
-    background-size: 100% 100%; /* Ensures gradient spans full width */
+    background: linear-gradient(90deg,
+            #348cbe 0%,
+            #3735aa 20%,
+            #25cae7 40%,
+            #555b8f 60%,
+            #118AB2 80%,
+            #1E59FF 100%);
+    background-size: 100% 100%;
+    /* Ensures gradient spans full width */
 }
 
+/* Tawk Custom Button */
+.custom-tawk-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #38ff1e 0%, #129919f6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(30, 89, 255, 0.4);
+    z-index: 999999;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: tawkPulse 2s infinite;
+    text-decoration: none;
+}
+
+.custom-tawk-button:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(30, 89, 255, 0.6);
+}
+
+.custom-tawk-button i {
+    transition: transform 0.3s ease;
+}
+
+.custom-tawk-button:hover i {
+    transform: scale(1.1);
+}
+#tawk-chat-container {
+    display: none !important;
+}
+@keyframes tawkPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(30, 89, 255, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(30, 89, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(30, 89, 255, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-tawk-button {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+}

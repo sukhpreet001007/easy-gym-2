@@ -706,3 +706,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fallback in case image loading check fails
     setTimeout(startRotation, 3000);
 });
+
