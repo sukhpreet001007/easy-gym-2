@@ -231,7 +231,15 @@ header {
     font-weight: 500;
     line-height: 22px;
     border: 0px;
-    background: linear-gradient(180deg, #1E59FF 0%, #123599 100%) !important;
+    /* Updated to match the flow style */
+    background: linear-gradient(90deg,
+            rgba(26, 61, 217, 1) 0%,
+            rgba(33, 0, 166, 1) 25%,
+            rgba(18, 48, 153, 1) 50%,
+            rgba(20, 33, 204, 1) 75%,
+            rgba(26, 61, 217, 1) 100%) !important;
+    background-size: 200% 100% !important;
+    animation: flowGradient 2s linear infinite;
     border-radius: 4px;
     /* Sync with btn-hero */
     color: #ffffff !important;
@@ -242,9 +250,7 @@ header {
     cursor: pointer;
 }
 
-.header-btn:hover {
-    background-color: #FFDD33;
-}
+
 
 .main-footer {
     background-color: #1C1C1E;
@@ -355,7 +361,15 @@ header {
     width: auto;
     height: 50px;
     cursor: pointer;
-    background: linear-gradient(180deg, #1E59FF 0%, #123599 100%);
+    /* Updated gradient for seamless water flow */
+    background: linear-gradient(90deg,
+            rgba(26, 61, 217, 1) 0%,
+            rgba(33, 0, 166, 1) 25%,
+            rgba(18, 48, 153, 1) 50%,
+            rgba(20, 33, 204, 1) 75%,
+            rgba(26, 61, 217, 1) 100%) !important;
+    background-size: 200% 100% !important;
+    animation: flowGradient 3s linear infinite;
     border: none;
     outline: none;
     padding: 10px 30px;
@@ -367,7 +381,22 @@ header {
     letter-spacing: 1px;
     border-radius: 4px;
     text-decoration: none;
+    position: relative;
+    /* Ensure pseudo-elements position usage */
 }
+
+/* Keyframes for the flowing gradient */
+@keyframes flowGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: -200% 50%;
+    }
+}
+
+
 
 /* SVG border that will animate around the button */
 .btn-hero svg,
@@ -393,8 +422,10 @@ header {
     rx: 4px;
     ry: 4px;
     fill: none;
-    stroke: #3437eb;
+    stroke: #ffffff;
     stroke-width: 2px;
+    opacity: 0;
+    /* Hidden by default */
     stroke-dasharray: 100 480;
     stroke-dashoffset: 100;
     transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -407,26 +438,11 @@ header {
 .book-demo-btn:hover svg rect {
     stroke-dashoffset: -480;
     stroke: #ffffff;
+    opacity: 1;
+    /* Visible on hover */
 }
 
-/* Shining effect on hover */
-.btn-hero:hover::before,
-.header-btn:hover::before,
-.btn-book-demo:hover::before,
-.book-demo-btn:hover::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -60%;
-    width: 20%;
-    height: 200%;
-    background: linear-gradient(90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3),
-            transparent);
-    transform: rotate(30deg);
-    animation: shine 1s ease-in-out;
-}
+
 
 /* Text and icon styling */
 .btn-hero span,
@@ -461,15 +477,7 @@ header {
 }
 
 /* Shining animation */
-@keyframes shine {
-    0% {
-        left: -60%;
-    }
 
-    100% {
-        left: 140%;
-    }
-}
 
 /* Click effect */
 .btn-hero:active,
@@ -3836,65 +3844,4 @@ button:focus:not(:focus-visible) {
             #1E59FF 100%);
     background-size: 100% 100%;
     /* Ensures gradient spans full width */
-}
-
-/* Tawk Custom Button */
-.custom-tawk-button {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 65px;
-    height: 65px;
-    background: linear-gradient(135deg, #38ff1e 0%, #129919f6 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white !important;
-    font-size: 30px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(30, 89, 255, 0.4);
-    z-index: 999999;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: tawkPulse 2s infinite;
-    text-decoration: none;
-}
-
-.custom-tawk-button:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 25px rgba(30, 89, 255, 0.6);
-}
-
-.custom-tawk-button i {
-    transition: transform 0.3s ease;
-}
-
-.custom-tawk-button:hover i {
-    transform: scale(1.1);
-}
-#tawk-chat-container {
-    display: none !important;
-}
-@keyframes tawkPulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(30, 89, 255, 0.7);
-    }
-
-    70% {
-        box-shadow: 0 0 0 15px rgba(30, 89, 255, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(30, 89, 255, 0);
-    }
-}
-
-@media (max-width: 768px) {
-    .custom-tawk-button {
-        width: 55px;
-        height: 55px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 24px;
-    }
 }

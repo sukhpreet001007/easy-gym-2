@@ -375,7 +375,9 @@
 /* Removed duplicate #booking-image rule as it's now handled in the shared block */
 
 @media (max-width: 991px) {
-    #main-dropdown-image, #booking-image {
+
+    #main-dropdown-image,
+    #booking-image {
         width: 100% !important;
         height: auto !important;
     }
