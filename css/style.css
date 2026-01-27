@@ -253,7 +253,34 @@ header {
 
 
 .main-footer {
-    background-color: #1C1C1E;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated background effect */
+.main-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.03) 50%,
+            transparent 100%);
+    animation: shimmer 15s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
 
 .footer-links h6 {
@@ -261,6 +288,43 @@ header {
     color: #ffffff;
     line-height: 27px;
     margin-bottom: 30px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInDown 0.6s ease-out;
+}
+
+/* Underline animation for headings */
+.footer-links h6::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.4s ease;
+    border-radius: 2px;
+}
+
+.footer-links:hover h6::after {
+    width: 60%;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .footer-links ul {
@@ -268,16 +332,113 @@ header {
     padding: 0px;
 }
 
-.footer-links ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    line-height: 22px;
-}
-
 .footer-links ul li {
     margin-bottom: 20px;
     list-style: none;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Staggered animation for list items */
+.footer-links ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.footer-links ul li:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.footer-links ul li:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.footer-links ul li:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.footer-links ul li:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.footer-links ul li:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.footer-links ul li:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.footer-links ul li:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+.footer-links ul li:nth-child(9) {
+    animation-delay: 0.5s;
+}
+
+.footer-links ul li:nth-child(10) {
+    animation-delay: 0.55s;
+}
+
+.footer-links ul li:nth-child(11) {
+    animation-delay: 0.6s;
+}
+
+.footer-links ul li:nth-child(12) {
+    animation-delay: 0.65s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #b8c1ec;
+    font-size: 18px;
+    line-height: 22px;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-left: 0;
+}
+
+/* Hover effect with slide-in arrow */
+.footer-links ul li a::before {
+    content: '→';
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    color: #667eea;
+}
+
+.footer-links ul li a:hover::before {
+    left: -15px;
+    opacity: 1;
+}
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+    text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+/* Special styling for "Book a demo" link */
+.footer-links ul li a b {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
 }
 
 .main-footer {
@@ -287,28 +448,72 @@ header {
 .footer-social ul {
     margin: 0px;
     padding: 0px;
+    display: flex;
+    gap: 10px;
 }
 
 .footer-social ul li {
     display: inline-block;
-    margin: 0px 15px 0px 0px;
+    margin: 0px;
 }
 
 .footer-social ul li a {
     color: #ffffff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated gradient background on hover */
+.footer-social ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.footer-social ul li a:hover::before {
+    opacity: 1;
+}
+
+.footer-social ul li a:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.footer-social ul li a i {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-social ul li a:hover i {
+    transform: rotate(360deg);
 }
 
 .footer-bottom {
-    border-top: 1px solid #D8DAE2;
+    border-top: 1px solid rgba(216, 218, 226, 0.2);
     padding-top: 20px;
+    position: relative;
 }
 
 .footer-top {
     padding-bottom: 100px;
-}
-
-.footer-social ul li a i {
-    font-size: 30px;
 }
 
 .footer-social {
@@ -317,8 +522,14 @@ header {
 
 .copyright {
     font-size: 18px;
-    color: #ffffff;
+    color: #b8c1ec;
     margin: 0px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.copyright:hover {
+    color: #ffffff;
 }
 
 .footer-links.footer-bottom-links ul li {
@@ -328,10 +539,92 @@ header {
 
 .footer-links.footer-bottom-links ul li a {
     font-size: 16px;
+    color: #b8c1ec;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+/* Animated underline for bottom links */
+.footer-links.footer-bottom-links ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.footer-links.footer-bottom-links ul li a:hover::after {
+    width: 100%;
+}
+
+.footer-links.footer-bottom-links ul li a:hover {
+    color: #ffffff;
 }
 
 .footer-links.footer-bottom-links {
     text-align: center;
+}
+
+/* Logo animation */
+.footer-bottom-logo img {
+    transition: all 0.4s ease;
+    filter: brightness(0.9);
+}
+
+.footer-bottom-logo img:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+/* Mobile: Reorder footer sections and apply layouts */
+@media (max-width: 767px) {
+
+    /* Make the row use flexbox with wrapping */
+    .footer-top .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* Reorder: Countries first (order: 1) */
+    .footer-top .row .col-md:nth-child(2) {
+        order: 1;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Countries in 2 columns (6-6) on mobile */
+    .footer-top .row .col-md:nth-child(2) .footer-links ul {
+        column-count: 2;
+        column-gap: 20px;
+    }
+
+    /* Solutions second (order: 2) - left side */
+    .footer-top .row .col-md:nth-child(1) {
+        order: 2;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Quick Links third (order: 3) - right side */
+    .footer-top .row .col-md:nth-child(3) {
+        order: 3;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Desktop: Display countries in 2 columns (6-6) */
+@media (min-width: 768px) {
+
+    /* Target only the second column in footer which contains countries */
+    .footer-top .row .col-md:nth-child(2) .footer-links ul {
+        column-count: 2;
+        column-gap: 30px;
+    }
 }
 
 .start-your-free-form {
