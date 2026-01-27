@@ -811,17 +811,56 @@ POS enables online payments, boosting in-house sales & retail. Effortless checko
     <script src="js/shorts-drag-scroll.js"></script>
 
     </footer>
-     <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5d00e724267b2e57853201f5/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+   <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5d00e724267b2e57853201f5/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+
+        Tawk_API = Tawk_API || {};
+        Tawk_API.onLoad = function () {
+            function toggleTawkVisibility() {
+                var isMobile = window.innerWidth <= 767;
+
+                var tawkWidget = document.getElementById('tawk-bubble-container');
+                var tawkMinContainer = document.querySelector('.tawk-min-container');
+                var tawkContainers = document.querySelectorAll('[id^="tawk"]');
+
+                var displayValue = isMobile ? 'none' : 'block';
+
+                if (tawkWidget) {
+                    tawkWidget.style.display = displayValue;
+                }
+
+                if (tawkMinContainer) {
+                    tawkMinContainer.style.display = displayValue;
+                }
+
+                tawkContainers.forEach(function (container) {
+                    if (container.style) {
+                        container.style.display = displayValue;
+                    }
+                });
+
+                if (isMobile && typeof Tawk_API.hideWidget === 'function') {
+                    Tawk_API.hideWidget();
+                } else if (!isMobile && typeof Tawk_API.showWidget === 'function') {
+                    Tawk_API.showWidget();
+                }
+            }
+
+            setTimeout(toggleTawkVisibility, 500);
+
+            window.addEventListener('resize', toggleTawkVisibility);
+
+            setInterval(toggleTawkVisibility, 1000);
+        };
+    </script>
 </body>
 
 </html>

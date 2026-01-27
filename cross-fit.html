@@ -284,7 +284,7 @@
                         <h5 class="text-light">Best Easy Gym Software for CrossFit </h5>
                         <h1 class="hero-h1 animate-title">Elevate Your CrossFit Studio <br> with Easy Gym Software 
 </h1>
-                        <p class="hero-p animate-description">Integrated CrossFit software simplifies operations, automates scheduling, and manages memberships seamlessly, enhancing training experiences, increasing engagement,<br> saving time, and fueling sustainable gym growth worldwide.
+                        <p class="hero-p animate-description">Integrated CrossFit software simplifies operations, automates scheduling, and manages memberships seamlessly, enhancing training experiences, increasing engagement, saving time, and fueling sustainable gym growth worldwide.
 </p>
 
                         <button href="#" class="btn-hero animate-button" data-bs-target="#ModalTogglesix" data-bs-toggle="modal"> 
@@ -1056,16 +1056,55 @@ Automated emails, texts, and WhatsApp messages keep members engaged with renewal
     </footer>
 
 
-   <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5d00e724267b2e57853201f5/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5d00e724267b2e57853201f5/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+
+        Tawk_API = Tawk_API || {};
+        Tawk_API.onLoad = function () {
+            function toggleTawkVisibility() {
+                var isMobile = window.innerWidth <= 767;
+
+                var tawkWidget = document.getElementById('tawk-bubble-container');
+                var tawkMinContainer = document.querySelector('.tawk-min-container');
+                var tawkContainers = document.querySelectorAll('[id^="tawk"]');
+
+                var displayValue = isMobile ? 'none' : 'block';
+
+                if (tawkWidget) {
+                    tawkWidget.style.display = displayValue;
+                }
+
+                if (tawkMinContainer) {
+                    tawkMinContainer.style.display = displayValue;
+                }
+
+                tawkContainers.forEach(function (container) {
+                    if (container.style) {
+                        container.style.display = displayValue;
+                    }
+                });
+
+                if (isMobile && typeof Tawk_API.hideWidget === 'function') {
+                    Tawk_API.hideWidget();
+                } else if (!isMobile && typeof Tawk_API.showWidget === 'function') {
+                    Tawk_API.showWidget();
+                }
+            }
+
+            setTimeout(toggleTawkVisibility, 500);
+
+            window.addEventListener('resize', toggleTawkVisibility);
+
+            setInterval(toggleTawkVisibility, 1000);
+        };
+    </script>
 </body>
 </html>

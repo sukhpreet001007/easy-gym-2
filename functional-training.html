@@ -281,11 +281,8 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <h5 class="text-light">Best Easy Gym Software for Fitness Studio</h5>
-                        <h1 class="hero-h1 animate-title">Unlock Growth with Fitness <br>  Studio Management
-</h1>
-                        <p class="hero-p animate-description">Effortlessly manage client billing, class bookings, and data with one powerful<br> fitness studio interface. Optimize cash flow, streamline schedules,<br> and boost studio performance and operational efficiency.
-
-</p>
+                        <h1 class="hero-h1 animate-title">Unlock Growth with Fitness <br>  Studio Management</h1>
+                        <p class="hero-p animate-description">Effortlessly manage client billing, class bookings, and data with one powerful fitness studio interface. Optimize cash flow, streamline schedules, and boost studio performance and operational efficiency.</p>
 
                         <button href="#" class="btn-hero animate-button" data-bs-target="#ModalTogglesix" data-bs-toggle="modal">
                             <svg width="100%" height="100%">
@@ -1057,15 +1054,54 @@ Personalized fitness and yoga plans allow trainers to assign customized routines
     </footer>
 
       <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5d00e724267b2e57853201f5/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5d00e724267b2e57853201f5/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+
+        Tawk_API = Tawk_API || {};
+        Tawk_API.onLoad = function () {
+            function toggleTawkVisibility() {
+                var isMobile = window.innerWidth <= 767;
+
+                var tawkWidget = document.getElementById('tawk-bubble-container');
+                var tawkMinContainer = document.querySelector('.tawk-min-container');
+                var tawkContainers = document.querySelectorAll('[id^="tawk"]');
+
+                var displayValue = isMobile ? 'none' : 'block';
+
+                if (tawkWidget) {
+                    tawkWidget.style.display = displayValue;
+                }
+
+                if (tawkMinContainer) {
+                    tawkMinContainer.style.display = displayValue;
+                }
+
+                tawkContainers.forEach(function (container) {
+                    if (container.style) {
+                        container.style.display = displayValue;
+                    }
+                });
+
+                if (isMobile && typeof Tawk_API.hideWidget === 'function') {
+                    Tawk_API.hideWidget();
+                } else if (!isMobile && typeof Tawk_API.showWidget === 'function') {
+                    Tawk_API.showWidget();
+                }
+            }
+
+            setTimeout(toggleTawkVisibility, 500);
+
+            window.addEventListener('resize', toggleTawkVisibility);
+
+            setInterval(toggleTawkVisibility, 1000);
+        };
+    </script>
 </body>
 </html>

@@ -285,7 +285,7 @@
                         <h1 class="hero-h1 animate-title">All-in-One Yoga Studio <br>Solution for Management <br> &
                             Billing
                         </h1>
-                        <p class="hero-p animate-description">Transform your studio with software that automates payments, class scheduling,<br> and memberships, saving time, reducing admin, boosting efficiency, cutting<br> costs, and streamlining operations with a complete integrated solution.
+                        <p class="hero-p animate-description">Transform your studio with software that automates payments, class scheduling, and memberships, saving time, reducing admin, boosting efficiency, cutting costs, and streamlining operations with a complete integrated solution.
                         </p>
 
                         <button href="#" class="btn-hero animate-button" data-bs-target="#ModalTogglesix"
@@ -1057,7 +1057,7 @@ Access real-time insights on attendance, revenue, renewals, class performance, a
 
     </footer>
 
-    <script type="text/javascript">
+      <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
             var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
@@ -1067,6 +1067,45 @@ Access real-time insights on attendance, revenue, renewals, class performance, a
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
+
+        Tawk_API = Tawk_API || {};
+        Tawk_API.onLoad = function () {
+            function toggleTawkVisibility() {
+                var isMobile = window.innerWidth <= 767;
+
+                var tawkWidget = document.getElementById('tawk-bubble-container');
+                var tawkMinContainer = document.querySelector('.tawk-min-container');
+                var tawkContainers = document.querySelectorAll('[id^="tawk"]');
+
+                var displayValue = isMobile ? 'none' : 'block';
+
+                if (tawkWidget) {
+                    tawkWidget.style.display = displayValue;
+                }
+
+                if (tawkMinContainer) {
+                    tawkMinContainer.style.display = displayValue;
+                }
+
+                tawkContainers.forEach(function (container) {
+                    if (container.style) {
+                        container.style.display = displayValue;
+                    }
+                });
+
+                if (isMobile && typeof Tawk_API.hideWidget === 'function') {
+                    Tawk_API.hideWidget();
+                } else if (!isMobile && typeof Tawk_API.showWidget === 'function') {
+                    Tawk_API.showWidget();
+                }
+            }
+
+            setTimeout(toggleTawkVisibility, 500);
+
+            window.addEventListener('resize', toggleTawkVisibility);
+
+            setInterval(toggleTawkVisibility, 1000);
+        };
     </script>
 </body>
 
