@@ -112,7 +112,7 @@
 }
 
 .contact-us-submit-btn {
-    background: linear-gradient(180deg, #1E59FF 0%, #123599 100%) !important;
+   background: linear-gradient(90deg, rgba(26, 61, 217, 1) 0%, rgba(33, 0, 166, 1) 25%, rgba(18, 48, 153, 1) 50%, rgba(20, 33, 204, 1) 75%, rgba(26, 61, 217, 1) 100%) !important;
     color: #ffffff;
     border: none;
     padding: 1.2rem 2.5rem;
