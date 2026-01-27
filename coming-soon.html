@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Easy Gym</title>
-     <link rel="icon" type="image/png" href="assets/Fav-Icon.png">
-     <meta property="og:image" content="https://geteasygym2.netlify.app/assets/Thumbnail.jpeg">
+    <link rel="icon" type="image/png" href="assets/Fav-Icon.png">
+    <meta property="og:image" content="https://geteasygym2.netlify.app/assets/Thumbnail.jpeg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -797,9 +797,116 @@
                 font-size: 1.1rem;
             }
 
+            /* Scale down the success checkmark for mobile */
+            .success-checkmark {
+                width: 80px;
+                height: 80px;
+                margin: 15px auto 20px;
+            }
+
+            .check-icon {
+                width: 60px;
+                height: 60px;
+                border: 3px solid #4CAF50;
+            }
+
+            .check-icon::before {
+                width: 22px;
+                height: 75px;
+            }
+
+            .check-icon::after {
+                left: 22px;
+                width: 45px;
+                height: 75px;
+            }
+
+            .line-tip {
+                top: 34px;
+                left: 10px;
+                width: 19px;
+                height: 4px;
+            }
+
+            .line-long {
+                top: 28px;
+                right: 6px;
+                width: 35px;
+                height: 4px;
+            }
+
             .icon-circle {
-                width: 100px;
-                height: 100px;
+                top: -3px;
+                left: -3px;
+                width: 60px;
+                height: 60px;
+                border: 3px solid rgba(76, 175, 80, 0.3);
+            }
+
+            .icon-fix {
+                top: 6px;
+                left: 19px;
+                width: 4px;
+                height: 64px;
+            }
+
+            /* Update animation keyframes for mobile */
+            @keyframes icon-line-tip {
+                0% {
+                    width: 0;
+                    left: 1px;
+                    top: 14px;
+                }
+
+                54% {
+                    width: 0;
+                    left: 1px;
+                    top: 14px;
+                }
+
+                70% {
+                    width: 38px;
+                    left: -6px;
+                    top: 28px;
+                }
+
+                84% {
+                    width: 13px;
+                    left: 16px;
+                    top: 36px;
+                }
+
+                100% {
+                    width: 19px;
+                    left: 10px;
+                    top: 34px;
+                }
+            }
+
+            @keyframes icon-line-long {
+                0% {
+                    width: 0;
+                    right: 34px;
+                    top: 40px;
+                }
+
+                65% {
+                    width: 0;
+                    right: 34px;
+                    top: 40px;
+                }
+
+                84% {
+                    width: 41px;
+                    right: 0px;
+                    top: 26px;
+                }
+
+                100% {
+                    width: 35px;
+                    right: 6px;
+                    top: 28px;
+                }
             }
 
             .thank-you-icon {
@@ -1065,7 +1172,7 @@
         <div class="thank-you-container">
             <!-- Main Content -->
             <div class="thank-you-content">
-               
+
                 <div class="success-checkmark">
                     <div class="check-icon">
                         <span class="icon-line line-tip"></span>
@@ -1081,7 +1188,7 @@
                 </h1>
 
                 <p class="thank-you-message">
-                  We’re crafting an amazing experience just for you. Stay tuned!
+                    We’re crafting an amazing experience just for you. Stay tuned!
 
 
                 </p>
@@ -1706,7 +1813,7 @@ Securely manage your gym operations from any device, anywhere, with transparency
             </div>
         </div>
     </section>
-        <section class="main-footer">
+    <section class="main-footer">
         <div class="spaceleft-right footer-top">
             <div class="container">
                 <div class="row justify-content-between">
@@ -1759,7 +1866,7 @@ Securely manage your gym operations from any device, anywhere, with transparency
                             <ul>
                                 <li><a href="#">Sitemap</a></li>
                                 <li><a href="contact-us.html">Contact Us</a></li>
-                               
+
                                 <!-- <li><a href="#">Career</a></li> -->
                                 <li><a href="" data-bs-target="#ModalTogglesix" data-bs-toggle="modal"><b>Book a
                                             demo</b> <i class="bi bi-arrow-right"></i></a></li>
@@ -1944,7 +2051,7 @@ Securely manage your gym operations from any device, anywhere, with transparency
 
     </footer>
 
-  <script type="text/javascript">
+    <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
             var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
