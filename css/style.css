@@ -4138,3 +4138,43 @@ button:focus:not(:focus-visible) {
     background-size: 100% 100%;
     /* Ensures gradient spans full width */
 }
+
+/* Phone Input Group with Country Code */
+.phone-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.country-code-select {
+    width: 90px !important;
+    border: 2px solid #e0e6ff !important;
+    border-radius: 12px !important;
+    padding: 0 10px !important;
+    font-size: 1rem !important;
+    background: #f8faff !important;
+    height: 56px !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.country-code-select:focus {
+    outline: none !important;
+    border-color: #0066ff !important;
+    background: white !important;
+    box-shadow: 0 8px 20px rgba(0, 102, 255, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+.phone-input-group .custom-form-input {
+    flex: 1;
+}
+
+/* Fix focus line for phone input group */
+.custom-form-group:focus-within .input-focus-line {
+    width: 100% !important;
+}
+
+#ModalTogglesix.custom-form-modal .custom-form-group:hover .country-code-select {
+    border-color: #b3d1ff !important;
+    background: white !important;
+}
