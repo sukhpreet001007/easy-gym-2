@@ -615,6 +615,10 @@ header {
         flex: 0 0 50%;
         max-width: 50%;
     }
+    .advantage-right-content .adva{
+        font-size: 35px !important;
+        
+    }
 }
 
 /* Desktop: Display countries in 2 columns (6-6) */

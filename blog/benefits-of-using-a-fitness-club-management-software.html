@@ -286,295 +286,530 @@
         </div>
     </header>
 
-    <!-- Blog Header (Moved Above Sticky Row) -->
-    <header class="blog-single-header pt-5">
-        <div class="blog-single-meta">
-            <span class="blog-single-category">Fitness Software</span>
-            <span class="blog-single-date"><i class="far fa-calendar"></i> January 15, 2024</span>
-            <span class="blog-single-readtime"><i class="far fa-clock"></i> 8 min read</span>
-        </div>
-        <h1 class="blog-single-title">Benefits of using a fitness club management software</h1>
-    </header>
+    <div class="blog-split-view">
+        <!-- Left Side: Sticky Vertical Shorts -->
+        <aside class="blog-sidebar-left">
+            <div class="vertical-shorts-wrap">
+                <div class="blog-sticky-item shorts">
+                    <iframe src="https://www.youtube.com/embed/FGwdRWTw5xw"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="blog-sticky-item shorts">
+                    <iframe src="https://www.youtube.com/embed/aSGTnSvPSYg"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </aside>
 
-    <!-- Sticky Media Row (Locked to Top) -->
-    <div class="blog-sticky-media-wrap" id="stickyMediaWrap">
-        <div class="blog-sticky-media-row">
-            <!-- Left Shorts Video (Desktop Only) -->
-            <div class="blog-sticky-item shorts desktop-only">
-                <iframe src="https://www.youtube.com/embed/FGwdRWTw5xw"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+        <!-- Right Side: Content -->
+        <div class="blog-content-right">
+            <!-- Blog Header -->
+            <header class="blog-single-header pt-5">
+                <div class="blog-single-meta">
+                    <span class="blog-single-category">Fitness Software</span>
+                    <span class="blog-single-date"><i class="far fa-calendar"></i> January 15, 2024</span>
+                    <span class="blog-single-readtime"><i class="far fa-clock"></i> 8 min read</span>
+                </div>
+                <h1 class="blog-single-title">Benefits of using a fitness club management software</h1>
+            </header>
+
+            <!-- Sticky Image Box (Shrinks on Scroll) -->
+            <div class="sticky-image-box" id="stickyImageBox">
+                <div class="blog-sticky-item center-img">
+                    <img src="../assets/blog-1.jpeg" alt="Fitness Club Management">
+                </div>
             </div>
 
-            <!-- Main Blog Image -->
-            <div class="blog-sticky-item center-img">
-                <img src="../assets/blog-1.jpeg" alt="Fitness Club Management">
-            </div>
-
-            <!-- Right Shorts Video (Desktop Only) -->
-            <div class="blog-sticky-item shorts desktop-only">
-                <iframe src="https://www.youtube.com/embed/aSGTnSvPSYg"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-
-            <!-- Mobile Shorts Carousel -->
-            <div class="mobile-shorts-section">
-                <div class="blog-shorts-carousel owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="blog-sticky-item shorts">
-                            <iframe src="https://www.youtube.com/embed/FGwdRWTw5xw"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
+            <!-- Sticky Media Row (Mobile/Tablet View) -->
+            <div class="blog-sticky-media-wrap desktop-layout-off" id="stickyMediaWrap">
+                <div class="blog-sticky-media-row">
+                    <!-- Tablet Portrait Layout (768px - 991px) -->
+                    <div class="tablet-portrait-layout">
+                        <div class="blog-sticky-item center-img">
+                            <img src="../assets/blog-1.jpeg" alt="Fitness Club Management">
+                        </div>
+                        <div class="tablet-shorts-row">
+                            <div class="blog-sticky-item shorts">
+                                <iframe src="https://www.youtube.com/embed/FGwdRWTw5xw"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div class="blog-sticky-item shorts">
+                                <iframe src="https://www.youtube.com/embed/aSGTnSvPSYg"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="blog-sticky-item shorts">
-                            <iframe src="https://www.youtube.com/embed/aSGTnSvPSYg"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
+
+                    <!-- Mobile Layout (<= 768px) -->
+                    <div class="mobile-layout">
+                        <div class="blog-sticky-item center-img">
+                            <img src="../assets/blog-1.jpeg" alt="Fitness Club Management">
+                        </div>
+                        <div class="mobile-shorts-section">
+                            <div class="blog-shorts-carousel owl-carousel owl-theme">
+                                <div class="item">
+                                    <div class="blog-sticky-item shorts">
+                                        <iframe src="https://www.youtube.com/embed/FGwdRWTw5xw"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="blog-sticky-item shorts">
+                                        <iframe src="https://www.youtube.com/embed/aSGTnSvPSYg"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <main class="blog-single-main-content">
+
+                <!-- Blog Content -->
+                <article class="blog-single-content">
+                    <!-- First video below the sticky row -->
+                    <div class="below-video-container">
+                        <iframe src="https://www.youtube.com/embed/FGwdRWTw5xw"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="blog-single-intro">
+                        <p class="blog-single-lead">The people are becoming aware of their diet, health, and lifestyle,
+                            as they
+                            know how crucial it is to attain and maintain fitness.</p>
+
+                        <p>As the number of fitness freaks is going on, the count of fitness clubs is rising too.
+                            Although the
+                            main motive of all these clubs is the same- to help people uplift their physical and mental
+                            health,
+                            and stay fit. But their means to achieve this goal may vary slightly or significantly.</p>
+
+                        <p>As the owner of such a fitness club, you have to be very cautious about each of the
+                            activities
+                            happening on your premises. The multiple competitive clubs are already there to capture your
+                            market
+                            share and members with just one single wrong step.</p>
+                    </div>
+
+                    <!-- SWOT Section -->
+                    <section class="blog-single-section">
+                        <h2 class="blog-single-section-title">The SWOT Framework for Fitness Clubs</h2>
+                        <p>Well, not only is preventing the possible threats enough, but embarking on fruitful
+                            opportunities is
+                            equally necessary. As per the SWOT measure, every organization even including fitness clubs
+                            should
+                            be focused on 4 aspects:</p>
+
+                        <div class="blog-single-features-grid">
+                            <div class="blog-single-feature">
+                                <div class="blog-single-feature-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <h3>1. Strength</h3>
+                                <p>What are you best at? Identify your core competencies that give you competitive
+                                    advantage in
+                                    the fitness industry.</p>
+                            </div>
+
+                            <div class="blog-single-feature">
+                                <div class="blog-single-feature-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <h3>2. Weakness</h3>
+                                <p>What do you lack at? Recognize areas that need improvement to stay competitive in the
+                                    market.
+                                </p>
+                            </div>
+
+                            <div class="blog-single-feature">
+                                <div class="blog-single-feature-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <h3>3. Opportunities</h3>
+                                <p>Look for possible chances to grow and earn. Identify market gaps and expansion
+                                    possibilities.
+                                </p>
+                            </div>
+
+                            <div class="blog-single-feature">
+                                <div class="blog-single-feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3>4. Threats</h3>
+                                <p>Prevent from possible mishappenings. Stay alert about competition and market changes.
+                                </p>
+                            </div>
+                        </div>
+
+                        <p>Taking all these 4 major aspects into consideration, Fitness Club Management Software is in
+                            huge
+                            demand these days. Beyond confining these four aspects, it also contains multiple such
+                            features,
+                            through which the owners and even members (both existing and prospective) can be benefited.
+                        </p>
+                    </section>
+
+                    <!-- Benefits Section -->
+                    <section class="blog-single-section">
+                        <h2 class="blog-single-section-title">Benefits of Fitness Club Management Software</h2>
+                        <p class="blog-single-section-intro">Here's a comprehensive overview of how management software
+                            can
+                            transform your fitness club operations:</p>
+
+                        <!-- Benefit 1 -->
+                        <div class="blog-single-benefit">
+                            <div class="blog-single-benefit-header">
+                                <span class="blog-single-benefit-number">1</span>
+                                <h3>Don't bother about membership management anymore</h3>
+                            </div>
+                            <p>The incorporation of the software helps to simplify your membership process. Whether it
+                                is the
+                                renewal of existing people's memberships, admission of a new member, providing certain
+                                discounts, etc, everything can be done smoothly through the incorporation of the
+                                software into
+                                fitness clubs.</p>
+                        </div>
+
+                        <!-- Benefit 2 -->
+                        <div class="blog-single-benefit">
+                            <div class="blog-single-benefit-header">
+                                <span class="blog-single-benefit-number">2</span>
+                                <h3>Easy appointment bookings, and scheduling</h3>
+                            </div>
+                            <p>The software also allows you, and your members with appointment bookings and management a
+                                lot.
+                                Within just a few clicks your clients can book their appointments, and even cancel, or
+                                reschedule them every time.</p>
+                            <p>This facility will one side help your clients with enhanced peace, and control over
+                                appointments.
+                                On the other hand, it will also help to reduce your burden of managing these
+                                appointments.</p>
+                        </div>
+
+                        <!-- Benefit 3 -->
+                        <div class="blog-single-benefit">
+                            <div class="blog-single-benefit-header">
+                                <span class="blog-single-benefit-number">3</span>
+                                <h3>No unnecessary exhaustion of inventory management</h3>
+                            </div>
+                            <p>Different tools, equipment, and inventory are needed in different types of clubs, such as
+                                dumbbells, treadmills, weights, cable machines, ropes, etc, and in basketballs,
+                                footballs,
+                                tennis, bats, rackets, etc in athletic clubs, and so on.</p>
+                            <p>However, if managed by a person it can be an extremely difficult task, where despite
+                                proper
+                                attention and care, the chances of errors are still there.</p>
+                            <p>Helping out with this, the software has a wonderful ability to properly manage all the
+                                inventory
+                                where automatic reminders are sent whenever the stock, or inventory reaches the refill
+                                or
+                                emergency level.</p>
+                        </div>
+
+                        <!-- Benefit 4 -->
+                        <div class="blog-single-benefit">
+                            <div class="blog-single-benefit-header">
+                                <span class="blog-single-benefit-number">4</span>
+                                <h3>Get the monthly reports to base reporting, and evaluation</h3>
+                            </div>
+                            <p>Another benefit of using fitness club management software is that you can also avail of
+                                monthly
+                                reports of the club's performance. It will help you to get a clear idea of how your
+                                clubs are
+                                performing, the position of your club in the entire industry, how the staff in your
+                                clubs are
+                                doing, etc.</p>
+                            <p>Through these performance reports, you can control the activities of your fitness clubs
+                                more
+                                easily, and conveniently. Further, it will also help to ensure whether you planned, and
+                                dreamed
+                                have actually happened, or not. If not, then take all corrective measures in advance.
+                            </p>
+                        </div>
+
+                        <!-- Benefit 5 -->
+                        <div class="blog-single-benefit">
+                            <div class="blog-single-benefit-header">
+                                <span class="blog-single-benefit-number">5</span>
+                                <h3>Stay connected with your members through routine SMS, and Email</h3>
+                            </div>
+                            <p>Lastly, there also exist features through which you can send special messages to your
+                                members. A
+                                brief attractive message can be either emailed or messaged on special events such as
+                                birthdays,
+                                anniversaries, New Year, festivals, etc.</p>
+                            <p>It will first keep you connected with your members, and secondly, you can even promote
+                                your
+                                latest deals, and packages through these messages. It will help your members to know
+                                what's new
+                                happening in your clubs.</p>
+                        </div>
+                    </section>
+
+                    <!-- Why Choose Section -->
+                    <section class="blog-single-section blog-single-highlight">
+                        <h2 class="blog-single-section-title">Why Choose Easy Gym Software?</h2>
+                        <p>There are multiple software available in the market, but still, Easy Gym Software should be
+                            your
+                            final destination. As it contains multiple such features and facilities that you will find
+                            nowhere
+                            else. It is best mainly due to the following reasons:</p>
+
+                        <div class="blog-single-reasons">
+                            <div class="blog-single-reason">
+                                <h4><i class="fas fa-check-circle"></i> Can fit all types of clubs:</h4>
+                                <p>No matter whether you are running a gym, fitness studio, yoga center, dance academy,
+                                    cross-fit camp, or Zumba classes, and looking for a system for effortless
+                                    management, this
+                                    software is just the perfect match.</p>
+                            </div>
+
+                            <div class="blog-single-reason">
+                                <h4><i class="fas fa-star"></i> Review integration:</h4>
+                                <p>It is the only software in the market that enables you to showcase your Facebook and
+                                    Google
+                                    Reviews on a single page. It will help your future members know how satisfied your
+                                    existing
+                                    members are with your club's services.</p>
+                            </div>
+
+                            <div class="blog-single-reason">
+                                <h4><i class="fas fa-images"></i> Picture showcase:</h4>
+                                <p>Using the Easy Gym Software will also help you to showcase your club's information
+                                    visualization. You can upload images of the equipment, trainers, infrastructure,
+                                    happy
+                                    members' responses, event activities, etc.</p>
+                            </div>
+
+                            <div class="blog-single-reason">
+                                <h4><i class="fas fa-qrcode"></i> QR standee:</h4>
+                                <p>That's yet another perk if you opt for this wonderful software. Through this QR
+                                    standee,
+                                    anyone with just a single scan from their smartphone can have all the information
+                                    about your
+                                    fitness club, or centre.</p>
+                            </div>
+
+                            <div class="blog-single-reason">
+                                <h4><i class="fab fa-whatsapp"></i> WhatsApp linking:</h4>
+                                <p>You can even link your WhatsApp with this software. One can create, customize, and
+                                    even send
+                                    the receipts to the members through WhatsApp.</p>
+                            </div>
+
+                            <div class="blog-single-reason">
+                                <h4><i class="fas fa-wallet"></i> Budget-friendly:</h4>
+                                <p>Last but not least, the software is also budget-friendly. Although it provides
+                                    several
+                                    wonderful and unique facilities and features but doesn't add huge pressure on your
+                                    financial
+                                    budget. It is quite cost-friendly if we compare it with other software used for
+                                    fitness club
+                                    management.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Conclusion -->
+                    <section class="blog-single-section">
+                        <h2 class="blog-single-section-title">Takeaway</h2>
+                        <div class="blog-single-conclusion">
+                            <p>Doubtlessly, running a fitness club is extremely difficult as your one decision or
+                                activity will
+                                have a direct and huge effect on the health and fitness of multiple individuals.</p>
+
+                            <p>We are sure that you are doing your level best to run and grow your fitness club, but the
+                                choice
+                                of effective club management software can uplift your level to a great extent.</p>
+
+                            <div class="blog-single-final-note">
+                                <p><strong>Easy Fitness Club Management Software</strong> can be your perfect partner in
+                                    this
+                                    journey to improve the fitness clubs as well as the health of countless folks,
+                                    followed by
+                                    wonderful unique features-cum-benefits.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Share Section -->
+                    <div class="blog-single-share">
+                        <span class="blog-single-share-label">Share this article:</span>
+                        <div class="blog-single-share-icons">
+                            <a href="#" class="blog-single-share-icon"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Back to Blogs -->
+                    <div class="blog-single-back">
+                        <a href="../blog.html" class="blog-single-back-btn">
+                            <i class="fas fa-arrow-left"></i> Back to All Blogs
+                        </a>
+                    </div>
+                </article>
+            </main>
+
+
+            <div class="mobile-fixed-buttons">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6 p-0"><a href="javascript:void(0)" data-bs-target="#ModalTogglesix"
+                                data-bs-toggle="modal" aria-label="book now">Book Demo</a></div>
+                        <div class="col-6 p-0"><a class="white" href="javascript:void(0)"
+                                data-bs-target="#ModalTogglefive" data-bs-toggle="modal" aria-label="Call us">Call
+                                Us</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade custom-modal" id="ModalTogglefive" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
+                    <div class="modal-content custom-modal-content">
+                        <div class="modal-body custom-modal-body">
+                            <div class="contact-numbers custom-contact-numbers">
+                                <a href="tel:17163404934" class="ph-no custom-ph-no">
+                                    <i class="flag-icon custom-flag-icon"><img loading="lazy" src="../images/canada.jpg"
+                                            alt="Canada"></i>
+                                    <div class="number custom-number">+1 7163404934</div>
+                                    <div class="shine-effect custom-shine-effect"></div>
+                                </a>
+                                <a href="tel:8699288803" class="ph-no custom-ph-no">
+                                    <i class="flag-icon custom-flag-icon"><img loading="lazy" src="../images/india.avif"
+                                            alt="India"></i>
+                                    <div class="number custom-number">+91 86992 88803</div>
+                                    <div class="shine-effect custom-shine-effect"></div>
+                                </a>
+                                <a href="https://wa.me/16042005518?text=Demo%20of%20Easy%20Gym%20Software"
+                                    target="_blank" rel="noopener" class="ph-no custom-ph-no">
+
+                                    <i class="whatsapp-icon custom-whatsapp-icon"><img loading="lazy"
+                                            src="../images/whatsapp.jpg" alt="WhatsApp"></i>
+                                    <div class="number custom-number">+1 604 200-5518</div>
+                                    <div class="shine-effect custom-shine-effect"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade demo-modal-form custom-form-modal" id="ModalTogglesix" tabindex="-1"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered custom-form-modal-dialog">
+                    <div class="modal-content register-modal custom-form-modal-content">
+
+                        <div class="modal-body custom-form-modal-body">
+                            <div class="modal-box custom-form-modal-box">
+                                <div class="modal-left custom-form-modal-left">
+                                    <div class="form-illustration">
+                                        <div class="form-illustration-content">
+                                            <h3 class="form-illustration-title">See Easy Gym Software in Action</h3>
+                                            <p class="form-illustration-text">Book a free demo and discover how to
+                                                manage your
+                                                gym effortlessly
+                                            </p>
+                                            <ul class="form-benefits">
+                                                <li><i class="benefit-icon">✓</i> Live software walkthrough</li>
+                                                <li><i class="benefit-icon">✓</i> Manage Members Easily</li>
+                                                <li><i class="benefit-icon">✓</i> Personalized For You</li>
+                                                <li><i class="benefit-icon">✓</i>Automate your tasks</li>
+                                                <li><i class="benefit-icon">✓</i>Boost revenue growth</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-right custom-form-modal-right">
+                                    <button type="button" class="mobile-close-btn" data-bs-dismiss="modal"
+                                        aria-label="Close">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                    <div class="form-header">
+                                        <h2 class="form-title">Book Your Demo</h2>
+                                        <p class="form-subtitle">Start by Entering Your Details</p>
+                                    </div>
+                                    <form class="custom-form">
+                                        <div class="mb-3 custom-form-group">
+                                            <label class="form-label custom-form-label">
+                                                <i class="fa-solid fa-user label-icon"></i>
+                                                Your Full Name<span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" class="form-control custom-form-input"
+                                                placeholder="Enter your full name">
+                                            <div class="input-focus-line"></div>
+                                        </div>
+                                        <div class="mb-3 custom-form-group">
+                                            <label class="form-label custom-form-label">
+
+                                                <i class="fa-solid fa-mobile label-icon"></i>
+                                                Phone Number<span class="text-danger">*</span>
+                                            </label>
+                                            <input type="tel" class="form-control custom-form-input"
+                                                placeholder="Enter your phone number">
+                                            <div class="input-focus-line"></div>
+                                        </div>
+                                        <div class="mb-3 custom-form-group">
+                                            <label class="form-label custom-form-label">
+
+                                                <i class="fa-solid fa-building label-icon"></i>
+                                                Business Name<span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" class="form-control custom-form-input"
+                                                placeholder="Enter business name">
+                                            <div class="input-focus-line"></div>
+                                        </div>
+                                        <div class="mb-3 custom-form-group">
+                                            <label class="form-label custom-form-label">
+                                                <i class="fa-solid fa-message label-icon"></i>
+                                                Email<span class="text-danger">*</span>
+                                            </label>
+                                            <input type="email" class="form-control custom-form-input"
+                                                placeholder="Enter your email">
+                                            <div class="input-focus-line"></div>
+                                        </div>
+                                        <button class="btn btn-primary custom-submit-btn"
+                                            data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                                            <span class="btn-text">Schedule My Free Demo</span>
+                                            <span class="btn-icon">→</span>
+                                            <div class="btn-shine"></div>
+                                        </button>
+
+                                    </form>
+
+                                    <div class="form-footer">
+
+                                        <p class="form-footer-text">By registering, you agree to our <a
+                                                href="../terms-conditions.html" class="form-footer-link">Terms &
+                                                Conditions</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </main>
         </div>
     </div>
+    <footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+            integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+            crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../js/owl.carousel.min.js"></script>
+        <script src="../js/menu-sidebar.js"></script>
+        <script src="../js/booking.js"></script>
+        <script src="../js/shorts-drag-scroll.js"></script>
 
-    <main class="blog-single-main-content">
-
-        <!-- Blog Content -->
-        <article class="blog-single-content">
-            <!-- First video below the sticky row -->
-            <div class="below-video-container">
-                <iframe src="https://www.youtube.com/embed/FGwdRWTw5xw"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="blog-single-intro">
-                <p class="blog-single-lead">The people are becoming aware of their diet, health, and lifestyle, as they
-                    know how crucial it is to attain and maintain fitness.</p>
-
-                <p>As the number of fitness freaks is going on, the count of fitness clubs is rising too. Although the
-                    main motive of all these clubs is the same- to help people uplift their physical and mental health,
-                    and stay fit. But their means to achieve this goal may vary slightly or significantly.</p>
-
-                <p>As the owner of such a fitness club, you have to be very cautious about each of the activities
-                    happening on your premises. The multiple competitive clubs are already there to capture your market
-                    share and members with just one single wrong step.</p>
-            </div>
-
-            <!-- SWOT Section -->
-            <section class="blog-single-section">
-                <h2 class="blog-single-section-title">The SWOT Framework for Fitness Clubs</h2>
-                <p>Well, not only is preventing the possible threats enough, but embarking on fruitful opportunities is
-                    equally necessary. As per the SWOT measure, every organization even including fitness clubs should
-                    be focused on 4 aspects:</p>
-
-                <div class="blog-single-features-grid">
-                    <div class="blog-single-feature">
-                        <div class="blog-single-feature-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3>1. Strength</h3>
-                        <p>What are you best at? Identify your core competencies that give you competitive advantage in
-                            the fitness industry.</p>
-                    </div>
-
-                    <div class="blog-single-feature">
-                        <div class="blog-single-feature-icon">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                        <h3>2. Weakness</h3>
-                        <p>What do you lack at? Recognize areas that need improvement to stay competitive in the market.
-                        </p>
-                    </div>
-
-                    <div class="blog-single-feature">
-                        <div class="blog-single-feature-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3>3. Opportunities</h3>
-                        <p>Look for possible chances to grow and earn. Identify market gaps and expansion possibilities.
-                        </p>
-                    </div>
-
-                    <div class="blog-single-feature">
-                        <div class="blog-single-feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>4. Threats</h3>
-                        <p>Prevent from possible mishappenings. Stay alert about competition and market changes.</p>
-                    </div>
-                </div>
-
-                <p>Taking all these 4 major aspects into consideration, Fitness Club Management Software is in huge
-                    demand these days. Beyond confining these four aspects, it also contains multiple such features,
-                    through which the owners and even members (both existing and prospective) can be benefited.</p>
-            </section>
-
-            <!-- Benefits Section -->
-            <section class="blog-single-section">
-                <h2 class="blog-single-section-title">Benefits of Fitness Club Management Software</h2>
-                <p class="blog-single-section-intro">Here's a comprehensive overview of how management software can
-                    transform your fitness club operations:</p>
-
-                <!-- Benefit 1 -->
-                <div class="blog-single-benefit">
-                    <div class="blog-single-benefit-header">
-                        <span class="blog-single-benefit-number">1</span>
-                        <h3>Don't bother about membership management anymore</h3>
-                    </div>
-                    <p>The incorporation of the software helps to simplify your membership process. Whether it is the
-                        renewal of existing people's memberships, admission of a new member, providing certain
-                        discounts, etc, everything can be done smoothly through the incorporation of the software into
-                        fitness clubs.</p>
-                </div>
-
-                <!-- Benefit 2 -->
-                <div class="blog-single-benefit">
-                    <div class="blog-single-benefit-header">
-                        <span class="blog-single-benefit-number">2</span>
-                        <h3>Easy appointment bookings, and scheduling</h3>
-                    </div>
-                    <p>The software also allows you, and your members with appointment bookings and management a lot.
-                        Within just a few clicks your clients can book their appointments, and even cancel, or
-                        reschedule them every time.</p>
-                    <p>This facility will one side help your clients with enhanced peace, and control over appointments.
-                        On the other hand, it will also help to reduce your burden of managing these appointments.</p>
-                </div>
-
-                <!-- Benefit 3 -->
-                <div class="blog-single-benefit">
-                    <div class="blog-single-benefit-header">
-                        <span class="blog-single-benefit-number">3</span>
-                        <h3>No unnecessary exhaustion of inventory management</h3>
-                    </div>
-                    <p>Different tools, equipment, and inventory are needed in different types of clubs, such as
-                        dumbbells, treadmills, weights, cable machines, ropes, etc, and in basketballs, footballs,
-                        tennis, bats, rackets, etc in athletic clubs, and so on.</p>
-                    <p>However, if managed by a person it can be an extremely difficult task, where despite proper
-                        attention and care, the chances of errors are still there.</p>
-                    <p>Helping out with this, the software has a wonderful ability to properly manage all the inventory
-                        where automatic reminders are sent whenever the stock, or inventory reaches the refill or
-                        emergency level.</p>
-                </div>
-
-                <!-- Benefit 4 -->
-                <div class="blog-single-benefit">
-                    <div class="blog-single-benefit-header">
-                        <span class="blog-single-benefit-number">4</span>
-                        <h3>Get the monthly reports to base reporting, and evaluation</h3>
-                    </div>
-                    <p>Another benefit of using fitness club management software is that you can also avail of monthly
-                        reports of the club's performance. It will help you to get a clear idea of how your clubs are
-                        performing, the position of your club in the entire industry, how the staff in your clubs are
-                        doing, etc.</p>
-                    <p>Through these performance reports, you can control the activities of your fitness clubs more
-                        easily, and conveniently. Further, it will also help to ensure whether you planned, and dreamed
-                        have actually happened, or not. If not, then take all corrective measures in advance.</p>
-                </div>
-
-                <!-- Benefit 5 -->
-                <div class="blog-single-benefit">
-                    <div class="blog-single-benefit-header">
-                        <span class="blog-single-benefit-number">5</span>
-                        <h3>Stay connected with your members through routine SMS, and Email</h3>
-                    </div>
-                    <p>Lastly, there also exist features through which you can send special messages to your members. A
-                        brief attractive message can be either emailed or messaged on special events such as birthdays,
-                        anniversaries, New Year, festivals, etc.</p>
-                    <p>It will first keep you connected with your members, and secondly, you can even promote your
-                        latest deals, and packages through these messages. It will help your members to know what's new
-                        happening in your clubs.</p>
-                </div>
-            </section>
-
-            <!-- Why Choose Section -->
-            <section class="blog-single-section blog-single-highlight">
-                <h2 class="blog-single-section-title">Why Choose Easy Gym Software?</h2>
-                <p>There are multiple software available in the market, but still, Easy Gym Software should be your
-                    final destination. As it contains multiple such features and facilities that you will find nowhere
-                    else. It is best mainly due to the following reasons:</p>
-
-                <div class="blog-single-reasons">
-                    <div class="blog-single-reason">
-                        <h4><i class="fas fa-check-circle"></i> Can fit all types of clubs:</h4>
-                        <p>No matter whether you are running a gym, fitness studio, yoga center, dance academy,
-                            cross-fit camp, or Zumba classes, and looking for a system for effortless management, this
-                            software is just the perfect match.</p>
-                    </div>
-
-                    <div class="blog-single-reason">
-                        <h4><i class="fas fa-star"></i> Review integration:</h4>
-                        <p>It is the only software in the market that enables you to showcase your Facebook and Google
-                            Reviews on a single page. It will help your future members know how satisfied your existing
-                            members are with your club's services.</p>
-                    </div>
-
-                    <div class="blog-single-reason">
-                        <h4><i class="fas fa-images"></i> Picture showcase:</h4>
-                        <p>Using the Easy Gym Software will also help you to showcase your club's information
-                            visualization. You can upload images of the equipment, trainers, infrastructure, happy
-                            members' responses, event activities, etc.</p>
-                    </div>
-
-                    <div class="blog-single-reason">
-                        <h4><i class="fas fa-qrcode"></i> QR standee:</h4>
-                        <p>That's yet another perk if you opt for this wonderful software. Through this QR standee,
-                            anyone with just a single scan from their smartphone can have all the information about your
-                            fitness club, or centre.</p>
-                    </div>
-
-                    <div class="blog-single-reason">
-                        <h4><i class="fab fa-whatsapp"></i> WhatsApp linking:</h4>
-                        <p>You can even link your WhatsApp with this software. One can create, customize, and even send
-                            the receipts to the members through WhatsApp.</p>
-                    </div>
-
-                    <div class="blog-single-reason">
-                        <h4><i class="fas fa-wallet"></i> Budget-friendly:</h4>
-                        <p>Last but not least, the software is also budget-friendly. Although it provides several
-                            wonderful and unique facilities and features but doesn't add huge pressure on your financial
-                            budget. It is quite cost-friendly if we compare it with other software used for fitness club
-                            management.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Conclusion -->
-            <section class="blog-single-section">
-                <h2 class="blog-single-section-title">Takeaway</h2>
-                <div class="blog-single-conclusion">
-                    <p>Doubtlessly, running a fitness club is extremely difficult as your one decision or activity will
-                        have a direct and huge effect on the health and fitness of multiple individuals.</p>
-
-                    <p>We are sure that you are doing your level best to run and grow your fitness club, but the choice
-                        of effective club management software can uplift your level to a great extent.</p>
-
-                    <div class="blog-single-final-note">
-                        <p><strong>Easy Fitness Club Management Software</strong> can be your perfect partner in this
-                            journey to improve the fitness clubs as well as the health of countless folks, followed by
-                            wonderful unique features-cum-benefits.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Share Section -->
-            <div class="blog-single-share">
-                <span class="blog-single-share-label">Share this article:</span>
-                <div class="blog-single-share-icons">
-                    <a href="#" class="blog-single-share-icon"><i class="fas fa-link"></i></a>
-                </div>
-            </div>
-
-            <!-- Back to Blogs -->
-            <div class="blog-single-back">
-                <a href="../blog.html" class="blog-single-back-btn">
-                    <i class="fas fa-arrow-left"></i> Back to All Blogs
-                </a>
-            </div>
-        </article>
-    </main>
+    </footer>
 
     <section class="data-migration-section">
         <div class="spaceleft-right">
@@ -672,8 +907,8 @@
                                     <!-- <li><a href="#"><i class="bi bi-linkedin"></i></a></li> -->
                                     <li><a href="https://www.instagram.com/easygymsoftware/" aria-label="Instagram"><i
                                                 class="bi bi-instagram"></i></a></li>
-                                    <li><a href="https://www.youtube.com/channel/UCLnl3aFCQmt0Ck5lP8EloWA" aria-label="Youtube"><i
-                                                class="bi bi-youtube"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCLnl3aFCQmt0Ck5lP8EloWA"
+                                            aria-label="Youtube"><i class="bi bi-youtube"></i></a></li>
 
                                 </ul>
                             </div>
@@ -699,162 +934,17 @@
             </div>
         </div>
     </section>
-
-    <div class="mobile-fixed-buttons">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-6 p-0"><a href="javascript:void(0)" data-bs-target="#ModalTogglesix"
-                        data-bs-toggle="modal">Book Demo</a></div>
-                <div class="col-6 p-0"><a class="white" href="javascript:void(0)" data-bs-target="#ModalTogglefive"
-                        data-bs-toggle="modal">Call Us</a></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade custom-modal" id="ModalTogglefive" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered custom-modal-dialog">
-            <div class="modal-content custom-modal-content">
-                <div class="modal-body custom-modal-body">
-                    <div class="contact-numbers custom-contact-numbers">
-                        <a href="tel:17163404934" class="ph-no custom-ph-no">
-                            <i class="flag-icon custom-flag-icon"><img loading="lazy" src="../images/canada.jpg"
-                                    alt="Canada"></i>
-                            <div class="number custom-number">+1 7163404934</div>
-                            <div class="shine-effect custom-shine-effect"></div>
-                        </a>
-                        <a href="tel:8699288803" class="ph-no custom-ph-no">
-                            <i class="flag-icon custom-flag-icon"><img loading="lazy" src="../images/india.avif"
-                                    alt="India"></i>
-                            <div class="number custom-number">+91 86992 88803</div>
-                            <div class="shine-effect custom-shine-effect"></div>
-                        </a>
-                        <a href="https://wa.me/16042005518?text=Demo%20of%20Easy%20Gym%20Software" target="_blank"
-                            rel="noopener" class="ph-no custom-ph-no">
-
-                            <i class="whatsapp-icon custom-whatsapp-icon"><img loading="lazy"
-                                    src="../images/whatsapp.jpg" alt="WhatsApp"></i>
-                            <div class="number custom-number">+1 604 200-5518</div>
-                            <div class="shine-effect custom-shine-effect"></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade demo-modal-form custom-form-modal" id="ModalTogglesix" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered custom-form-modal-dialog">
-            <div class="modal-content register-modal custom-form-modal-content">
-
-                <div class="modal-body custom-form-modal-body">
-                    <div class="modal-box custom-form-modal-box">
-                        <div class="modal-left custom-form-modal-left">
-                            <div class="form-illustration">
-                                <div class="form-illustration-content">
-                                    <h3 class="form-illustration-title">See Easy Gym Software in Action</h3>
-                                    <p class="form-illustration-text">Book a free demo and discover how to manage your
-                                        gym effortlessly
-                                    </p>
-                                    <ul class="form-benefits">
-                                        <li><i class="benefit-icon">✓</i> Live software walkthrough</li>
-                                        <li><i class="benefit-icon">✓</i> Manage Members Easily</li>
-                                        <li><i class="benefit-icon">✓</i> Personalized For You</li>
-                                        <li><i class="benefit-icon">✓</i>Automate your tasks</li>
-                                        <li><i class="benefit-icon">✓</i>Boost revenue growth</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-right custom-form-modal-right">
-                            <button type="button" class="mobile-close-btn" data-bs-dismiss="modal" aria-label="Close">
-                                <i class="fa-solid fa-xmark"></i>
-                            </button>
-                            <div class="form-header">
-                                <h2 class="form-title">Book Your Demo</h2>
-                                <p class="form-subtitle">Start by Entering Your Details</p>
-                            </div>
-                            <form class="custom-form">
-                                <div class="mb-3 custom-form-group">
-                                    <label class="form-label custom-form-label">
-                                        <i class="fa-solid fa-user label-icon"></i>
-                                        Your Full Name<span class="text-danger">*</span>
-                                    </label>
-                                    <input type="text" class="form-control custom-form-input"
-                                        placeholder="Enter your full name">
-                                    <div class="input-focus-line"></div>
-                                </div>
-                                <div class="mb-3 custom-form-group">
-                                    <label class="form-label custom-form-label">
-
-                                        <i class="fa-solid fa-mobile label-icon"></i>
-                                        Phone Number<span class="text-danger">*</span>
-                                    </label>
-                                    <input type="tel" class="form-control custom-form-input"
-                                        placeholder="Enter your phone number">
-                                    <div class="input-focus-line"></div>
-                                </div>
-                                <div class="mb-3 custom-form-group">
-                                    <label class="form-label custom-form-label">
-
-                                        <i class="fa-solid fa-building label-icon"></i>
-                                        Business Name<span class="text-danger">*</span>
-                                    </label>
-                                    <input type="text" class="form-control custom-form-input"
-                                        placeholder="Enter business name">
-                                    <div class="input-focus-line"></div>
-                                </div>
-                                <div class="mb-3 custom-form-group">
-                                    <label class="form-label custom-form-label">
-                                        <i class="fa-solid fa-message label-icon"></i>
-                                        Email<span class="text-danger">*</span>
-                                    </label>
-                                    <input type="email" class="form-control custom-form-input"
-                                        placeholder="Enter your email">
-                                    <div class="input-focus-line"></div>
-                                </div>
-                                <button class="btn btn-primary custom-submit-btn" data-bs-target="#exampleModalToggle"
-                                    data-bs-toggle="modal">
-                                    <span class="btn-text">Schedule My Free Demo</span>
-                                    <span class="btn-icon">→</span>
-                                    <div class="btn-shine"></div>
-                                </button>
-
-                            </form>
-
-                            <div class="form-footer">
-
-                                <p class="form-footer-text">By registering, you agree to our <a
-                                        href="../terms-conditions.html" class="form-footer-link">Terms & Conditions</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-            integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
-            crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="../js/owl.carousel.min.js"></script>
-        <script src="../js/menu-sidebar.js"></script>
-        <script src="../js/booking.js"></script>
-        <script src="../js/shorts-drag-scroll.js"></script>
-
-    </footer>
     <script>
-        // Sticky Shrink Logic
-        const stickyBar = document.getElementById('stickyMediaWrap');
-        const scrollThreshold = 300;
+        // Sticky Shrink Logic for Dual Layout
+        const stickyImage = document.getElementById('stickyImageBox');
+        const scrollThreshold = 100;
 
         window.addEventListener('scroll', () => {
-            if (window.innerWidth > 768) { // Only shrink on desktop
+            if (window.innerWidth > 991) { // Only on desktop split view
                 if (window.scrollY > scrollThreshold) {
-                    stickyBar.classList.add('is-shrunk');
+                    stickyImage.classList.add('is-shrunk');
                 } else {
-                    stickyBar.classList.remove('is-shrunk');
+                    stickyImage.classList.remove('is-shrunk');
                 }
             }
         });
