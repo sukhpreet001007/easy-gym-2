@@ -11,14 +11,20 @@
 
     <link rel="icon" type="image/png" href="assets/Fav-Icon.png">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://www.youtube.com">
     <link rel="preconnect" href="https://s.ytimg.com">
     <link rel="preconnect" href="https://www.google.com">
+
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="images/gym-man.png" as="image" fetchpriority="high">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
@@ -49,7 +55,7 @@
     <div id="custom-sidebar" class="custom-sidebar">
         <div class="sidebar-header">
             <div class="sidebar-logo">
-                <img src="images/logoo.png" alt="Easy Gym">
+                <img decoding="async" src="images/logoo.png" alt="Easy Gym">
             </div>
             <button id="close-sidebar" class="close-sidebar-btn">
                 <i class="bi bi-x-lg"></i>
@@ -152,8 +158,8 @@
         <div class="spaceleft-right">
             <nav class="navbar navbar-expand-md navbar-dark py-0">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html"><img style="width: 175px; height: 58px;"
-                            src="images/logooo.svg" class="img-fluid"></a>
+                    <a class="navbar-brand" href="index.html"><img decoding="async" width="175" height="58"
+                            src="images/logooo.svg" class="img-fluid" alt="Easy Gym Software"></a>
 
                     <!-- mobile menu toggle button start -->
                     <button class="ma5menu__toggle" type="button">
@@ -168,7 +174,8 @@
                                     <ul>
                                         <li>
                                             <a href="client-management.html" class="menulink">
-                                                <div class="linkicon"><img src="images/prm.png" alt="Client Management">
+                                                <div class="linkicon"><img decoding="async" src="images/prm.png"
+                                                        alt="Client Management">
                                                 </div>
                                                 <div class="menulink-text">
                                                     <h6>Client Management</h6>
@@ -181,7 +188,8 @@
                                         </li>
                                         <li>
                                             <a href="marketing.html" class="menulink">
-                                                <div class="linkicon"><img src="images/mar.png" alt="Marketing"></div>
+                                                <div class="linkicon"><img decoding="async" src="images/mar.png"
+                                                        alt="Marketing"></div>
                                                 <div class="menulink-text">
                                                     <h6>Marketing</h6>
                                                     <p>Boost your sales and increase cash flow with marketing tools that
@@ -192,7 +200,7 @@
                                         </li>
                                         <li>
                                             <a href="employee.html" class="menulink">
-                                                <div class="linkicon"><img src="images/em.png"
+                                                <div class="linkicon"><img decoding="async" src="images/em.png"
                                                         alt="Employee Management"></div>
                                                 <div class="menulink-text">
                                                     <h6>Employee Management</h6>
@@ -206,7 +214,7 @@
 
                                         <li>
                                             <a href="billing.html" class="menulink">
-                                                <div class="linkicon"><img src="images/bp.png"
+                                                <div class="linkicon"><img decoding="async" src="images/bp.png"
                                                         alt="Billing &amp; Payment"></div>
                                                 <div class="menulink-text">
                                                     <h6>Billing</h6>
@@ -217,7 +225,7 @@
                                         </li>
                                         <li>
                                             <a href="reporting.html" class="menulink">
-                                                <div class="linkicon"><img src="images/rg.png"
+                                                <div class="linkicon"><img decoding="async" src="images/rg.png"
                                                         alt="Reports &amp; Graphs"></div>
                                                 <div class="menulink-text">
                                                     <h6>Reporting</h6>
@@ -228,7 +236,7 @@
                                         </li>
                                         <li>
                                             <a href="bio-metric.html" class="menulink">
-                                                <div class="linkicon"><img src="images/inm.png"
+                                                <div class="linkicon"><img decoding="async" src="images/inm.png"
                                                         alt="Inventory Management"></div>
                                                 <div class="menulink-text">
                                                     <h6>Biometric</h6>
@@ -240,7 +248,7 @@
                                         </li>
                                         <li>
                                             <a href="booking.html" class="menulink">
-                                                <div class="linkicon"><img src="images/ap.png"
+                                                <div class="linkicon"><img decoding="async" src="images/ap.png"
                                                         alt="Appointment  Management"></div>
                                                 <div class="menulink-text">
                                                     <h6>Class Booking</h6>
@@ -266,12 +274,12 @@
                                     class="bi bi-chevron-down"></i></button>
                             <div class="connect-content" id="connectDropdown">
                                 <a href="tel:8699288803" class="ph-no">
-                                    <i><img src="images/india.svg"></i>
+                                    <i><img decoding="async" src="images/india.svg"></i>
 
                                     <div style="color: #ffffff;">+91 86992 88803</div>
                                 </a>
                                 <a href="tel:17163404934" class="ph-no">
-                                    <i><img src="images/canada.png"></i>
+                                    <i><img decoding="async" src="images/canada.png"></i>
                                     <div style="color: #ffffff;">+1 7163404934</div>
                                 </a>
                                 <div class="social-icons">
@@ -346,12 +354,14 @@
                                 <li class="flag-counter-container">
                                     <div class="flag-wrapper">
                                         <a href="#" class="flag-link">
-                                            <img src="images/india.svg" alt="India" class="flag-img active"
+                                            <img decoding="async" src="images/india.svg" alt="India"
+                                                class="flag-img active" loading="lazy">
+                                            <img decoding="async" src="images/uae.png" alt="UAE" class="flag-img"
                                                 loading="lazy">
-                                            <img src="images/uae.png" alt="UAE" class="flag-img" loading="lazy">
-                                            <img src="images/s-africa.svg" alt="South Africa" class="flag-img"
-                                                loading="lazy">
-                                            <img src="images/bahrain.png" alt="Bahrain" class="flag-img" loading="lazy">
+                                            <img decoding="async" src="images/s-africa.svg" alt="South Africa"
+                                                class="flag-img" loading="lazy">
+                                            <img decoding="async" src="images/bahrain.png" alt="Bahrain"
+                                                class="flag-img" loading="lazy">
                                         </a>
                                     </div>
                                 </li>
@@ -361,12 +371,30 @@
                                 <li class="flag-counter-container">
                                     <div class="flag-wrapper">
                                         <a href="#" class="flag-link">
-                                            <img src="images/qatar.jpg" alt="Qatar" class="flag-img active"
+                                            <img decoding="async" src="images/qatar.jpg" alt="Qatar"
+                                                class="flag-img active" loading="lazy">
+                                            <img decoding="async" src="images/kuwait-n.png" alt="Kuwait"
+                                                class="flag-img" loading="lazy">
+                                            <img decoding="async" src="images/flag-malaysia.svg" alt="Malaysia"
+                                                class="flag-img" loading="lazy">
+                                            <img decoding="async" src="images/lebanon-flag.svg" alt="Lebanon"
+                                                class="flag-img" loading="lazy">
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="line desktop-only">|</li>
+
+                                <li class="flag-counter-container">
+                                    <div class="flag-wrapper">
+                                        <a href="#" class="flag-link">
+                                            <img decoding="async" src="images/uae.png" alt="UAE" class="flag-img active"
                                                 loading="lazy">
-                                            <img src="images/kuwait-n.png" alt="Kuwait" class="flag-img" loading="lazy">
-                                            <img src="images/flag-malaysia.svg" alt="Malaysia" class="flag-img"
-                                                loading="lazy">
-                                            <img src="images/lebanon-flag.svg" alt="Lebanon" class="flag-img"
+                                            <img decoding="async" src="images/s-africa.svg" alt="South Africa"
+                                                class="flag-img" loading="lazy">
+                                            <img decoding="async" src="images/bahrain.png" alt="Bahrain"
+                                                class="flag-img" loading="lazy">
+                                            <img decoding="async" src="images/india.svg" alt="India" class="flag-img"
                                                 loading="lazy">
                                         </a>
                                     </div>
@@ -377,27 +405,14 @@
                                 <li class="flag-counter-container">
                                     <div class="flag-wrapper">
                                         <a href="#" class="flag-link">
-                                            <img src="images/uae.png" alt="UAE" class="flag-img active" loading="lazy">
-                                            <img src="images/s-africa.svg" alt="South Africa" class="flag-img"
-                                                loading="lazy">
-                                            <img src="images/bahrain.png" alt="Bahrain" class="flag-img" loading="lazy">
-                                            <img src="images/india.svg" alt="India" class="flag-img" loading="lazy">
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li class="line desktop-only">|</li>
-
-                                <li class="flag-counter-container">
-                                    <div class="flag-wrapper">
-                                        <a href="#" class="flag-link">
-                                            <img src="images/qatar.jpg" alt="Qatar" class="flag-img active"
-                                                loading="lazy">
-                                            <img src="images/kuwait-n.png" alt="Kuwait" class="flag-img" loading="lazy">
-                                            <img src="images/flag-malaysia.svg" alt="Malaysia" class="flag-img"
-                                                loading="lazy">
-                                            <img src="images/lebanon-flag.svg" alt="Lebanon" class="flag-img"
-                                                loading="lazy">
+                                            <img decoding="async" src="images/qatar.jpg" alt="Qatar"
+                                                class="flag-img active" loading="lazy">
+                                            <img decoding="async" src="images/kuwait-n.png" alt="Kuwait"
+                                                class="flag-img" loading="lazy">
+                                            <img decoding="async" src="images/flag-malaysia.svg" alt="Malaysia"
+                                                class="flag-img" loading="lazy">
+                                            <img decoding="async" src="images/lebanon-flag.svg" alt="Lebanon"
+                                                class="flag-img" loading="lazy">
                                         </a>
                                     </div>
                                 </li>
@@ -405,27 +420,39 @@
                         </div>
                         <div class="banner-images d-flex justify-content-center justify-content-lg-start align-items-center mb-4"
                             style="gap: 40px;">
-                            <img class="img-fluid" style="width: 134.64px;" src="images/capterra-five.svg" alt="five">
-                            <img class="img-fluid" style="width: 120px;" src="images/5rating-one.svg" alt="one">
-                            <img class="img-fluid" style="width: 120px;" src="images/source-two.svg" alt="two">
-                            <img class="img-fluid" style="width: 85px;" src="images/softsuggest-three.svg" alt="three">
+                            <img decoding="async" class="img-fluid" style="width: 134.64px;"
+                                src="images/capterra-five.svg" alt="five">
+                            <img decoding="async" class="img-fluid" style="width: 120px;" src="images/5rating-one.svg"
+                                alt="one">
+                            <img decoding="async" class="img-fluid" style="width: 120px;" src="images/source-two.svg"
+                                alt="two">
+                            <img decoding="async" class="img-fluid" style="width: 85px;"
+                                src="images/softsuggest-three.svg" alt="three">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="hero-image-container">
                             <!-- Background Dashboard -->
-                            <img src="images/bg-dashboard.svg" class="hero-dashboard" alt="Dashboard">
+                            <img decoding="async" src="images/bg-dashboard.svg" class="hero-dashboard" alt="Dashboard"
+                                fetchpriority="high">
 
                             <!-- Center Gym Man -->
-                            <img src="images/gym-man.png" class="hero-man" alt="Gym Man">
+                            <img decoding="async" src="images/gym-man.png" class="hero-man" alt="Gym Man"
+                                fetchpriority="high">
 
                             <!-- Floating Animated Elements -->
-                            <img src="images/avocado.png" class="floating-card avocado-card" alt="Diet Plan">
-                            <img src="images/new-workout.png" class="floating-card workout-card" alt="New Workout">
-                            <img src="images/detected.png" class="floating-card detected-card" alt="Login Detected">
-                            <img src="images/barbell.png" class="floating-card barbell-card" alt="Barbell Rows">
-                            <img src="images/daily-meals.svg" class="floating-card meals-card" alt="Daily Meals">
-                            <img src="images/rose-card.svg" class="floating-card rose-card" alt="Member Card">
+                            <img decoding="async" src="images/avocado.png" class="floating-card avocado-card"
+                                alt="Diet Plan">
+                            <img decoding="async" src="images/new-workout.png" class="floating-card workout-card"
+                                alt="New Workout">
+                            <img decoding="async" src="images/detected.png" class="floating-card detected-card"
+                                alt="Login Detected">
+                            <img decoding="async" src="images/barbell.png" class="floating-card barbell-card"
+                                alt="Barbell Rows">
+                            <img decoding="async" src="images/daily-meals.svg" class="floating-card meals-card"
+                                alt="Daily Meals">
+                            <img decoding="async" src="images/rose-card.svg" class="floating-card rose-card"
+                                alt="Member Card">
                         </div>
                     </div>
                 </div>
@@ -446,14 +473,14 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/afit-nepal.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/afit-nepal.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Memberships increased by 15% in just 30 days.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -AFit Studios, Nepal
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/nepal-flag.svg" alt="nepal flag">
                                         </p>
                                     </div>
@@ -463,8 +490,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/alpha-fitness.png"
-                                            class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/alpha-fitness.png" class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -472,8 +499,8 @@
                                         <h6>“In just 30 days, the average order value increased by 18%.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -ALPHA FITNESS GYM,
-                                            Kenya <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/kenya.png" alt="kenya-flag">
+                                            Kenya <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/kenya.png" alt="kenya-flag">
                                         </p>
                                     </div>
                                 </div>
@@ -482,7 +509,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/aldo.png" class=" img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy" src="brands/aldo.png"
+                                            class=" img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -490,8 +518,8 @@
                                         <h6>“In 30 days, social engagement rose by 40%.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Aldo Fortress,
-                                            Mauritius <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="images/Mauritius.svg.png" alt="Mauritius flag"></p>
+                                            Mauritius <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="images/Mauritius.svg.png" alt="Mauritius flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -499,7 +527,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/avakas.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/avakas.png" class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -507,8 +536,8 @@
                                         <h6>“Sales grew by 18% in 60 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Avakas Fitness,
-                                            Malaysia <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/malaysia.svg" alt="malaysia flag"></p>
+                                            Malaysia <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/malaysia.svg" alt="malaysia flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -516,7 +545,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/bahla.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy" src="brands/bahla.png"
+                                            class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -524,7 +554,7 @@
                                         <h6>“Within 60 days, revenue per employee rose by 15%.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -BAHLA EAGLES GYM,
-                                            Oman <img style="width: 26px; height: 20px;" loading="lazy"
+                                            Oman <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/oman.png" alt="oman flag">
                                         </p>
                                     </div>
@@ -534,15 +564,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/best-body.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/best-body.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“New leads increased by 40% in 60 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Best Body Gym, Niger
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/niger-flag.svg" alt="niger flag">
                                         </p>
                                     </div>
@@ -552,7 +582,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/boost.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy" src="brands/boost.png"
+                                            class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -560,8 +591,8 @@
                                         <h6>“Revenue surged by 25% in 90 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Boost Fitness Ltd,
-                                            Kenya <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/kenya.png" alt="kenya flag">
+                                            Kenya <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/kenya.png" alt="kenya flag">
                                         </p>
                                     </div>
                                 </div>
@@ -570,7 +601,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/byfitt.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/byfitt.png" class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -578,8 +610,8 @@
                                         <h6>“Sign-ups rose by 30% in 90 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Byfitt Fitness
-                                            Center, UAE <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/uae.svg" alt="uae flag"></p>
+                                            Center, UAE <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/uae.svg" alt="uae flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -587,7 +619,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/evolve.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/evolve.png" class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -595,8 +628,8 @@
                                         <h6>“Web traffic grew by 28% in 90 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Evolve 360 Fitness,
-                                            Nigeria <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/nigeria.svg" alt="nigeria flag"></p>
+                                            Nigeria <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/nigeria.svg" alt="nigeria flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -604,14 +637,14 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/fitness-club.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/fitness-club.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Operational costs reduced by 12% in 60 days.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -FITNESS ONE, Kuwait
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/kuwait.png" alt="kuwait flag">
                                         </p>
                                     </div>
@@ -621,16 +654,16 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/fitness-factory.png"
-                                            class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/fitness-factory.png" class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Lead conversion improved by 35% in 90 days.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Fitness Factory
-                                            Empire, Malaysia <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/malaysia.svg" alt="malaysia flag"></p>
+                                            Empire, Malaysia <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/malaysia.svg" alt="malaysia flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -638,16 +671,16 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/fitness-matter.png"
-                                            class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/fitness-matter.png" class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Marketing ROI grew by 30% in 60 days.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Fitness Matters,
-                                            Indonesia <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/indonisia.png" alt="indonisia flag"></p>
+                                            Indonesia <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/indonisia.png" alt="indonisia flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -655,14 +688,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/gymx.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy" src="brands/gymx.png"
+                                            class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Profit margins grew by 20% in 3 months.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Gymx, Maldives <img
-                                                style="width: 26px; height: 20px;" loading="lazy"
+                                                decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/maldivas.png" alt="maldivas flag"></p>
                                     </div>
                                 </div>
@@ -671,14 +705,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/ifit.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy" src="brands/ifit.png"
+                                            class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“In three months, customer satisfaction rose by 25%.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -IFIT FITNESS CLUB,
-                                            UAE <img style="width: 26px; height: 20px;" loading="lazy"
+                                            UAE <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/uae.svg" alt="uae"></p>
                                     </div>
                                 </div>
@@ -687,15 +722,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/invictus.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/invictus.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Renewals boosted by 25% in 3 months.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Invictus Fitness,
-                                            Zimbabwe <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/zimba.png" alt="zimiba flag"></p>
+                                            Zimbabwe <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/zimba.png" alt="zimiba flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -703,15 +738,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/knockout.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/knockout.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Sales funnel efficiency improved by 20% in 30 days.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Knockout Dynamic Gym,
-                                            Bahrain <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/bahrain.png" alt="bahrain flag"></p>
+                                            Bahrain <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/bahrain.png" alt="bahrain flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -719,14 +754,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/nadeem.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/nadeem.png" class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“In 60 days, referral conversions have increased by 30%.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -NADEEM FITNESS, Saudi
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/saudi.webp" alt="saudi flag">
                                         </p>
                                     </div>
@@ -736,16 +772,17 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/orangebox.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/orangebox.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Customer lifetime value increased by 20% in 90 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -ORANGEBOX FITNESS,
-                                            Philippines <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="images/Philippines.svg.png" alt="philippines flag"></p>
+                                            Philippines <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="images/Philippines.svg.png" alt="philippines flag">
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -753,15 +790,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/rock-power.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/rock-power.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“In 90 days, productivity increased by 20%.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Rock-a-Power Gym,
-                                            Qatar <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="images/Qatar.svg.png" alt="qatar flag"></p>
+                                            Qatar <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="images/Qatar.svg.png" alt="qatar flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -769,14 +806,14 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/sparking.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/sparking.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Order frequency grew by 22% in 90 days.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Sparking Fitness,
-                                            Oman <img style="width: 26px; height: 20px;" loading="lazy"
+                                            Oman <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/oman.png" alt="oman flag">
                                         </p>
                                     </div>
@@ -786,14 +823,14 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/the-fitness.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/the-fitness.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“In 90 days, the cost per acquisition dropped by 18%.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -The Fitnesis, Lebanon
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/lebanon.svg" alt="lebanon flag">
                                         </p>
                                     </div>
@@ -803,14 +840,14 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/unity-gym.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/unity-gym.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Customer retention increased by 22% in just 6 months.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Unity Gym, Guyana
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/guyana.png" alt="guyana flag">
                                         </p>
                                     </div>
@@ -820,16 +857,16 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/vision-gym.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/vision-gym.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Our team saved 2 extra staff salaries every month.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Vision Fitness Gym,
-                                            Sri Lanka <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/srilanka.svg" alt="srilanka flag"></p>
+                                            Sri Lanka <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/srilanka.svg" alt="srilanka flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -839,14 +876,14 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/afit-nepal.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/afit-nepal.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Memberships increased by 15% in just 30 days.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -AFit Studios, Nepal
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/nepal-flag.svg" alt="nepal-flag">
                                         </p>
                                     </div>
@@ -856,8 +893,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/alpha-fitness.png"
-                                            class=" img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/alpha-fitness.png" class=" img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -865,8 +902,8 @@
                                         <h6>“In just 30 days, the average order value increased by 18%.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -ALPHA FITNESS GYM,
-                                            Kenya <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/kenya.png" alt="kenya flag">
+                                            Kenya <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/kenya.png" alt="kenya flag">
                                         </p>
                                     </div>
                                 </div>
@@ -875,7 +912,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/aldo.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy" src="brands/aldo.png"
+                                            class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -883,8 +921,8 @@
                                         <h6>“In 30 days, social engagement rose by 40%.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Aldo Fortress,
-                                            Mauritius <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="images/Mauritius.svg.png" alt="marutitius flag"></p>
+                                            Mauritius <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="images/Mauritius.svg.png" alt="marutitius flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -892,7 +930,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/avakas.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/avakas.png" class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -900,8 +939,8 @@
                                         <h6>“Sales grew by 18% in 60 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Avakas Fitness,
-                                            Malaysia <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/malaysia.svg" alt="malaysia flag"></p>
+                                            Malaysia <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/malaysia.svg" alt="malaysia flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -909,7 +948,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/bahla.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy" src="brands/bahla.png"
+                                            class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -917,7 +957,7 @@
                                         <h6>“Within 60 days, revenue per employee rose by 15%.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -BAHLA EAGLES GYM,
-                                            Oman <img style="width: 26px; height: 20px;" loading="lazy"
+                                            Oman <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/oman.png" alt="oman flag">
                                         </p>
                                     </div>
@@ -927,15 +967,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/best-body.png"
-                                            class=" img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/best-body.png" class=" img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“New leads increased by 40% in 60 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Best Body Gym, Niger
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/niger-flag.svg" alt="niger flag">
                                         </p>
                                     </div>
@@ -945,7 +985,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/boost.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy" src="brands/boost.png"
+                                            class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -953,8 +994,8 @@
                                         <h6>“Revenue surged by 25% in 90 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Boost Fitness Ltd,
-                                            Kenya <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/kenya.png" alt="kenya flag">
+                                            Kenya <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/kenya.png" alt="kenya flag">
                                         </p>
                                     </div>
                                 </div>
@@ -963,7 +1004,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/byfitt.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/byfitt.png" class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -971,8 +1013,8 @@
                                         <h6>“ Sign-ups rose by 30% in 90 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Byfitt Fitness
-                                            Center, UAE <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/uae.svg" alt="uae flag"></p>
+                                            Center, UAE <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/uae.svg" alt="uae flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -980,7 +1022,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/evolve.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/evolve.png" class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -988,8 +1031,8 @@
                                         <h6>“Web traffic grew by 28% in 90 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Evolve 360 Fitness,
-                                            Nigeria <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/nigeria.svg" alt="nigeria flag"></p>
+                                            Nigeria <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/nigeria.svg" alt="nigeria flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -997,15 +1040,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/fitness-club.png"
-                                            class="img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/fitness-club.png" class="img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Operational costs reduced by 12% in 60 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -FITNESS ONE, Kuwait
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/kuwait.png" alt="kuwait flag">
                                         </p>
                                     </div>
@@ -1015,8 +1058,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/fitness-factory.png"
-                                            class=" img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/fitness-factory.png" class=" img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -1024,8 +1067,8 @@
                                         <h6>“Lead conversion improved by 35% in 90 days.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Fitness Factory
-                                            Empire, Malaysia <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/malaysia.svg" alt="malaysia flag"></p>
+                                            Empire, Malaysia <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/malaysia.svg" alt="malaysia flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -1033,16 +1076,16 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/fitness-matter.png"
-                                            class=" img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/fitness-matter.png" class=" img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Marketing ROI grew by 30% in 60 days.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Fitness Matters,
-                                            Indonesia <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/indonisia.png" alt="indonisia flag"></p>
+                                            Indonesia <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/indonisia.png" alt="indonisia flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -1050,14 +1093,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/gymx.png" class=" img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy" src="brands/gymx.png"
+                                            class=" img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Profit margins grew by 20% in 3 months.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Gymx, Maldives <img
-                                                style="width: 26px; height: 20px;" loading="lazy"
+                                                decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/maldivas.png" alt="maldivas flag"></p>
                                     </div>
                                 </div>
@@ -1066,7 +1110,8 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/ifit.png" class="img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy" src="brands/ifit.png"
+                                            class="img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
@@ -1074,7 +1119,7 @@
                                         <h6>“In three months, customer satisfaction rose by 25%.
                                             ”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -IFIT FITNESS CLUB,
-                                            UAE <img style="width: 26px; height: 20px;" loading="lazy"
+                                            UAE <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/uae.svg" alt="uae flag"></p>
                                     </div>
                                 </div>
@@ -1083,15 +1128,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/invictus.png"
-                                            class=" img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/invictus.png" class=" img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Renewals boosted by 25% in 3 months.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Invictus Fitness,
-                                            Zimbabwe <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/zimba.png" alt="zimba flag"></p>
+                                            Zimbabwe <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/zimba.png" alt="zimba flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -1099,15 +1144,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/knockout.png"
-                                            class=" img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/knockout.png" class=" img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Sales funnel efficiency improved by 20% in 30 days.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Knockout Dynamic Gym,
-                                            Bahrain <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/bahrain.png" alt="bahrain flag"></p>
+                                            Bahrain <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/bahrain.png" alt="bahrain flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -1115,14 +1160,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/nadeem.png" class=" img-b">
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/nadeem.png" class=" img-b">
                                     </div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“In 60 days, referral conversions have increased by 30%.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -NADEEM FITNESS, Saudi
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/saudi.webp" alt="saudi flag">
                                         </p>
                                     </div>
@@ -1132,15 +1178,16 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/orangebox.png"
-                                            class=" img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/orangebox.png" class=" img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Customer lifetime value increased by 20% in 90 days.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -ORANGEBOX FITNESS,
-                                            Philippines <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="images/Philippines.svg.png" alt="phillippines flag"></p>
+                                            Philippines <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="images/Philippines.svg.png" alt="phillippines flag">
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -1148,15 +1195,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/rock-power.png"
-                                            class=" img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/rock-power.png" class=" img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“In 90 days, productivity increased by 20%.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Rock-a-Power Gym,
-                                            Qatar <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="images/Qatar.svg.png" alt="qatar"></p>
+                                            Qatar <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="images/Qatar.svg.png" alt="qatar"></p>
                                     </div>
                                 </div>
                             </div>
@@ -1164,14 +1211,14 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/sparking.png"
-                                            class=" img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/sparking.png" class=" img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Order frequency grew by 22% in 90 days.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Sparking Fitness,
-                                            Oman <img style="width: 26px; height: 20px;" loading="lazy"
+                                            Oman <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/oman.png" alt="oman flag">
                                         </p>
                                     </div>
@@ -1181,14 +1228,14 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/the-fitness.png"
-                                            class=" img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/the-fitness.png" class=" img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“In 90 days, the cost per acquisition dropped by 18%.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -The Fitnesis, Lebanon
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/lebanon.svg" alt="lebanon flag">
                                         </p>
                                     </div>
@@ -1198,14 +1245,14 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/unity-gym.png"
-                                            class=" img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/unity-gym.png" class=" img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Customer retention increased by 22% in just 6 months.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Unity Gym, Guyana
-                                            <img style="width: 26px; height: 20px;" loading="lazy"
+                                            <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                 src="brands/guyana.png" alt="guyana flag">
                                         </p>
                                     </div>
@@ -1215,15 +1262,15 @@
                         <div class="brand-ticker-item">
                             <div class="row align-items-center">
                                 <div class="col-5">
-                                    <div class="text-center"><img loading="lazy" src="brands/vision-gym.png"
-                                            class=" img-b"></div>
+                                    <div class="text-center"><img decoding="async" loading="lazy"
+                                            src="brands/vision-gym.png" class=" img-b"></div>
                                 </div>
                                 <div class="col-7">
                                     <div class="grey-bar-text">
                                         <h6>“Our team saved 2 extra staff salaries every month.”</h6>
                                         <p style="display: flex; gap: 5px; align-items: center;"> -Vision Fitness Gym,
-                                            Sri Lanka <img style="width: 26px; height: 20px;" loading="lazy"
-                                                src="brands/srilanka.svg" alt="srilanka flag"></p>
+                                            Sri Lanka <img decoding="async" style="width: 26px; height: 20px;"
+                                                loading="lazy" src="brands/srilanka.svg" alt="srilanka flag"></p>
                                     </div>
                                 </div>
                             </div>
@@ -1236,16 +1283,16 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/afit-nepal.png"
-                                                class="img-fluid">
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/afit-nepal.png" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Memberships increased by 15% in just 30 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -AFit Studios,
-                                                Nepal <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/nepal-flag.svg" alt="nepal flag">
+                                                Nepal <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/nepal-flag.svg" alt="nepal flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1254,16 +1301,16 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/alpha-fitness.png"
-                                                class="img-fluid">
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/alpha-fitness.png" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“In just 30 days, the average order value increased by 18%.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -ALPHA FITNESS
-                                                GYM, Kenya <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/kenya.png" alt="kenya flag">
+                                                GYM, Kenya <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/kenya.png" alt="kenya flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1272,15 +1319,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/aldo.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/aldo.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“In 30 days, social engagement rose by 40%.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Aldo Fortress,
                                                 Mauritius
-                                                <img style="width: 26px; height: 20px;" loading="lazy"
+                                                <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                     src="images/Mauritius.svg.png" alt="mauritius flag">
                                             </p>
                                         </div>
@@ -1294,15 +1341,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/avakas.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/avakas.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Sales grew by 18% in 60 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Avakas Fitness,
-                                                Malaysia <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/malaysia.svg" alt="malaysia flag">
+                                                Malaysia <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/malaysia.svg" alt="malaysia flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1311,15 +1358,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/bahla.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/bahla.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Within 60 days, revenue per employee rose by 15%.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -BAHLA EAGLES
-                                                GYM, Oman <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/oman.png" alt="oman flag">
+                                                GYM, Oman <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/oman.png" alt="oman flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1328,16 +1375,16 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/best-body.png"
-                                                class="img-fluid">
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/best-body.png" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“New leads increased by 40% in 60 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Best Body Gym,
-                                                Niger <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/niger-flag.svg" alt="niger flag">
+                                                Niger <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/niger-flag.svg" alt="niger flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1350,15 +1397,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/boost.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/boost.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Revenue surged by 25% in 90 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Boost Fitness
-                                                Ltd, Kenya <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/kenya.png" alt="kenya flag">
+                                                Ltd, Kenya <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/kenya.png" alt="kenya flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1367,15 +1414,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/byfitt.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/byfitt.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Sign-ups rose by 30% in 90 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Byfitt Fitness
-                                                Center, UAE <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/uae.svg" alt="uae flag">
+                                                Center, UAE <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/uae.svg" alt="uae flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1384,14 +1431,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/evolve.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/evolve.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Web traffic grew by 28% in 90 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Evolve 360
-                                                Fitness, Nigeria <img style="width: 26px; height: 20px;" loading="lazy"
+                                                Fitness, Nigeria <img decoding="async"
+                                                    style="width: 26px; height: 20px;" loading="lazy"
                                                     src="brands/nigeria.svg" alt="nigeria flag">
                                             </p>
                                         </div>
@@ -1405,16 +1453,16 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/fitness-club.png"
-                                                class="img-fluid">
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/fitness-club.png" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Operational costs reduced by 12% in 60 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -FITNESS ONE,
-                                                Kuwait <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/kuwait.png" alt="kuwait flag">
+                                                Kuwait <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/kuwait.png" alt="kuwait flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1423,14 +1471,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/fitness-factory.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/fitness-factory.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Lead conversion improved by 35% in 90 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Fitness Factory
-                                                Empire, Malaysia <img style="width: 26px; height: 20px;" loading="lazy"
+                                                Empire, Malaysia <img decoding="async"
+                                                    style="width: 26px; height: 20px;" loading="lazy"
                                                     src="brands/malaysia.svg" alt="malaysia flag">
                                             </p>
                                         </div>
@@ -1440,16 +1489,16 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/fitness-matter.png"
-                                                class="img-fluid">
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/fitness-matter.png" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Marketing ROI grew by 30% in 60 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Fitness Matters,
-                                                Indonesia <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/indonisia.png" alt="indonisia flag">
+                                                Indonesia <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/indonisia.png" alt="indonisia flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1462,14 +1511,14 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/gymx.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/gymx.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Profit margins grew by 20% in 3 months.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Gymx, Maldives
-                                                <img style="width: 26px; height: 20px;" loading="lazy"
+                                                <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                     src="brands/maldivas.png" alt="maldivas flag">
                                             </p>
                                         </div>
@@ -1479,15 +1528,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/ifit.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/ifit.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“In three months, customer satisfaction rose by 25%.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -IFIT FITNESS
-                                                CLUB, UAE <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/uae.svg" alt="uae flag">
+                                                CLUB, UAE <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/uae.svg" alt="uae flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1496,14 +1545,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/invictus.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/invictus.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Renewals boosted by 25% in 3 months.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Invictus
-                                                Fitness, Zimbabwe <img style="width: 26px; height: 20px;" loading="lazy"
+                                                Fitness, Zimbabwe <img decoding="async"
+                                                    style="width: 26px; height: 20px;" loading="lazy"
                                                     src="brands/zimba.png" alt="zimba flag">
                                             </p>
                                         </div>
@@ -1517,15 +1567,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/knockout.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/knockout.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Sales funnel efficiency improved by 20% in 30 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Knockout Dynamic
-                                                Gym, Bahrain <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/bahrain.png" alt="bahrian flag">
+                                                Gym, Bahrain <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/bahrain.png" alt="bahrian flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1534,15 +1584,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/nadeem.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/nadeem.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“In 60 days, referral conversions have increased by 30%.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -NADEEM FITNESS,
-                                                Saudi <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/saudi.webp" alt="saudi flag">
+                                                Saudi <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/saudi.webp" alt="saudi flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1551,8 +1601,8 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/orangebox.png"
-                                                class="img-fluid">
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/orangebox.png" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="col-md-7">
@@ -1560,7 +1610,7 @@
                                             <h6>“Customer lifetime value increased by 20% in 90 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -ORANGEBOX
                                                 FITNESS, Philippines
-                                                <img style="width: 26px; height: 20px;" loading="lazy"
+                                                <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                     src="images/Philippines.svg.png" alt="phillippines flag">
                                             </p>
                                         </div>
@@ -1574,8 +1624,8 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/rock-power.png"
-                                                class="img-fluid">
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/rock-power.png" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="col-md-7">
@@ -1583,7 +1633,7 @@
                                             <h6>“In 90 days, productivity increased by 20%.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Rock-a-Power
                                                 Gym, Qatar
-                                                <img style="width: 26px; height: 20px;" loading="lazy"
+                                                <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
                                                     src="images/Qatar.svg.png" alt="qatar flag">
                                             </p>
                                         </div>
@@ -1593,15 +1643,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/sparking.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/sparking.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Order frequency grew by 22% in 90 days.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Sparking
-                                                Fitness, Oman <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/oman.png" alt="oman flag">
+                                                Fitness, Oman <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/oman.png" alt="oman flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1610,16 +1660,16 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/the-fitness.png"
-                                                class="img-fluid">
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/the-fitness.png" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“In 90 days, the cost per acquisition dropped by 18%.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -The Fitnesis,
-                                                Lebanon <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/lebanon.svg" alt="lebanon flag">
+                                                Lebanon <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/lebanon.svg" alt="lebanon flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1632,16 +1682,16 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/unity-gym.png"
-                                                class="img-fluid">
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/unity-gym.png" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Customer retention increased by 22% in just 6 months.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Unity Gym,
-                                                Guyana <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/guyana.png" alt="guyana flag">
+                                                Guyana <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/guyana.png" alt="guyana flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1650,16 +1700,16 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="brands/vision-gym.png"
-                                                class="img-fluid">
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="brands/vision-gym.png" class="img-fluid">
                                         </div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“Our team saved 2 extra staff salaries every month.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; "> -Vision Fitness
-                                                Gym, Sri Lanka <img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/srilanka.svg" alt="srilanka flag">
+                                                Gym, Sri Lanka <img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="brands/srilanka.svg" alt="srilanka flag">
                                             </p>
                                         </div>
                                     </div>
@@ -1668,15 +1718,15 @@
                             <div class="col-lg-4 col-6">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
-                                        <div class="text-center"><img loading="lazy" src="images/body.png"
-                                                class="img-fluid"></div>
+                                        <div class="text-center"><img decoding="async" loading="lazy"
+                                                src="images/body.png" class="img-fluid"></div>
                                     </div>
                                     <div class="col-md-7">
                                         <div class="grey-bar-text">
                                             <h6>“In just 90 days, collections rose by 32%.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center; ">-Body Mechanics,
-                                                Qatar<img style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="images/Qatar.svg.png" alt="qatar flag"></p>
+                                                Qatar<img decoding="async" style="width: 26px; height: 20px;"
+                                                    loading="lazy" src="images/Qatar.svg.png" alt="qatar flag"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1697,8 +1747,8 @@
                     <div class="row">
                         <div class="col-md-4 col-lg-4">
                             <div class="item">
-                                <div class="item-img"><img loading="lazy" src="images/Automated_Whatsapp.png"
-                                        class="img-fluid"></div>
+                                <div class="item-img"><img decoding="async" loading="lazy"
+                                        src="images/Automated_Whatsapp.png" class="img-fluid"></div>
                                 <div class="item-content">
                                     <h6>Automated WhatsApp</h6>
                                     <p>Automated WhatsApp boosts member retention and revenue with automatic reminders,
@@ -1711,8 +1761,8 @@
                         </div>
                         <div class="col-md-4 col-lg-4">
                             <div class="item">
-                                <div class="item-img"><img loading="lazy" src="images/Biometric_authentication.png"
-                                        class="img-fluid"></div>
+                                <div class="item-img"><img decoding="async" loading="lazy"
+                                        src="images/Biometric_authentication.png" class="img-fluid"></div>
                                 <div class="item-content">
                                     <h6>Biometric Authentication</h6>
                                     <p>Biometric authentication in software controls entry, attendance, and revenue. It
@@ -1724,8 +1774,8 @@
                         </div>
                         <div class="col-md-4 col-lg-4">
                             <div class="item">
-                                <div class="item-img"><img loading="lazy" src="images/MultiLocation_user_access.png"
-                                        class="img-fluid"></div>
+                                <div class="item-img"><img decoding="async" loading="lazy"
+                                        src="images/MultiLocation_user_access.png" class="img-fluid"></div>
                                 <div class="item-content">
                                     <h6>Multi-Location User Access</h6>
                                     <p>Multi-location access in software lets owners manage all branches from a single
@@ -1885,7 +1935,7 @@
                         <div class="first-accordion-image-container">
                             <!-- Added first-acc-ani-container wrapper and first-acc-ani-image class -->
                             <div class="first-acc-ani-container">
-                                <img id="main-dropdown-image" loading="lazy" src="images/Dashboard.png"
+                                <img decoding="async" id="main-dropdown-image" loading="lazy" src="images/Dashboard.png"
                                     class="img-fluid absolute-right-image first-acc-ani-image"
                                     style="transition: opacity 0.4s ease-in-out;">
                             </div>
@@ -1931,8 +1981,9 @@
                     <div class="col-lg-7 gym-advantage">
                         <div class="advantage-right-content">
 
-                            <h2 class="text-center mb-5 adva"> <img loading="lazy" src="images/logoo.png" alt="logo"
-                                    class="graph-logo"> <br> Powering Your Gym’s Success</h2>
+                            <h2 class="text-center mb-5 adva"> <img decoding="async" loading="lazy"
+                                    src="images/logoo.png" alt="logo" class="graph-logo"> <br> Powering Your Gym’s
+                                Success</h2>
                             <div class="compare-table">
                                 <div id="advantage-table" class="animated-compare-table"></div>
                             </div>
@@ -1955,30 +2006,30 @@
                     <a href="gyms.html" class="business-card">
                         <h6>Gym</h6>
                         <div class="business-icon">
-                            <img loading="lazy" src="assets/gym-blue.svg" alt="gym">
-                            <img loading="lazy" src="assets/gym-white.svg" alt="gym">
+                            <img decoding="async" loading="lazy" src="assets/gym-blue.svg" alt="gym">
+                            <img decoding="async" loading="lazy" src="assets/gym-white.svg" alt="gym">
                         </div>
                     </a>
-                    <a href="mma-studio.html" class="business-card">
+                    <a href="fitness-studio.html" class="business-card">
                         <h6>MMA Studio</h6>
                         <div class="business-icon">
-                            <img loading="lazy" src="assets/kick-blue.svg" alt="gym">
-                            <img loading="lazy" src="assets/kick-white.svg" alt="gym">
+                            <img decoding="async" loading="lazy" src="assets/kick-blue.svg" alt="gym">
+                            <img decoding="async" loading="lazy" src="assets/kick-white.svg" alt="gym">
                         </div>
                     </a>
                     <a href="dance-studio.html" class="business-card">
                         <h6>Dance Studio</h6>
                         <div class="business-icon">
-                            <img loading="lazy" src="assets/dance-blue.svg" alt="dance studio">
-                            <img loading="lazy" src="assets/dance-white.svg" alt="dance studio">
+                            <img decoding="async" loading="lazy" src="assets/dance-blue.svg" alt="dance studio">
+                            <img decoding="async" loading="lazy" src="assets/dance-white.svg" alt="dance studio">
 
                         </div>
                     </a>
                     <a href="cross-fit.html" class="business-card">
                         <h6>Cross Fit</h6>
                         <div class="business-icon">
-                            <img loading="lazy" src="assets/rope-blue.svg" alt="rope blue">
-                            <img loading="lazy" src="assets/rope-white.svg" alt="rope white">
+                            <img decoding="async" loading="lazy" src="assets/rope-blue.svg" alt="rope blue">
+                            <img decoding="async" loading="lazy" src="assets/rope-white.svg" alt="rope white">
 
                         </div>
                     </a>
@@ -1986,24 +2037,24 @@
                     <a href="yoga.html" class="business-card">
                         <h6>Yoga</h6>
                         <div class="business-icon">
-                            <img loading="lazy" src="assets/yoga-blue.svg" alt="yoga blue">
-                            <img loading="lazy" src="assets/yoga-white.svg" alt="yoga white">
+                            <img decoding="async" loading="lazy" src="assets/yoga-blue.svg" alt="yoga blue">
+                            <img decoding="async" loading="lazy" src="assets/yoga-white.svg" alt="yoga white">
 
                         </div>
                     </a>
                     <a href="pilates.html" class="business-card">
                         <h6>Pilates</h6>
                         <div class="business-icon">
-                            <img loading="lazy" src="assets/ball-blue.png" alt="ball blue">
-                            <img loading="lazy" src="assets/ball-white.svg" alt="ball white">
+                            <img decoding="async" loading="lazy" src="assets/ball-blue.png" alt="ball blue">
+                            <img decoding="async" loading="lazy" src="assets/ball-white.svg" alt="ball white">
 
                         </div>
                     </a>
                     <a href="functional-training.html" class="business-card">
                         <h6>Functional Training</h6>
                         <div class="business-icon">
-                            <img loading="lazy" src="assets/machine-blue.png" alt="machine blue">
-                            <img loading="lazy" src="assets/machine-white.svg" alt="machine white">
+                            <img decoding="async" loading="lazy" src="assets/machine-blue.png" alt="machine blue">
+                            <img decoding="async" loading="lazy" src="assets/machine-white.svg" alt="machine white">
                         </div>
                     </a>
                 </div>
@@ -2025,7 +2076,7 @@
                 <div class="row">
                     <div class="col-lg-6 dropdown-image">
                         <div class="first-accordion-image-container">
-                            <img id="booking-image" loading="lazy" src="/images/smart-booking.png"
+                            <img decoding="async" id="booking-image" loading="lazy" src="/images/smart-booking.png"
                                 class="img-fluid absolute-right-image" style="transition: opacity 0.4s ease-in-out;">
                         </div>
                     </div>
@@ -2217,7 +2268,7 @@
                         <span class="dollar-sign">$</span><span class="dollar-value" id="dollar-counter-value">99</span>
                     </div>
                     <div id="group-level-chart" class="graph-chart"></div>
-                    <img loading="lazy" src="images/logoo.png" alt="logo" class="logo-image">
+                    <img decoding="async" loading="lazy" src="images/logoo.png" alt="logo" class="logo-image">
                 </div>
             </div>
         </div>
@@ -2239,7 +2290,8 @@
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/finger.svg" alt="Biometric" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/finger.svg" alt="Biometric"
+                            class="stage-card-icon">
                         <h4>Biometric Integration</h4>
                         <p>Easy Gym Software offers secure access, real-time attendance tracking, and automatic
                             membership expiry. Fingerprint, facial, and RFID biometrics have been integrated into
@@ -2251,7 +2303,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/note.svg" alt="Workout" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/note.svg" alt="Workout"
+                            class="stage-card-icon">
                         <h4>Workout & Diet Plans</h4>
                         <p>Coaches can easily utilize Easy Gym Software to create personalized fitness and nutritional
                             plans with AI suggestions. Members access plans directly via apps, while a drag-and-drop
@@ -2262,7 +2315,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/mobile.svg" alt="Retention" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/mobile.svg" alt="Retention"
+                            class="stage-card-icon">
                         <h4>Client Retention</h4>
                         <p>With automated, customized birthday and anniversary messages, as well as timely payment
                             reminders and renewal prompts via WhatsApp, email, and text, you can ensure your gym patrons
@@ -2273,7 +2327,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/home.svg" alt="Marketing" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/home.svg" alt="Marketing"
+                            class="stage-card-icon">
                         <h4>Walk-Ins & Marketing Tools</h4>
                         <p>Track all new inquiries and follow up with advanced marketing templates for MMA, fitness
                             studios, yoga, dance, and sports academies. Smart lead tracking and automatic nurturing
@@ -2285,7 +2340,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/mick.svg" alt="Front Desk" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/mick.svg" alt="Front Desk"
+                            class="stage-card-icon">
                         <h4>Virtual Front Desk That Works While You Sleep</h4>
                         <p>Transform your fitness business with a smart 24/7 virtual receptionist for Pilates, dance,
                             CrossFit, MMA, or sports studios. Stay connected with members anytime and manage operations
@@ -2297,7 +2353,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/setting.svg" alt="Always on" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/setting.svg" alt="Always on"
+                            class="stage-card-icon">
                         <h4>Always On</h4>
                         <p>Easy Gym Software's Always On feature provides 24/7 seamless access to bookings, payments,
                             and membership management, with the latest updates and secure cloud data storage with
@@ -2311,7 +2368,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/message.svg" alt="Support" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/message.svg" alt="Support"
+                            class="stage-card-icon">
                         <h4>Automated Client Support</h4>
                         <p>Deliver notifications, membership renewals, enticing offers, payment reminders, important
                             notices, and customized birthday and anniversary wishes automatically to keep your customers
@@ -2324,7 +2382,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/like.svg" alt="Engagement" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/like.svg" alt="Engagement"
+                            class="stage-card-icon">
                         <h4>Instant Engagement</h4>
                         <p>Address the latest inquiries by delivering carefully tailored emails, texts, and WhatsApp
                             messages, ensuring prospective customers feel valued and appreciated without delay. Drop-off
@@ -2336,7 +2395,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/magnet.svg" alt="Cold Leads" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/magnet.svg" alt="Cold Leads"
+                            class="stage-card-icon">
                         <h4>Re‑Engage Cold Leads
                         </h4>
                         <p>Trouble-free Send professional, fully customized emails, texts, and WhatsApp messages to
@@ -2348,7 +2408,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/bulb.svg" alt="Insights" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/bulb.svg" alt="Insights"
+                            class="stage-card-icon">
                         <h4>Smart Insights</h4>
                         <p>Access robust, visual dashboards that display the best-selling classes, best-performing
                             packages, busiest hours, and client feedback for your fitness centers, training schools,
@@ -2360,7 +2421,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/rocket.svg" alt="Retention" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/rocket.svg" alt="Retention"
+                            class="stage-card-icon">
                         <h4>Boost Retention</h4>
                         <p>Track members who are irregular or inconsistent, and stay consistently connected with timely,
                             personalized follow-ups that clearly show your commitment to their progress. Strengthen
@@ -2373,7 +2435,8 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-4">
                     <div class="stage-section-card">
-                        <img loading="lazy" src="assets/home.svg" alt="Operations" class="stage-card-icon">
+                        <img decoding="async" loading="lazy" src="assets/home.svg" alt="Operations"
+                            class="stage-card-icon">
                         <h4>Effortless Studio Operations</h4>
                         <p>Our goal is to provide the best possible fitness experience while efficiently handling all
                             administrative tasks. Supervise attendance, bookings, staff, schedules, memberships,
@@ -2398,7 +2461,8 @@
                             <div id="review-player-1" class="youtube-player" data-video-id="JM5ROK63h78"></div>
                         </div>
                         <div class="card-info">
-                            <div class="client-avatar"><img loading="lazy" src="images/gym-logo.png" alt="logo"></div>
+                            <div class="client-avatar"><img decoding="async" loading="lazy" src="images/gym-logo.png"
+                                    alt="logo"></div>
                             <div class="client-details">
                                 <strong>Rahul K.</strong>
                                 <p>O9 Fitness Gym Owner</p>
@@ -2411,7 +2475,8 @@
                             <div id="review-player-2" class="youtube-player" data-video-id="1TurwwFAE7I"></div>
                         </div>
                         <div class="card-info">
-                            <div class="client-avatar"><img loading="lazy" src="images/gym-logo.png" alt="logo"></div>
+                            <div class="client-avatar"><img decoding="async" loading="lazy" src="images/gym-logo.png"
+                                    alt="logo"></div>
                             <div class="client-details">
                                 <strong>Manoj K.</strong>
                                 <p>Director (the Inferno - 8 Branch)</p>
@@ -2425,7 +2490,8 @@
                             <div class="client-tag">Amber Gym, Malaysia</div>
                         </div>
                         <div class="card-info">
-                            <div class="client-avatar"><img loading="lazy" src="images/gym-logo.png" alt="logo"></div>
+                            <div class="client-avatar"><img decoding="async" loading="lazy" src="images/gym-logo.png"
+                                    alt="logo"></div>
                             <div class="client-details">
                                 <strong>Rahul K.</strong>
                                 <p>Amber Gym Owner, Malaysia</p>
@@ -2438,7 +2504,8 @@
                             <div id="review-player-4" class="youtube-player" data-video-id="xPnqlyXRyCU"></div>
                         </div>
                         <div class="card-info">
-                            <div class="client-avatar"><img loading="lazy" src="images/gym-logo.png" alt="logo"></div>
+                            <div class="client-avatar"><img decoding="async" loading="lazy" src="images/gym-logo.png"
+                                    alt="logo"></div>
                             <div class="client-details">
                                 <strong>Manoj K.</strong>
                                 <p>Director (the Inferno - 8 Branch)</p>
@@ -2452,7 +2519,8 @@
                             <div id="review-player-5" class="youtube-player" data-video-id="JM5ROK63h78"></div>
                         </div>
                         <div class="card-info">
-                            <div class="client-avatar"><img loading="lazy" src="images/gym-logo.png" alt="logo"></div>
+                            <div class="client-avatar"><img decoding="async" loading="lazy" src="images/gym-logo.png"
+                                    alt="logo"></div>
                             <div class="client-details">
                                 <strong>Rahul K.</strong>
                                 <p>O9 Fitness Gym Owner</p>
@@ -2465,7 +2533,8 @@
                             <div id="review-player-6" class="youtube-player" data-video-id="1TurwwFAE7I"></div>
                         </div>
                         <div class="card-info">
-                            <div class="client-avatar"><img loading="lazy" src="images/gym-logo.png" alt="logo"></div>
+                            <div class="client-avatar"><img decoding="async" loading="lazy" src="images/gym-logo.png"
+                                    alt="logo"></div>
                             <div class="client-details">
                                 <strong>Manoj K.</strong>
                                 <p>Director (the Inferno - 8 Branch)</p>
@@ -2479,7 +2548,8 @@
                             <div class="client-tag">Amber Gym, Malaysia</div>
                         </div>
                         <div class="card-info">
-                            <div class="client-avatar"><img loading="lazy" src="images/gym-logo.png" alt="logo"></div>
+                            <div class="client-avatar"><img decoding="async" loading="lazy" src="images/gym-logo.png"
+                                    alt="logo"></div>
                             <div class="client-details">
                                 <strong>Rahul K.</strong>
                                 <p>Amber Gym Owner, Malaysia</p>
@@ -2492,7 +2562,8 @@
                             <div id="review-player-8" class="youtube-player" data-video-id="xPnqlyXRyCU"></div>
                         </div>
                         <div class="card-info">
-                            <div class="client-avatar"><img loading="lazy" src="images/gym-logo.png" alt="logo"></div>
+                            <div class="client-avatar"><img decoding="async" loading="lazy" src="images/gym-logo.png"
+                                    alt="logo"></div>
                             <div class="client-details">
                                 <strong>Manoj K.</strong>
                                 <p>Director (the Inferno - 8 Branch)</p>
@@ -2539,7 +2610,7 @@
                             <h6>Solutions</h6>
                             <ul>
                                 <li><a href="gyms.html">Gym</a></li>
-                                <li><a href="mma-studio.html">MMA Studio</a></li>
+                                <li><a href="fitness-studio.html">MMA Studio</a></li>
                                 <li><a href="dance-studio.html">Dance Studio</a></li>
                                 <li><a href="cross-fit.html">Cross fit</a></li>
                                 <li><a href="yoga.html">Yoga</a></li>
@@ -2616,7 +2687,7 @@
 
                         <div class="col-lg-3 col-md-12 text-center text-lg-end">
                             <div class="footer-bottom-logo">
-                                <img loading="lazy" src="images/logooo.svg" class="img-fluid">
+                                <img decoding="async" loading="lazy" src="images/logooo.svg" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -2642,22 +2713,22 @@
                 <div class="modal-body custom-modal-body">
                     <div class="contact-numbers custom-contact-numbers">
                         <a href="tel:17163404934" class="ph-no custom-ph-no">
-                            <i class="flag-icon custom-flag-icon"><img loading="lazy" src="images/canada.jpg"
-                                    alt="Canada"></i>
+                            <i class="flag-icon custom-flag-icon"><img decoding="async" loading="lazy"
+                                    src="images/canada.jpg" alt="Canada"></i>
                             <div class="number custom-number">+1 716-340-4934</div>
                             <div class="shine-effect custom-shine-effect"></div>
                         </a>
                         <a href="tel:8699288803" class="ph-no custom-ph-no">
-                            <i class="flag-icon custom-flag-icon"><img loading="lazy" src="images/india.avif"
-                                    alt="India"></i>
+                            <i class="flag-icon custom-flag-icon"><img decoding="async" loading="lazy"
+                                    src="images/india.avif" alt="India"></i>
                             <div class="number custom-number">+91 86992 88803</div>
                             <div class="shine-effect custom-shine-effect"></div>
                         </a>
                         <a href="https://wa.me/17163404934?text=Demo%20of%20Easy%20Gym%20Software" target="_blank"
                             rel="noopener" class="ph-no custom-ph-no">
 
-                            <i class="whatsapp-icon custom-whatsapp-icon"><img loading="lazy" src="images/whatsapp.jpg"
-                                    alt="WhatsApp"></i>
+                            <i class="whatsapp-icon custom-whatsapp-icon"><img decoding="async" loading="lazy"
+                                    src="images/whatsapp.jpg" alt="WhatsApp"></i>
                             <div class="number custom-number">+1 716-340-4934</div>
                             <div class="shine-effect custom-shine-effect"></div>
                         </a>
@@ -2875,13 +2946,13 @@
             });
         </script>
 
-        <script src="js/menu-sidebar.js"></script>
+        <script src="js/menu-sidebar.js" defer></script>
 
 
     </footer>
-    <script src="/js/booking.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@6.0.0/dist/echarts.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+    <script src="/js/booking.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@6.0.0/dist/echarts.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js" defer></script>
 
     <script>
         class AnimatedComparisonTable {
@@ -3201,7 +3272,7 @@
 
 
 
-    <script src="js/shorts-drag-scroll.js"></script>
+    <script src="js/shorts-drag-scroll.js" defer></script>
 
 
     <script type="text/javascript">
