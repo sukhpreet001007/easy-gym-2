@@ -94,14 +94,13 @@ window.onYouTubeIframeAPIReady = function () {
             'controls': 1,
             'rel': 0,
             'showinfo': 0,
-            'mute': isClientReview ? 0 : 1,
+            'mute': 1, // All videos muted by default
             'loop': 1,
             'playlist': videoId
         };
 
         if (isFaqVideo) {
             playerVars.autoplay = 0; // Don't autoplay FAQ videos
-            playerVars.mute = 0;     // Don't mute FAQ videos by default
         }
 
         const player = new YT.Player(el.id, {
@@ -112,10 +111,18 @@ window.onYouTubeIframeAPIReady = function () {
             events: {
                 'onReady': onPlayerReady,
                 'onVolumeChange': onPlayerVolumeChange,
-                'onStateChange': onPlayerStateChange // Added for single play logic
+                'onStateChange': onPlayerStateChange
             }
         });
-        players.push({ id: el.id, player: player, element: parentElement, isClientReview: isClientReview, isFaqVideo: isFaqVideo });
+        players.push({
+            id: el.id,
+            player: player,
+            element: parentElement,
+            isClientReview: isClientReview,
+            isFaqVideo: isFaqVideo,
+            manuallyPaused: false,
+            autoPausing: false
+        });
     };
 
     if ('IntersectionObserver' in window) {
@@ -140,14 +147,12 @@ function onPlayerReady(event) {
     const iframe = event.target.getIframe();
     const isClientReview = iframe.closest('.client-review-card') !== null;
 
+    // Explicitly mute on load to ensure muted-autoplay on mobile
+    event.target.mute();
+
     // Check if this is an FAQ video by looking up via ID (more robust)
-    // The iframe id usually matches the original div id
     const playerObj = players.find(p => p.id === iframe.id);
     const isFaqVideo = playerObj ? playerObj.isFaqVideo : false;
-
-    // Double check via attribute on the iframe itself if possible? 
-    // The YT API replaces the div, but sometimes copies attributes or we might have set it on the parent.
-    // The playerObj lookup is best.
 
     if (!isClientReview && !isFaqVideo) {
         const rect = iframe.getBoundingClientRect();
@@ -164,16 +169,19 @@ function onPlayerReady(event) {
 }
 
 function onPlayerStateChange(event) {
+    const playerObj = players.find(p => p.player === event.target);
+    if (!playerObj) return;
+
     if (event.data === YT.PlayerState.PLAYING) {
-        const currentPlayer = event.target;
-        players.forEach(p => {
-            if (p.player !== currentPlayer) {
-                // Check if the other player is currently playing
-                if (p.player.getPlayerState && p.player.getPlayerState() === YT.PlayerState.PLAYING) {
-                    p.player.pauseVideo();
-                }
-            }
-        });
+        playerObj.manuallyPaused = false;
+        // Logic to pause other players or stop ticker has been removed
+        // to allow independent video playback as requested.
+    } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+        // If it wasn't our code that called pause (autoPausing), then it was the user
+        if (!playerObj.autoPausing) {
+            playerObj.manuallyPaused = true;
+        }
+        playerObj.autoPausing = false; // Reset
     }
 }
 
@@ -191,39 +199,54 @@ function onPlayerVolumeChange(event) {
 }
 
 function startAutoplayLogic() {
-    const checkCenterPlayer = () => {
+    const checkVisiblePlayers = () => {
         const viewportWidth = window.innerWidth;
+        const centerX = viewportWidth / 2;
+
+        let bestVisible = null;
+        let minDistance = Infinity;
 
         players.forEach(p => {
-            if (!p.element || p.isClientReview || p.isFaqVideo) return; // Skip client review and FAQ videos from autoplay logic
+            if (!p.element || p.isClientReview || p.isFaqVideo) return;
 
             const rect = p.element.getBoundingClientRect();
 
-            // Check if the player is within the horizontal viewport (with a small buffer)
-            const isVisible = rect.right > -100 && rect.left < viewportWidth + 100;
+            // Check if the player is within the horizontal viewport
+            const isVisible = rect.right > -50 && rect.left < viewportWidth + 50;
 
             if (isVisible) {
-                // If visible and not playing, try to play
-                if (p.player.getPlayerState &&
-                    p.player.getPlayerState() !== YT.PlayerState.PLAYING &&
-                    p.player.getPlayerState() !== YT.PlayerState.BUFFERING) {
-                    try {
-                        p.player.playVideo();
-                    } catch (e) {
-                        console.warn("Autoplay blocked or failed for:", p.id);
-                    }
+                // Determine which video is closest to center for focused autoplay
+                const dist = Math.abs((rect.left + rect.right) / 2 - centerX);
+                if (dist < minDistance && !p.manuallyPaused) {
+                    minDistance = dist;
+                    bestVisible = p;
                 }
             } else {
                 // If NOT visible and is playing, pause to save resources
                 if (p.player.getPlayerState && p.player.getPlayerState() === YT.PlayerState.PLAYING) {
+                    p.autoPausing = true;
                     p.player.pauseVideo();
+                    setTimeout(() => { p.autoPausing = false; }, 500);
                 }
             }
         });
+
+        // Try to start the best visible one if it's not manually paused
+        if (bestVisible) {
+            if (bestVisible.player.getPlayerState &&
+                bestVisible.player.getPlayerState() !== YT.PlayerState.PLAYING &&
+                bestVisible.player.getPlayerState() !== YT.PlayerState.BUFFERING) {
+                try {
+                    bestVisible.player.playVideo();
+                } catch (e) {
+                    console.warn("Autoplay blocked or failed for:", bestVisible.id);
+                }
+            }
+        }
     };
 
-    // Run check frequently for smooth transitions in the ticker
-    setInterval(checkCenterPlayer, 200);
+    // Run check frequently
+    setInterval(checkVisiblePlayers, 400);
 }
 
 
@@ -559,12 +582,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (progressBar) {
             progressBar.style.width = scrollPercentage + '%';
-            
+
             const hue = (scrollPercentage / 100) * 360;
         }
 
         if (goToTopBtn) {
-            if (scrollTop > 300) { 
+            if (scrollTop > 300) {
                 goToTopBtn.classList.add('show');
             } else {
                 goToTopBtn.classList.remove('show');
@@ -573,12 +596,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const flagContainers = document.querySelectorAll('.flag-counter-container');
     let currentIndices = [0, 0, 0, 0];
     let usedFlags = new Set();
     let isAnimating = false;
-    
+
     // Preload all flag images
     function preloadImages() {
         const allImages = document.querySelectorAll('.flag-img');
@@ -587,98 +610,98 @@ document.addEventListener('DOMContentLoaded', function() {
             const preloadImg = new Image();
             preloadImg.src = img.src;
             img.dataset.loaded = 'false';
-            
-            preloadImg.onload = function() {
+
+            preloadImg.onload = function () {
                 img.dataset.loaded = 'true';
                 img.classList.remove('loading');
             };
-            
-            preloadImg.onerror = function() {
+
+            preloadImg.onerror = function () {
                 img.dataset.loaded = 'true';
                 img.classList.remove('loading');
             };
-            
+
             // Show loading state
             img.classList.add('loading');
         });
     }
-    
+
     function getRandomUniqueFlag(containerIndex) {
         const container = flagContainers[containerIndex];
         const flags = container.querySelectorAll('.flag-img');
         const availableIndices = [];
-        
+
         // Find available flags that aren't currently shown in other containers
         flags.forEach((flag, index) => {
             if (!usedFlags.has(flag.src)) {
                 availableIndices.push(index);
             }
         });
-        
+
         // If no unique flags available, reset and use any flag
         if (availableIndices.length === 0) {
             usedFlags.clear();
             return Math.floor(Math.random() * flags.length);
         }
-        
+
         return availableIndices[Math.floor(Math.random() * availableIndices.length)];
     }
-    
+
     function rotateFlags() {
         if (isAnimating) return;
         isAnimating = true;
-        
+
         // Clear used flags set for this rotation cycle
         usedFlags.clear();
-        
+
         flagContainers.forEach((container, containerIndex) => {
             const flags = container.querySelectorAll('.flag-img');
             const currentActive = container.querySelector('.flag-img.active');
             const nextIndex = getRandomUniqueFlag(containerIndex);
-            
+
             // Mark this flag as used for current cycle
             usedFlags.add(flags[nextIndex].src);
-            
+
             // Set next flag as "next" state (coming from bottom)
             const nextFlag = flags[nextIndex];
             nextFlag.classList.add('next');
-            
+
             // Force reflow to ensure CSS transition starts
             void nextFlag.offsetWidth;
-            
+
             // Start animation after a small delay to create staggered effect
             setTimeout(() => {
                 if (currentActive) {
                     currentActive.classList.remove('active');
                     currentActive.classList.add('leaving');
                 }
-                
+
                 nextFlag.classList.remove('next');
                 nextFlag.classList.add('active');
-                
+
                 // Remove leaving class after animation completes
                 if (currentActive) {
                     setTimeout(() => {
                         currentActive.classList.remove('leaving');
                     }, 1200);
                 }
-                
+
                 currentIndices[containerIndex] = nextIndex;
             }, containerIndex * 100); // Staggered start for each container
         });
-        
+
         // Reset animation flag after all animations complete
         setTimeout(() => {
             isAnimating = false;
         }, 2000);
     }
-    
+
     // Preload images first
     preloadImages();
-    
+
     // Start rotation after images are loaded - change every 4 seconds (slower)
     let rotationInterval;
-    
+
     function startRotation() {
         // Initial rotation after 2 seconds to ensure images are loaded
         setTimeout(() => {
@@ -687,22 +710,22 @@ document.addEventListener('DOMContentLoaded', function() {
             rotationInterval = setInterval(rotateFlags, 4000);
         }, 2000);
     }
-    
+
     // Check if all images are loaded before starting
     function checkAllImagesLoaded() {
         const allImages = document.querySelectorAll('.flag-img');
         const loadedImages = Array.from(allImages).filter(img => img.dataset.loaded === 'true');
-        
+
         if (loadedImages.length >= allImages.length * 0.8) { // Start when 80% are loaded
             startRotation();
         } else {
             setTimeout(checkAllImagesLoaded, 500);
         }
     }
-    
+
     // Start checking image loading
     setTimeout(checkAllImagesLoaded, 1000);
-    
+
     // Fallback in case image loading check fails
     setTimeout(startRotation, 3000);
 });

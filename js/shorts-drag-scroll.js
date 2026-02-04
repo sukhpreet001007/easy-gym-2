@@ -9,6 +9,17 @@
 
     if (!wrapper || !ticker) return;
 
+    // Expose control functions to global scope for video interaction
+    window.stopShortsTicker = function () {
+        if (isDragging) return;
+        ticker.style.animationPlayState = 'paused';
+    };
+
+    window.resumeShortsTicker = function () {
+        if (isDragging) return;
+        ticker.style.animationPlayState = 'running';
+    };
+
     let isDragging = false;
     let startX = 0;
     let currentTranslateX = 0;
@@ -79,12 +90,16 @@
         ticker.style.transform = '';
         ticker.style.animation = `ticker-scroll ${animationDuration}s linear infinite`;
         ticker.style.animationDelay = `${delay}s`;
+        ticker.style.animationPlayState = 'running'; // Ensure it's running
     }
 
     // Mouse Listeners
     wrapper.addEventListener('mousedown', (e) => {
         onDragStart(e.clientX);
-        e.preventDefault(); // Prevents image dragging and text selection
+        // Only prevent default if we're not clicking on a video player
+        if (!e.target.closest('.youtube-player')) {
+            e.preventDefault();
+        }
     });
 
     window.addEventListener('mousemove', (e) => {

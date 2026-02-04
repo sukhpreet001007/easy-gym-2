@@ -466,7 +466,8 @@
 }
 
 
-.shorts-ticker-wrapper:hover .shorts-ticker {
+.shorts-ticker-wrapper:hover .shorts-ticker,
+.shorts-ticker-wrapper:active .shorts-ticker {
     animation-play-state: paused;
 }
 
