@@ -28,7 +28,7 @@
     height: auto;
     z-index: 2;
     top: 50%;
-    left: 55%;
+    left: 43%;
     transform: translate(-50%, -50%);
     /* filter: drop-shadow(0 8px 12px rgba(0, 0, 0)); */
 
@@ -153,8 +153,8 @@
     }
 
     .hero-man {
-        width: 540px;
-        left: 57%;
+        width: 580px;
+        left: 39%;
     }
 
     .hero-p {
@@ -168,12 +168,12 @@
 
     .detected-card,
     .workout-card {
-        width: 250px !important;
-        right: 2%;
+        width: 284px !important;
+        right: -7.5%;
     }
 
     .avocado-card {
-        width: 250px !important;
+        width: 290px !important;
         top: -8%;
     }
 
@@ -260,17 +260,10 @@
         margin-right: 0px !important;
     }
 
-    .hero-dashboard {
-        width: 500px !important;
-        left: 52% !important;
-        top: 45% !important;
-        transform: translate(-50%, -50%) !important;
-        max-width: 520px !important;
-    }
-
+    
     .hero-man {
         width: 420px !important;
-        left: 65% !important;
+        left: 50% !important;
         top: 50% !important;
         transform: translate(-50%, -50%) !important;
     }
@@ -278,6 +271,7 @@
     /* Floating cards */
     .avocado-card {
         width: 200px !important;
+        top: -5%;
     }
 
     .workout-card {
@@ -287,7 +281,7 @@
 
     .detected-card {
         width: 190px !important;
-        top: 8%;
+        top: 7%;
         right: -14%;
     }
 
@@ -301,6 +295,7 @@
 
     .rose-card {
         width: 150px !important;
+        bottom: 2%;
     }
 
     /* Accordion fixes */
@@ -415,13 +410,13 @@
     }
 
     .hero-man {
-        left: 65% !important;
-        max-width: 420px;
+        left: 42% !important;
     }
 
     .avocado-card {
-        width: 200px !important;
+        width:250px !important;
         top: -4% !important;
+        left: -6% !important;
     }
 
     .detected-card {
@@ -470,8 +465,8 @@
     }
 
     .hero-man {
-        width: 420px !important;
-        left: 65% !important;
+        width: 470px !important;
+        left: 45% !important;
         top: 50% !important;
         transform: translate(-50%, -50%) !important;
     }
@@ -506,7 +501,7 @@
     .barbell-card {
         width: 150px !important;
         top: 40% !important;
-        right: 6% !important;
+        right: 8% !important;
         animation-delay: 0.9s;
     }
 
@@ -518,7 +513,7 @@
     }
 
     .rose-card {
-        width: 170px !important;
+        width: 150px !important;
         bottom: 10% !important;
         left: 10% !important;
         animation-delay: 1.5s;
@@ -706,21 +701,22 @@
 
     .hero-man {
         width: 350px;
-        left: 70%;
+        left: 43%;
     }
 
     .avocado-card,
     .workout-card,
     .detected-card,
-    .barbell-card,
     .meals-card,
     .rose-card {
-        width: 20%;
+        width: 35%;
     }
-
+ .rose-card {
+        width: 22%;
+    }
     /* Adjust positions for mobile */
     .avocado-card {
-        top: -15%;
+        top: -8%;
         left: 3%;
     }
 
@@ -735,8 +731,9 @@
     }
 
     .barbell-card {
+        width: 130px;
         top: 40%;
-        right: 0%;
+        right: 5%;
     }
 
     .meals-card {
@@ -797,8 +794,8 @@
     }
 
     .hero-man {
-        width: 280px;
-        left: 50%;
+        width: 250px;
+        left: 40%;
     }
 
     .avocado-card {
@@ -810,13 +807,13 @@
     .workout-card {
         top: -3%;
         right: -7%;
-        width: 150px;
+        width: 130px;
     }
 
     .detected-card {
         top: 10%;
         right: -7%;
-        width: 150px;
+        width: 130px;
     }
 
     .barbell-card {
@@ -939,3 +936,9 @@
         }
     }
 }
+
+
+
+
+        /* width: 252px !important;
+        right: -8.5%; */

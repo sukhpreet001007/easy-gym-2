@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://www.google.com">
 
     <link rel="preload" href="css/style.css" as="style">
-    <link rel="preload" href="images/gym-man.png" as="image" fetchpriority="high">
+    <link rel="preload" href="images/hero-section.png" as="image" fetchpriority="high">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -442,11 +442,11 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="hero-image-container">
                                 <!-- Background Dashboard -->
-                                <img decoding="async" src="images/bg-dashboard.svg" class="hero-dashboard"
-                                    alt="Dashboard" fetchpriority="high">
+                                <!-- <img decoding="async" src="images/bg-dashboard.svg" class="hero-dashboard"
+                                    alt="Dashboard" fetchpriority="high"> -->
 
                                 <!-- Center Gym Man -->
-                                <img decoding="async" src="images/gym-man.png" class="hero-man" alt="Gym Man"
+                                <img decoding="async" src="images/hero-section.png" class="hero-man" alt="Gym Man"
                                     fetchpriority="high">
 
                                 <!-- Floating Animated Elements -->
@@ -714,7 +714,8 @@
                                             <h6>“Profit margins grew by 20% in 3 months.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center;"> -Gymx, Maldives
                                                 <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/maldivas.png" alt="maldivas flag"></p>
+                                                    src="brands/maldivas.png" alt="maldivas flag">
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -1134,7 +1135,8 @@
                                             <h6>“Profit margins grew by 20% in 3 months.”</h6>
                                             <p style="display: flex; gap: 5px; align-items: center;"> -Gymx, Maldives
                                                 <img decoding="async" style="width: 26px; height: 20px;" loading="lazy"
-                                                    src="brands/maldivas.png" alt="maldivas flag"></p>
+                                                    src="brands/maldivas.png" alt="maldivas flag">
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -2755,8 +2757,9 @@
                                 <li><a href="contact-us.html">Contact Us</a></li>
                                 <li><a href="about-us.html">About us</a></li>
                                 <!-- <li><a href="#">Career</a></li> -->
-                                <li><a href="" data-bs-target="#ModalTogglesix" data-bs-toggle="modal"><b>Book a
-                                            demo</b> <i class="bi bi-arrow-right"></i></a></li>
+                                <li><button style="background: none; border: none; color: #b8c1ec;"
+                                        data-bs-target="#ModalTogglesix" data-bs-toggle="modal"><b>Book a
+                                            demo</b> <i class="bi bi-arrow-right"></i></button></li>
                             </ul>
                         </div>
                     </div>
@@ -2854,21 +2857,12 @@
                 <div class="modal-body custom-form-modal-body">
                     <div class="modal-box custom-form-modal-box">
                         <div class="modal-left custom-form-modal-left">
-                            <div class="form-illustration">
-                                <div class="form-illustration-content">
-                                    <h3 class="form-illustration-title">See Easy Gym Software in Action</h3>
-                                    <p class="form-illustration-text">Book a free demo and discover how to manage your
-                                        gym effortlessly
-                                    </p>
-                                    <ul class="form-benefits">
-                                        <li><i class="benefit-icon">✓</i> Live software walkthrough</li>
-                                        <li><i class="benefit-icon">✓</i> Manage Members Easily</li>
-                                        <li><i class="benefit-icon">✓</i> Personalized For You</li>
-                                        <li><i class="benefit-icon">✓</i>Automate your tasks</li>
-                                        <li><i class="benefit-icon">✓</i>Boost revenue growth</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <img src="images/form-left.jpeg" alt="Book Free Demo"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                        </div>
+                        <div class="mobile-only-header d-lg-none" style="width: 100%;">
+                            <img src="images/mob-tab-form.png" alt="Book Free Demo"
+                                style="width: 100%; height: auto; display: block; border-radius: 20px 20px 0 0;">
                         </div>
                         <div class="modal-right custom-form-modal-right">
                             <button type="button" class="mobile-close-btn" data-bs-dismiss="modal" aria-label="Close">

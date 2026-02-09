@@ -403,8 +403,10 @@
     padding: 10px 0;
     font-size: 1.1rem;
     display: flex;
-    align-items: flex-start; /* important */
-    gap: 15px;               /* cleaner spacing */
+    align-items: flex-start;
+    /* important */
+    gap: 15px;
+    /* cleaner spacing */
     opacity: 0.9;
     transition: opacity 0.3s ease;
 }
@@ -415,7 +417,8 @@
 }
 
 .benefit-icon {
-    flex-shrink: 0;          /* key fix */
+    flex-shrink: 0;
+    /* key fix */
     width: 24px;
     height: 24px;
     background: rgba(255, 255, 255, 0.2);
@@ -654,7 +657,7 @@
     }
 
     #ModalTogglesix.custom-form-modal .custom-form-modal-left {
-        padding: 30px 20px;
+        display: none;
     }
 
     #ModalTogglesix.custom-form-modal .custom-form-modal-right {
